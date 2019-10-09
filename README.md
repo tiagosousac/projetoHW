@@ -3,6 +3,8 @@ Projeto da cadeira Infraestrutura de Hardware (IF674), do professor Adriano Sarm
 
 # Recursos
 
+Segue alguns links úteis para o projeto, adicione também se encontrar algum interessante.
+
 * [Especificação do projeto](https://drive.google.com/file/d/1DO_luS3GKVyv3rYO_oJdjYfEV0kU3biG/view)
 * [Cartolina do projeto](http://abre.ai/cartolinahw)
 * [Slides Verilog](https://drive.google.com/file/d/1y0gqVissNJZ3fpTfjAh6yvX_9Y9t9xqC/view)
