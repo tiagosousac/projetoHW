@@ -10,10 +10,9 @@ Segue alguns links úteis para o projeto, adicione também se encontrar algum in
 * [Slides Verilog](https://drive.google.com/file/d/1y0gqVissNJZ3fpTfjAh6yvX_9Y9t9xqC/view)
 * [Atividades Verilog](https://drive.google.com/file/d/1H81--gwP9lwWjgLLp97iK5sfZ7ko82NW/view)
 * [Quartus II](https://drive.google.com/file/d/1wQKtpDSJMCUhpOUdQVPDfxamvXK26KWc/view)
-
+* [PETLib de HW](https://drive.google.com/drive/folders/1B7kcXXYe2SE-hnkpGaBfN5sVz51AqKfs)
 
 # Checklist
 
 Usem o [checklist](https://docs.google.com/spreadsheets/d/13kJTckkGqviGsZGby3BrcM13_c1ZbBVm-t53vDKq94E/edit#gid=0) pra avisar pros outros o que vocês tão fazendo ou já fizeram,
  pra evitar que haja trabalho em dobro. Ta faltando alguns tópicos, então colaborem pra complementar.
- 
