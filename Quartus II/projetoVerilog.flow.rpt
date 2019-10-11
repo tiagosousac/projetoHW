@@ -1,5 +1,5 @@
 Flow report for projetoVerilog
-Fri Oct 11 13:54:27 2019
+Fri Oct 11 14:09:29 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,16 +38,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Fri Oct 11 13:54:27 2019        ;
+; Flow Status                   ; Successful - Fri Oct 11 14:09:29 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; projetoVerilog                               ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Met timing requirements       ; No                                           ;
 ; Logic utilization             ; < 1 %                                        ;
-;     Combinational ALUTs       ; 88 / 12,480 ( < 1 % )                        ;
-;     Dedicated logic registers ; 46 / 12,480 ( < 1 % )                        ;
-; Total registers               ; 46                                           ;
+;     Combinational ALUTs       ; 67 / 12,480 ( < 1 % )                        ;
+;     Dedicated logic registers ; 47 / 12,480 ( < 1 % )                        ;
+; Total registers               ; 47                                           ;
 ; Total pins                    ; 300 / 343 ( 87 % )                           ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 64 / 419,328 ( < 1 % )                       ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/11/2019 13:54:16 ;
+; Start date & time ; 10/11/2019 14:09:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; projetoVerilog      ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+----------------+-------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value  ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 118933439759328.157081285613836 ; --             ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 118933439759328.157081375908560 ; --             ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --             ; CPU         ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --             ; CPU         ; Top            ;
 ; TOP_LEVEL_ENTITY                   ; CPU                             ; projetoVerilog ; --          ; --             ;
@@ -88,11 +88,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 273 MB              ; 00:00:05                           ;
+; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 273 MB              ; 00:00:06                           ;
 ; Fitter                  ; 00:00:03     ; 1.0                     ; 269 MB              ; 00:00:04                           ;
-; Assembler               ; 00:00:02     ; 1.0                     ; 236 MB              ; 00:00:01                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 167 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:08     ; --                      ; --                  ; 00:00:10                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 236 MB              ; 00:00:01                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 166 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:07     ; --                      ; --                  ; 00:00:11                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

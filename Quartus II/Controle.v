@@ -264,6 +264,35 @@ always @(posedge clock) begin
 							MemToReg = 4'b0000;
 							estado = AfterADDIU;
 							end
+						7'd0: begin
+							WriteCond = 1'b0;
+							PCWrite = 1'b1;
+							RegWrite = 1'b0;
+							Wr = 1'b0;
+							IRWrite = 1'b0;
+							WriteRegA = 1'b0;
+							WriteRegB = 1'b0;
+							AluOutControl = 1'b0;
+							EPCWrite = 1'b0;
+							ShiftSrc = 1'b0;
+							ShiftAmt = 1'b0;
+							DivCtrl = 1'b0;
+							MultCtrl = 1'b0;
+							HICtrl = 1'b0;
+							LOCtrl = 1'b0;
+							WriteHI = 1'b0;
+							WriteLO = 1'b0;
+							ExceptionCtrl = 2'b00; 
+							AluSrcA = 2'b00;
+							AluSrcB = 3'b0001;
+							AluOp = 3'b010;
+							PCSource = 3'b001;
+							IorD = 3'b000;
+							ShiftCtrl = 3'b000;
+							RegDst = 3'b000;
+							MemToReg = 4'b0000;
+							estado = FETCH;
+							end
 					endcase
 				end
 				AfterADDIU: begin
@@ -298,6 +327,7 @@ always @(posedge clock) begin
 				WAIT: begin
 					estado = FETCH;
 					end
+					
 			endcase
 		end
 	end

@@ -1,3 +1,4 @@
+Success, your file was converted:
 DEPTH = 4;
 WIDTH = 8;
 
@@ -6,9 +7,9 @@ DATA_RADIX = BIN;
 CONTENT
 BEGIN
 
-000 : 00000101; --addiu 15 0 5
+000 : 00001101; --break
 001 : 00000000;
-002 : 00001111;
-003 : 00100100;
+002 : 00000000;
+003 : 00000000;
 
 END;
