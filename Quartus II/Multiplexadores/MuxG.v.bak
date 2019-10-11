@@ -6,8 +6,8 @@ output reg[31:0] toShift
 );
 
 always @(*) begin
-	if (IorD == 1'b0) toShift <= FromA;
-	if (IorD == 1'b1) toShift <= FromB;
+	if (ShiftSrc == 1'b0) toShift <= FromB;
+	if (ShiftSrc == 1'b1) toShift <= FromA;
 end
 
 endmodule

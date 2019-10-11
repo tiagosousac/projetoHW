@@ -1,0 +1,29 @@
+module MuxE (
+input wire[31:0] FromA,
+input wire[31:0] FromALU,
+input wire[31:0] FromJump,
+input wire[31:0] FromALUOut,
+input wire[31:0] FromEPC,
+input wire[31:0] FromSEW,
+input wire[2:0] PCSource,
+output reg[31:0] toPC
+);
+parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, S5 = 5;
+always @(*) begin
+	case(PCSource)
+		S0:
+			toPC <= FromA;
+		S1:
+			toPC <= FromALU;
+		S2:
+			toPC <= FromJump;
+		S3:
+			toPC <= FromALUOut;
+		S4:
+			toPC <= FromEPC;
+		S5:
+			toPC <= FromSEW;
+	endcase
+end
+
+endmodule

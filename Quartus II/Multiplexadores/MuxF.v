@@ -3,10 +3,16 @@ module MuxF (
 //output reg[31:0] toMuxA
 );
 
+parameter S0 = 0, S1 = 1, S2 = 2;
 always @(*) begin
-//	if (ShiftAmt == 2'b00) toShift <= 32'b11111101;//253
-//	if (ShiftAmt == 2'b01) toShift <= 32'b11111110;//254
-//	if (ShiftAmt == 2'b10) toShift <= 32'b11111111;//255
+	case(ExceptionCtrl)
+		S0:
+			toMuxA <= 32'd253;
+		S1:
+			toMuxA <= 32'd254;
+		S2:
+			toMuxA <= 32'd255;
+	endcase
 end
 
 endmodule

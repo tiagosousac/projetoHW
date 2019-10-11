@@ -1,0 +1,17 @@
+module MuxC (
+input wire[31:0] FromPC,
+input wire[31:0] FromB,
+input wire[31:0] FromA,
+input wire[31:0] FromMem,
+input wire[1:0] ALUSrcA,
+output reg[31:0] toALU
+);
+
+always @(*) begin
+	if (ALUSrcA == 2'b00) toALU <= FromPC;
+	if (ALUSrcA == 2'b01) toALU <= FromB;
+	if (ALUSrcA == 2'b10) toALU <= FromA;
+	if (ALUSrcA == 2'b11) toALU <= FromMem;
+end
+
+endmodule

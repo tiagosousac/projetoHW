@@ -1,0 +1,24 @@
+module MuxB (
+input wire[4:0] InstructionRS,
+input wire[4:0] InstructionRT,
+input wire[4:0] InstructionRD,
+input wire[2:0] RegDst,
+output reg[4:0] toWReg
+);
+parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4;
+always @(*) begin
+	case(RegDst)
+		S0:
+			toWReg <= InstructionRS;
+		S1:
+			toWReg <= InstructionRT;
+		S2:
+			toWReg <= 5'd29;
+		S3:
+			toWReg <= 5'd31;
+		S4:
+			toWReg <= InstructionRD;
+	endcase
+end
+
+endmodule
