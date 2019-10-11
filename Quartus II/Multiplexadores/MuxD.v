@@ -6,7 +6,8 @@ input wire[31:0] FromImmediate2,
 input wire[2:0] ALUSrcB,
 output reg[31:0] toALU
 );
-parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4;
+parameter S0 = 3'b000, S1 = 3'b001, S2 = 3'b010, S3 = 3'b011, S4 = 3'b100;
+
 always @(*) begin
 	case(ALUSrcB)
 		S0:
