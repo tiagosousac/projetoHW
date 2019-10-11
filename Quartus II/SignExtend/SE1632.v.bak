@@ -1,0 +1,11 @@
+module SE1632 (
+input wire[15:0] FromOffset,
+output reg[31:0] toMuxD
+);
+
+parameter S0 = 0, S1 = 1, S2 = 2;
+always @(*) begin
+	toMuxA <= {{16'd0},ExceptionCtrl};
+end
+
+endmodulex
