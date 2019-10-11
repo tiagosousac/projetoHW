@@ -1,5 +1,5 @@
 Flow report for projetoVerilog
-Fri Oct 11 00:32:11 2019
+Fri Oct 11 11:19:57 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Fri Oct 11 00:32:11 2019        ;
+; Flow Status                   ; Successful - Fri Oct 11 11:19:57 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; projetoVerilog                               ;
 ; Top-level Entity Name         ; Controle                                     ;
@@ -48,7 +48,7 @@ applicable agreement for further details.
 ;     Combinational ALUTs       ; 16 / 12,480 ( < 1 % )                        ;
 ;     Dedicated logic registers ; 15 / 12,480 ( < 1 % )                        ;
 ; Total registers               ; 15                                           ;
-; Total pins                    ; 57 / 343 ( 17 % )                            ;
+; Total pins                    ; 58 / 343 ( 17 % )                            ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 0 / 419,328 ( 0 % )                          ;
 ; DSP block 9-bit elements      ; 0 / 96 ( 0 % )                               ;
@@ -64,23 +64,23 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/11/2019 00:31:55 ;
+; Start date & time ; 10/11/2019 11:19:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; projetoVerilog      ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+------------------------------------+--------------------------------+----------------+-------------+----------------+
-; Assignment Name                    ; Value                          ; Default Value  ; Entity Name ; Section Id     ;
-+------------------------------------+--------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 31032335980359.157076471500137 ; --             ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                       ; --             ; Controle    ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                         ; --             ; Controle    ; Top            ;
-; TOP_LEVEL_ENTITY                   ; Controle                       ; projetoVerilog ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                            ; --             ; --          ; eda_blast_fpga ;
-+------------------------------------+--------------------------------+----------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++------------------------------------+---------------------------------+----------------+-------------+----------------+
+; Assignment Name                    ; Value                           ; Default Value  ; Entity Name ; Section Id     ;
++------------------------------------+---------------------------------+----------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 123532113655026.157080358100217 ; --             ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                        ; --             ; Controle    ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --             ; Controle    ; Top            ;
+; TOP_LEVEL_ENTITY                   ; Controle                        ; projetoVerilog ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --             ; --          ; eda_blast_fpga ;
++------------------------------------+---------------------------------+----------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -90,22 +90,22 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 0 MB                ; 00:00:00                           ;
 ; Fitter                  ; 00:00:07     ; 1.0                     ; 0 MB                ; 00:00:00                           ;
-; Assembler               ; 00:00:02     ; 1.0                     ; 0 MB                ; 00:00:02                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 0 MB                ; 00:00:01                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 0 MB                ; 00:00:00                           ;
-; Total                   ; 00:00:12     ; --                      ; --                  ; 00:00:02                           ;
+; Total                   ; 00:00:11     ; --                      ; --                  ; 00:00:01                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                           ;
-+-------------------------+----------------------+------------+------------+----------------+
-; Module Name             ; Machine Hostname     ; OS Name    ; OS Version ; Processor type ;
-+-------------------------+----------------------+------------+------------+----------------+
-; Analysis & Synthesis    ; tiago-Aspire-F5-573G ; Windows XP ; 10.0       ; x86_64         ;
-; Fitter                  ; tiago-Aspire-F5-573G ; Windows XP ; 10.0       ; x86_64         ;
-; Assembler               ; tiago-Aspire-F5-573G ; Windows XP ; 10.0       ; x86_64         ;
-; Classic Timing Analyzer ; tiago-Aspire-F5-573G ; Windows XP ; 10.0       ; x86_64         ;
-+-------------------------+----------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++-------------------------+------------------+---------------+------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++-------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis    ; olinda           ; Windows Vista ; 6.1        ; x86_64         ;
+; Fitter                  ; olinda           ; Windows Vista ; 6.1        ; x86_64         ;
+; Assembler               ; olinda           ; Windows Vista ; 6.1        ; x86_64         ;
+; Classic Timing Analyzer ; olinda           ; Windows Vista ; 6.1        ; x86_64         ;
++-------------------------+------------------+---------------+------------+----------------+
 
 
 ------------

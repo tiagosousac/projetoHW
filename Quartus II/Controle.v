@@ -20,6 +20,7 @@ output reg HICtrl,
 output reg LOCtrl,
 output reg WriteHI,
 output reg WriteLO,
+output reg MDRCtrl, // falta colocar ele nos casos
 output reg [1:0] ExceptionCtrl, 
 output reg [1:0] AluSrcA,
 output reg [2:0] AluSrcB,
