@@ -1,0 +1,9 @@
+
+State Machine - |Controle|estado
+Name estado.AfterADDIU estado.OPERAR estado.DECODE estado.WAITFETCH estado.FETCH estado.WAIT 
+estado.FETCH 0 0 0 0 0 0 
+estado.WAITFETCH 0 0 0 1 1 0 
+estado.DECODE 0 0 1 0 1 0 
+estado.OPERAR 0 1 0 0 1 0 
+estado.AfterADDIU 1 0 0 0 1 0 
+estado.WAIT 0 0 0 0 1 1 

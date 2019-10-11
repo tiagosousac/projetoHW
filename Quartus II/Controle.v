@@ -1,7 +1,6 @@
 module Controle(
 input clock,
 input reset,
-input Div0,
 input [5:0] Opcode,
 input [5:0] Funct,
 output reg WriteCond,
@@ -30,7 +29,7 @@ output reg [2:0] IorD,
 output reg [2:0] ShiftCtrl,
 output reg [2:0] RegDst,
 output reg [3:0] MemToReg
-)
+);
 
 reg [6:0] estado;
 // parameters dos estados
@@ -38,7 +37,8 @@ parameter FETCH = 7'b0000000;
 parameter WAITFETCH = 7'b0000001;
 parameter DECODE = 7'b0000010;
 parameter OPERAR = 7'b0000011;
-parameter ADD/SUB/AND = 7'b0000100;
+parameter AfterADDIU = 7'b0000100;
+parameter WAIT = 7'b1111111;
 // parameters do Opcode
 parameter RINSTRUCTION = 6'b000000;
 parameter ADDI = 6'b001000;
@@ -65,7 +65,7 @@ parameter DIV = 6'b011010;
 parameter MULT = 6'b011000;
 parameter JR = 6'b001000;
 parameter MFHI = 6'b010000;
-parameter MFLO = 6'b010020;
+parameter MFLO = 6'b010010;
 parameter SLL = 6'b000000;
 parameter SLLV = 6'b000100;
 parameter SLT = 6'b101010;
@@ -82,7 +82,7 @@ initial begin
 	estado = FETCH;
 end
 
-always @(posedge clk) begin
+always @(posedge clock) begin
 		if (reset) begin
 			WriteCond = 1'b0;
 			PCWrite = 1'b0;
@@ -111,7 +111,7 @@ always @(posedge clk) begin
 			RegDst = 3'b101;
 			MemToReg = 4'b1011;
 			estado = FETCH;
-		end
+		end			
 		else begin
 			case (estado)
 				FETCH: begin
@@ -140,7 +140,7 @@ always @(posedge clk) begin
 					IorD = 3'b000;
 					ShiftCtrl = 3'b000;
 					RegDst = 3'b101;
-					MemToReg = 4'b000;
+					MemToReg = 4'b0000;
 					estado = WAITFETCH;
 					end
 				WAITFETCH: begin
@@ -169,7 +169,7 @@ always @(posedge clk) begin
 					IorD = 3'b000;
 					ShiftCtrl = 3'b000;
 					RegDst = 3'b000;
-					MemToReg = 4'b000;
+					MemToReg = 4'b0000;
 					estado = DECODE;
 					end
 				DECODE: begin
@@ -198,42 +198,75 @@ always @(posedge clk) begin
 					IorD = 3'b000;
 					ShiftCtrl = 3'b001;
 					RegDst = 3'b000;
-					MemToReg = 4'b000;
+					MemToReg = 4'b0000;
 					estado = OPERAR;
+					end
 				OPERAR: begin
 					case(Opcode)
-						RINSTRUCTION: begin
-							case(Funct)
-								ADD: begin
-									WriteCond = 1'b0;
-									PCWrite = 1'b0;
-									RegWrite = 1'b0;
-									Wr = 1'b0;
-									IRWrite = 1'b0;
-									WriteRegA = 1'b0;
-									WriteRegB = 1'b0;
-									AluOutControl = 1'b1;
-									EPCWrite = 1'b0;
-									ShiftSrc = 1'b0;
-									ShiftAmt = 1'b0;
-									DivCtrl = 1'b0;
-									MultCtrl = 1'b0;
-									HICtrl = 1'b0;
-									LOCtrl = 1'b0;
-									WriteHI = 1'b0;
-									WriteLO = 1'b0;
-									ExceptionCtrl = 2'b00; 
-									AluSrcA = 2'b10;
-									AluSrcB = 3'b000;
-									AluOp = 3'b001;
-									PCSource = 3'b000;
-									IorD = 3'b000;
-									ShiftCtrl = 3'b000;
-									RegDst = 3'b000;
-									MemToReg = 4'b000;
-									estado = ADD/SUB/AND;
-									
-						
-					
-			
-
+						ADDIU: begin
+							WriteCond = 1'b0;
+							PCWrite = 1'b0;
+							RegWrite = 1'b0;
+							Wr = 1'b0;
+							IRWrite = 1'b0;
+							WriteRegA = 1'b0;
+							WriteRegB = 1'b0;
+							AluOutControl = 1'b1;
+							EPCWrite = 1'b0;
+							ShiftSrc = 1'b0;
+							ShiftAmt = 1'b0;
+							DivCtrl = 1'b0;
+							MultCtrl = 1'b0;
+							HICtrl = 1'b0;
+							LOCtrl = 1'b0;
+							WriteHI = 1'b0;
+							WriteLO = 1'b0;
+							ExceptionCtrl = 2'b00; 
+							AluSrcA = 2'b10;
+							AluSrcB = 3'b010;
+							AluOp = 3'b001;
+							PCSource = 3'b000;
+							IorD = 3'b000;
+							ShiftCtrl = 3'b000;
+							RegDst = 3'b000;
+							MemToReg = 4'b0000;
+							estado = AfterADDIU;
+							end
+					endcase
+				end
+				AfterADDIU: begin
+					WriteCond = 1'b0;
+					PCWrite = 1'b0;
+					RegWrite = 1'b0;
+					Wr = 1'b0;
+					IRWrite = 1'b0;
+					WriteRegA = 1'b0;
+					WriteRegB = 1'b0;
+					AluOutControl = 1'b0;
+					EPCWrite = 1'b0;
+					ShiftSrc = 1'b0;
+					ShiftAmt = 1'b0;
+					DivCtrl = 1'b0;
+					MultCtrl = 1'b0;
+					HICtrl = 1'b0;
+					LOCtrl = 1'b0;
+					WriteHI = 1'b0;
+					WriteLO = 1'b0;
+					ExceptionCtrl = 2'b00; 
+					AluSrcA = 2'b00;
+					AluSrcB = 3'b000;
+					AluOp = 3'b000;
+					PCSource = 3'b000;
+					IorD = 3'b000;
+					ShiftCtrl = 3'b000;
+					RegDst = 3'b010;
+					MemToReg = 4'b0000;
+					estado = WAIT;
+					end
+				WAIT: begin
+					estado = FETCH;
+					end
+			endcase
+		end
+	end
+endmodule
