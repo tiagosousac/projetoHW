@@ -44,14 +44,28 @@ set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:39:05  OCTOBER 09, 20
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
-set_global_assignment -name VERILOG_FILE InstrucaoR/ADDI.v
-set_global_assignment -name VERILOG_FILE Multiplexadores/MuxA.v
-set_global_assignment -name VERILOG_FILE Multiplexadores/MuxG.v
-set_global_assignment -name VERILOG_FILE Multiplexadores/MuxH.v
-set_global_assignment -name VERILOG_FILE Multiplexadores/MuxF.v
-set_global_assignment -name VERILOG_FILE Controle.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -entity projetoVerilog -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projetoVerilog -section_id "Root Region"
+set_global_assignment -name VHDL_FILE GivenComps/Banco_reg.vhd
+set_global_assignment -name VHDL_FILE GivenComps/Instr_Reg.vhd
+set_global_assignment -name VHDL_FILE GivenComps/Memoria.vhd
+set_global_assignment -name VHDL_FILE GivenComps/RegDesloc.vhd
+set_global_assignment -name VHDL_FILE GivenComps/Registrador.vhd
+set_global_assignment -name VHDL_FILE GivenComps/ula32.vhd
+set_global_assignment -name VERILOG_FILE SignExtend/SE132.v
+set_global_assignment -name VERILOG_FILE SignExtend/SE1632.v
+set_global_assignment -name VERILOG_FILE InstrucaoR/ADDI.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxB.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxC.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxD.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxE.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxA.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxG.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxH.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxI.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/MuxF.v
+set_global_assignment -name VERILOG_FILE Controle.v
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

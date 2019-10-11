@@ -1,6 +1,6 @@
 module MuxF (
-//input wire[1:0] ExceptionCtrl,
-//output reg[31:0] toMuxA
+input wire[1:0] ExceptionCtrl,
+output reg[31:0] toMuxA
 );
 
 parameter S0 = 0, S1 = 1, S2 = 2;
