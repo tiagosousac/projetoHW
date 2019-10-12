@@ -13,7 +13,7 @@ input wire[31:0] FromSL16,
 input wire[3:0] MemToReg,
 output reg[31:0] toWriteD
 );
-parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, S5 = 5, S6 = 6, S7 = 7, S8 = 8, S9 = 9, S10 = 10, S11 = 11;
+parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, S5 = 5, S6 = 6, S7 = 7, S8 = 8, S9 = 9, S10 = 10;
 always @(*) begin
 	case(MemToReg)
 		S0:
@@ -21,7 +21,7 @@ always @(*) begin
 		S1:
 			toWriteD <= FromLoad;
 		S2:
-			toWriteD <= FromMDR;
+			toWriteD <= 32'd227;
 		S3:
 			toWriteD <= FromShift;
 		S4:
@@ -38,8 +38,6 @@ always @(*) begin
 			toWriteD <= FromAdress2;
 		S10:
 			toWriteD <= FromSL16;
-		S11:
-			toWriteD <= 32'd227;
 	endcase
 end
 
