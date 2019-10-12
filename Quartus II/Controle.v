@@ -42,10 +42,9 @@ parameter WAITFETCH = 7'b0000001;
 parameter WAITFETCH2 = 7'b0000010;
 parameter DECODE = 7'b0000011;
 parameter OPERAR = 7'b0000100;
-parameter AfterADDIU = 7'b0000101;
-parameter AfterADDI = 7'b0000110;
-parameter AfterADD_SUB_AND = 7'b0000111;
-parameter AfterSRA_SRL = 7'b0001000;
+parameter ADDIxClk2 = 7'b0000101;
+parameter AfterADD_SUB_AND = 7'b0000110;
+parameter AfterSRA_SRL = 7'b0000111;
 parameter WAIT = 7'b1111111;
 // parameters do Opcode
 parameter RINSTRUCTION = 6'b000000;
@@ -129,18 +128,18 @@ always @(posedge clock) begin
 			case (estado)
 				FETCH: begin
 				//Alteradas
+                    PCSource = 3'b001;
                     IorD = 3'b000;
                     Wr = 1'b0;
                     AluSrcA = 2'b00;
 					AluSrcB = 3'b001;
-                    PCWrite = 1'b0;
+                    PCWrite = 1'b1;
+                    AluOp = 3'b001;
 				//Inalteradas
-					PCSource = 3'b000;
 					WriteCond = 1'b0;
 					IRWrite = 1'b0;
 					WriteRegA = 1'b0;
 					WriteRegB = 1'b0;
-					AluOp = 3'b000;
 					AluOutControl = 1'b0;
 					RegDst = 4'b0000;
 					MemToReg = 4'b0000;
@@ -300,7 +299,7 @@ always @(posedge clock) begin
                                 ShiftAmt = 1'b0;
                                 ShiftCtrl = 3'b000;
                                 EPCWrite = 1'b0;
-								estado = AfterADDI;
+								estado = ADDIxClk2;
 							end
 
 						ADDIU: begin

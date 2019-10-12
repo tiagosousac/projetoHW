@@ -1,16 +1,16 @@
 module MuxLOCtrl (
-input wire[31:0] DivCtrlOut,
-input wire[31:0] MultCtrlOut,
+input wire[31:0] DivCtrlLOOut,
+input wire[31:0] MultCtrlLOOut,
 input wire LOCtrl,
-output reg[31:0] MuxLOOut
+output reg[31:0] MuxLOCtrlOut
 );
 parameter S0 = 0, S1 = 1;
 always @(*) begin
 	case(LOCtrl)
 		S0:
-			MuxLOOut <= DivCtrlOut;
+			MuxLOCtrlOut <= DivCtrlOut;
 		S1:
-			MuxLOOut <= MultCtrlOut;
+			MuxLOCtrlOut <= MultCtrlOut;
 	endcase
 end
 
