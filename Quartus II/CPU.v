@@ -3,13 +3,13 @@ module CPU (clock, reset, AluResult, MuxMemToRegOut, MuxShiftSrcOut, MuxShiftAmt
 input clock;
 input reset;
 
-output reg [31:0] AluResult;
+output wire [31:0] AluResult;
 output wire [31:0] RegAOut, RegBOut, RegPCOut, MemData, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut, MuxMemToRegOut;
 output wire [6:0] estado;
 output wire [2:0] AluOp;
 
-wire [31:0] SSOut, RegWriteOutA, RegWriteOutB, MuxPCSourceOut, RegEPCOut, RegAluOutOut,  RegMDROut, MuxIorDOut, LSControlOut;
-wire [31:0] HICtrlOut, RegHIOut, LOCtrlOut, RegLOOut, RegDeslocOut, MuxAluSrcAOut, MuxAluSrcBOut, Extend16a32Out, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16;
+wire [31:0] SSControlOut, RegWriteOutA, RegWriteOutB, MuxPCSourceOut, RegEPCOut, RegAluOutOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MultCtrlLOOut, Mux;
+wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, RegDeslocOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16;
 wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado, Shamt;
 wire [15:0] Offset;
 wire [5:0] Opcode, Funct;
@@ -36,6 +36,8 @@ wire WriteHI;
 wire WriteLO;
 wire MDRCtrl;
 wire [1:0] ExceptionsCtrl;
+wire [1:0] LSControl;
+wire [1:0] SSControl;
 wire [1:0] AluSrcA;
 wire [2:0] AluSrcB;
 wire [2:0] PCSource;
@@ -45,6 +47,9 @@ wire [2:0] RegDst;
 wire [3:0] MemToReg;
 
 assign RegBOutCortado = RegBOut[4:0];
+assign OffsetExtendido = Offset;
+assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
+assign Funct = Offset [5:0];
 
 Registrador A(clock, reset, WriteRegA, RegWriteOutA, RegAOut);
  
@@ -58,17 +63,17 @@ Registrador AluOut (clock, reset, AluOutControl, AluResult, RegAluOutOut);
  
 Registrador MDR(clock, reset, MDRCtrl, MemData, RegMDROut);
  
-Registrador HI(clock, reset, WriteHI, HICtrlOut, RegHIOut);
+Registrador HI(clock, reset, WriteHI, MuxHICtrlOut, RegHIOut);
  
-Registrador LO(clock, reset, WriteLO, LOCtrlOut, RegLOOut);
+Registrador LO(clock, reset, WriteLO, MuxLOCtrlOut, RegLOOut);
  
 Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDstOut, MuxMemToRegOut, RegWriteOutA, RegWriteOutB);
  
 RegDesloc regdesloc(clock, reset, ShiftCtrl, MuxShiftAmtOut, MuxShiftSrcOut, RegDeslocOut);
  
-Controle controle(clock, reset, Opcode, Funct, WriteCond,PCWrite,RegWrite,Wr,IRWrite,WriteRegA,WriteRegB,AluOutControl,EPCWrite,ShiftSrc,ShiftAmt,DivCtrl,MultCtrl,HICtrl,LOCtrl,WriteHI,WriteLO,MDRCtrl,ExceptionCtrl, AluSrcA,AluSrcB,AluOp,PCSource,IorD,ShiftCtrl,RegDst,MemToReg, estado);
+Controle controle(clock, reset, Opcode, Funct, WriteCond,PCWrite,RegWrite,Wr,IRWrite,WriteRegA,WriteRegB,AluOutControl,EPCWrite,ShiftSrc,ShiftAmt,DivCtrl,MultCtrl,HICtrl,LOCtrl,WriteHI,WriteLO,MDRCtrl,LSControl, SSControl, ExceptionsCtrl, AluSrcA,AluSrcB,AluOp,PCSource,IorD,ShiftCtrl,RegDst,MemToReg, estado);
  
-Memoria memoria(MuxIorDOut, clock, Wr, SSOut, MemData); // acho valido mudar o nome do SSOut
+Memoria memoria(MuxIorDOut, clock, Wr, SSControlOut, MemData);
  
 Instr_Reg InstructionRegisters (clock, reset, IRWrite, MemData, Opcode, RS, RT, Offset);	
 
@@ -80,9 +85,9 @@ MuxRegDst MuxRegDst(RS, RT, RD, RegDst, MuxRegDstOut);
  
 MuxAluSrcA MuxAluSrcA(RegPCOut, RegBOut, RegAOut, MemData, AluSrcA, MuxAluSrcAOut);
 
-MuxAluSrcB MuxAluSrcB(RegBOut, OffsetExtendido, RegMDROut, OffsetExtendidoLeft2, AluSrcB, MuxAluSrcBOut);
+MuxAluSrcB MuxAluSrcB(RegBOut, OffsetExtendido, LSControlOut, OffsetExtendidoLeft2, AluSrcB, MuxAluSrcBOut);
 
-MuxPCSource MuxPCSource(RegAOut, AluResult, 1'd0, RegAluOutOut, RegEPCOut, 1'd0, PCSource, MuxPCSourceOut); //depos fa�o essses
+MuxPCSource MuxPCSource(RegAOut, AluResult, 1'd0, RegAluOutOut, RegEPCOut, 1'd0, PCSource, MuxPCSourceOut); //depos faï¿½o essses
 
 MuxExceptionsCtrl MuxExceptionsCtrl(ExceptionsCtrl, MuxExceptionsCtrlOut);
 
@@ -92,12 +97,12 @@ MuxShiftAmt MuxShiftAmt(RegBOutCortado, Shamt, ShiftAmt, MuxShiftAmtOut);
 
 MuxMemToReg MuxMemToReg(LTExtendido, LSControlOut, RegDeslocOut, RegHIOut, RegLOOut, RegBOut, RegAOut, RegAluOutOut, OffsetExtendidoLeft2, OffsetExtendidoLeft16, MemToReg, MuxMemToRegOut);
 
-SE1632 SignExtend16a32(Offset, OffsetExtendido); // tentar tirar isso
+MuxHICtrl MuxHICtrl(DivCtrlHIOut, MultCtrlLOOut, HICtrl, MuxHICtrlOut);
 
-ShiftLeft2 sl2(OffsetExtendido, OffsetExtendidoLeft2); // tentar tirar isso
+MuxLOCtrl MuxLOCtrl(DivCtrlHIOut, MultCtrlLOOut, LOCtrl, MuxLOCtrlOut);
 
-FunctExtract functextract(Offset, Funct); // tentar tirar isso
+LoadSize LS(RegMDROut, LSControl, LSControlOut);
 
-
+StoreSize SS(RegBOut, LSControlOut, SSControl, SSControlOut);
 
 endmodule
