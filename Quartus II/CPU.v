@@ -36,6 +36,8 @@ wire WriteHI;
 wire WriteLO;
 wire MDRCtrl;
 wire [1:0] ExceptionsCtrl;
+wire[1:0] LSControl;
+wire [1:0] SSControl;
 wire [1:0] AluSrcA;
 wire [2:0] AluSrcB;
 wire [2:0] PCSource;
@@ -66,7 +68,7 @@ Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDstOut, MuxM
  
 RegDesloc regdesloc(clock, reset, ShiftCtrl, MuxShiftAmtOut, MuxShiftSrcOut, RegDeslocOut);
  
-Controle controle(clock, reset, Opcode, Funct, WriteCond,PCWrite,RegWrite,Wr,IRWrite,WriteRegA,WriteRegB,AluOutControl,EPCWrite,ShiftSrc,ShiftAmt,DivCtrl,MultCtrl,HICtrl,LOCtrl,WriteHI,WriteLO,MDRCtrl,ExceptionCtrl, AluSrcA,AluSrcB,AluOp,PCSource,IorD,ShiftCtrl,RegDst,MemToReg, estado);
+Controle controle(clock, reset, Opcode, Funct, WriteCond,PCWrite,RegWrite,Wr,IRWrite,WriteRegA,WriteRegB,AluOutControl,EPCWrite,ShiftSrc,ShiftAmt,DivCtrl,MultCtrl,HICtrl,LOCtrl,WriteHI,WriteLO,MDRCtrl,LSControl, SSControl, ExceptionCtrl, AluSrcA,AluSrcB,AluOp,PCSource,IorD,ShiftCtrl,RegDst,MemToReg, estado);
  
 Memoria memoria(MuxIorDOut, clock, Wr, SSOut, MemData); // acho valido mudar o nome do SSOut
  
