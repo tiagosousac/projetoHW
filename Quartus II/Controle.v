@@ -131,12 +131,12 @@ always @(posedge clock) begin
 			case (estado)
 				FETCH: begin
 				//Alteradas
-                    PCSource = 3'b001;
+					PCSource = 3'b001;
+                    PCWrite = 1'b1;
                     IorD = 3'b000;
                     Wr = 1'b0;
                     AluSrcA = 2'b00;
 					AluSrcB = 3'b001;
-                    PCWrite = 1'b1;
                     AluOp = 3'b001;
 				//Inalteradas
 					WriteCond = 1'b0;
@@ -274,8 +274,7 @@ always @(posedge clock) begin
 							AluSrcA = 2'b10;
 							AluSrcB = 3'b010;
 							AluOutControl = 1'b1;
-							AluOp = 3'b001;		
-							RegDst = 3'b010;
+							AluOp = 3'b001;
 							
 							//inalterados
 								PCSource = 3'b000;
@@ -285,7 +284,8 @@ always @(posedge clock) begin
                                 Wr = 1'b0;
                                 IRWrite = 1'b0;
                                 WriteRegA = 1'b0;
-                                WriteRegB = 1'b0;    
+                                WriteRegB = 1'b0;
+								RegDst = 3'b000;
                                 MemToReg = 4'b0000;
                                 RegWrite = 1'b0;
                                 MDRCtrl = 1'b0;
@@ -342,9 +342,6 @@ always @(posedge clock) begin
 					            ShiftCtrl = 3'b000;
 					            EPCWrite = 1'b0;
 					            estado = ADDIxClk2;
-
-
-							
 							end
 						BEQ: begin
 							end
@@ -442,7 +439,7 @@ always @(posedge clock) begin
 									ShiftAmt = 1'b0;
 									ShiftCtrl = 3'b000;
 									EPCWrite = 1'b0;
-									estado =AfterADD_SUB_AND;
+									estado = AfterADD_SUB_AND;
 									end
 								AND: begin
 								//Alteradas
