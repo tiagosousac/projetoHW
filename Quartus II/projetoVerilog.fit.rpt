@@ -1,5 +1,5 @@
 Fitter report for projetoVerilog
-Fri Oct 11 14:09:26 2019
+Sat Oct 12 00:08:17 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +-------------------------------+----------------------------------------------+
-; Fitter Status                 ; Successful - Fri Oct 11 14:09:26 2019        ;
+; Fitter Status                 ; Successful - Sat Oct 12 00:08:17 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; projetoVerilog                               ;
 ; Top-level Entity Name         ; CPU                                          ;
@@ -1446,18 +1446,18 @@ Note: User assignments will override these defaults. The user specified values a
 ;    |Instr_Reg:InstructionRegisters|             ; 0 (0)               ; 7 (7)   ; 7 (7)                     ; 0 (0)         ; 0                 ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 3 (3)              ; 4 (4)                         ; |CPU|Instr_Reg:InstructionRegisters                                                                            ; work         ;
 ;    |Memoria:memoria|                            ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 64                ; 2     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
+;          |altram:sram|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
+;          |altram:sram|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
 ;          |altram:sram|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 1     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM                                                                            ;              ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)               ; 0 (0)   ; 0 (0)                     ; 0 (0)         ; 16                ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)                          ; 0 (0)              ; 0 (0)                         ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
@@ -2477,7 +2477,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Oct 11 14:09:23 2019
+    Info: Processing started: Sat Oct 12 00:08:14 2019
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off projetoVerilog -c projetoVerilog
 Info: Automatically selected device EP2S15F484C3 for design projetoVerilog
 Info: Found following RAM instances in design that are actually implemented as ROM because the write logic is always disabled
@@ -2867,7 +2867,7 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  43 pins available
         Info: I/O bank number 9 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  6 pins available
         Info: I/O bank number 10 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  6 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
@@ -3204,7 +3204,7 @@ Info: Delay annotation completed successfully
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II Fitter was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 269 megabytes
-    Info: Processing ended: Fri Oct 11 14:09:26 2019
+    Info: Processing ended: Sat Oct 12 00:08:17 2019
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:04
 

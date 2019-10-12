@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoVerilog
-Fri Oct 11 14:09:22 2019
+Sat Oct 12 00:08:14 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -70,7 +70,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Fri Oct 11 14:09:22 2019        ;
+; Analysis & Synthesis Status   ; Successful - Sat Oct 12 00:08:14 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; projetoVerilog                               ;
 ; Top-level Entity Name         ; CPU                                          ;
@@ -259,18 +259,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |Instr_Reg:InstructionRegisters|             ; 0 (0)             ; 7 (7)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegisters                                                                            ; work         ;
 ;    |Memoria:memoria|                            ; 0 (0)             ; 0 (0)        ; 64                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM                                                                            ;              ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
@@ -1065,7 +1065,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Oct 11 14:09:19 2019
+    Info: Processing started: Sat Oct 12 00:08:11 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoVerilog -c projetoVerilog
 Info: Found 2 design units, including 1 entities, in source file givencomps/banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
@@ -1117,6 +1117,10 @@ Info: Found 1 design units, including 1 entities, in source file shiftleft2.v
     Info: Found entity 1: ShiftLeft2
 Info: Found 1 design units, including 1 entities, in source file functextract.v
     Info: Found entity 1: FunctExtract
+Info: Found 1 design units, including 1 entities, in source file complexcomp/sscontrol.v
+    Info: Found entity 1: SSControl
+Info: Found 1 design units, including 1 entities, in source file shifts/sl32.v
+    Info: Found entity 1: SL32
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "Overflow"
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "Negativo"
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "Zero"
@@ -1569,8 +1573,8 @@ Info: Implemented 436 device resources after synthesis - the final resource coun
     Info: Implemented 32 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 256 warnings
     Info: Peak virtual memory: 273 megabytes
-    Info: Processing ended: Fri Oct 11 14:09:22 2019
+    Info: Processing ended: Sat Oct 12 00:08:14 2019
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:04
 
 
