@@ -236,6 +236,33 @@ always @(posedge clock) begin
 				OPERAR: begin
 					case(Opcode)
 						ADDI: begin
+							WriteCond = 1'b0;
+							PCWrite = 1'b0;
+							RegWrite = 1'b0;
+							Wr = 1'b0;
+							IRWrite = 1'b0;
+							WriteRegA = 1'b0;
+							WriteRegB = 1'b0;
+							AluOutControl = 1'b1;
+							EPCWrite = 1'b0;
+							ShiftSrc = 1'b0;
+							ShiftAmt = 1'b0;
+							DivCtrl = 1'b0;
+							MultCtrl = 1'b0;
+							HICtrl = 1'b0;
+							LOCtrl = 1'b0;
+							WriteHI = 1'b0;
+							WriteLO = 1'b0;
+							ExceptionCtrl = 2'b00; 
+							AluSrcA = 2'b10;
+							AluSrcB = 3'b010;
+							AluOp = 3'b001;
+							PCSource = 3'b000;
+							IorD = 3'b000;
+							ShiftCtrl = 3'b000;
+							RegDst = 3'b000;
+							MemToReg = 4'b0000;
+							estado = AfterADDI;
 							end
 						ADDIU: begin
 							WriteCond = 1'b0;
@@ -314,7 +341,7 @@ always @(posedge clock) begin
 									end
 								SLL: begin
 									end
-								SLV: begin
+								SLLV: begin
 									end
 								SRL: begin
 									end
@@ -363,6 +390,35 @@ always @(posedge clock) begin
 						end
 					endcase
 				end
+				AfterADDI: begin
+					WriteCond = 1'b0;
+					PCWrite = 1'b0;
+					RegWrite = 1'b1;
+					Wr = 1'b0;
+					IRWrite = 1'b0;
+					WriteRegA = 1'b0;
+					WriteRegB = 1'b0;
+					AluOutControl = 1'b0;
+					EPCWrite = 1'b0;
+					ShiftSrc = 1'b0;
+					ShiftAmt = 1'b0;
+					DivCtrl = 1'b0;
+					MultCtrl = 1'b0;
+					HICtrl = 1'b0;
+					LOCtrl = 1'b0;
+					WriteHI = 1'b0;
+					WriteLO = 1'b0;
+					ExceptionCtrl = 2'b00; 
+					AluSrcA = 2'b00;
+					AluSrcB = 3'b000;
+					AluOp = 3'b000;
+					PCSource = 3'b000;
+					IorD = 3'b000;
+					ShiftCtrl = 3'b000;
+					RegDst = 3'b010;
+					MemToReg = 4'b1000;
+					estado = WAIT;
+					end
 				AfterADDIU: begin
 					WriteCond = 1'b0;
 					PCWrite = 1'b0;
