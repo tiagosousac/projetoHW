@@ -8,9 +8,9 @@ parameter S0 = 0, S1 = 1;
 always @(*) begin
 	case(HICtrl)
 		S0:
-			MuxHICtrlOut <= DivCtrlHIOut;
+			MuxHICtrlOut <= DivCtrlOut;
 		S1:
-			MuxHICtrlOut <= MultCtrlHIOut;
+			MuxHICtrlOut <= MultCtrlOut;
 	endcase
 end
 
