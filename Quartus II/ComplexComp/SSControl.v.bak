@@ -1,0 +1,19 @@
+module SSControl (
+input wire[31:0] FromB,
+input wire[31:0] FromData,
+input wire[1:0] SControl,
+output reg[31:0] SSOut
+);
+parameter S0 = 0, S1 = 1, S2 = 2;
+always @(*) begin
+	case(SControl)
+		S0:
+			SSOut <= FromB;//Store Word
+		S1:
+			SSOut <= {FromData[31:17],FromB[16:0]};//Store Half
+		S2:
+			SSOut <= {{[31:8]FromData},{[7:0]FromB}};//Store Byte
+	endcase
+end
+
+endmodule
