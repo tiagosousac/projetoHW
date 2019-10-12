@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoVerilog
-Fri Oct 11 14:09:22 2019
+Sat Oct 12 00:37:36 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -70,15 +70,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Fri Oct 11 14:09:22 2019        ;
+; Analysis & Synthesis Status   ; Successful - Sat Oct 12 00:37:36 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; projetoVerilog                               ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 67                                           ;
-;     Dedicated logic registers ; 47                                           ;
-; Total registers               ; 47                                           ;
+;     Combinational ALUTs       ; 72                                           ;
+;     Dedicated logic registers ; 53                                           ;
+; Total registers               ; 53                                           ;
 ; Total pins                    ; 300                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 64                                           ;
@@ -179,33 +179,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                        ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                    ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+
-; GivenComps/Banco_reg.vhd         ; yes             ; User VHDL File                         ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/GivenComps/Banco_reg.vhd            ;
-; GivenComps/Instr_Reg.vhd         ; yes             ; User VHDL File                         ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/GivenComps/Instr_Reg.vhd            ;
-; GivenComps/Memoria.vhd           ; yes             ; User VHDL File                         ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/GivenComps/Memoria.vhd              ;
-; GivenComps/RegDesloc.vhd         ; yes             ; User VHDL File                         ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/GivenComps/RegDesloc.vhd            ;
-; GivenComps/Registrador.vhd       ; yes             ; User VHDL File                         ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/GivenComps/Registrador.vhd          ;
-; GivenComps/ula32.vhd             ; yes             ; User VHDL File                         ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/GivenComps/ula32.vhd                ;
-; SignExtend/SE1632.v              ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/SignExtend/SE1632.v                 ;
-; Multiplexadores/MuxB.v           ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/Multiplexadores/MuxB.v              ;
-; Multiplexadores/MuxC.v           ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/Multiplexadores/MuxC.v              ;
-; Multiplexadores/MuxD.v           ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/Multiplexadores/MuxD.v              ;
-; Multiplexadores/MuxE.v           ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/Multiplexadores/MuxE.v              ;
-; Multiplexadores/MuxA.v           ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/Multiplexadores/MuxA.v              ;
-; Controle.v                       ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/Controle.v                          ;
-; CPU.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/CPU.v                               ;
-; ShiftLeft2.v                     ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/ShiftLeft2.v                        ;
-; FunctExtract.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/FunctExtract.v                      ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; c:/users/sinxk/desktop/quartetus/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
-; altram.tdf                       ; yes             ; Megafunction                           ; c:/users/sinxk/desktop/quartetus/quartus/libraries/megafunctions/altram.tdf     ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/sinxk/desktop/quartetus/quartus/libraries/megafunctions/altsyncram.tdf ;
-; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/db/altsyncram_g2a1.tdf              ;
-; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/sinxk/Desktop/projetoHW/Quartus II/instrucoes.mif                      ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                      ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
+; GivenComps/Banco_reg.vhd         ; yes             ; User VHDL File                         ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/GivenComps/Banco_reg.vhd   ;
+; GivenComps/Instr_Reg.vhd         ; yes             ; User VHDL File                         ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/GivenComps/Instr_Reg.vhd   ;
+; GivenComps/Memoria.vhd           ; yes             ; User VHDL File                         ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/GivenComps/Memoria.vhd     ;
+; GivenComps/RegDesloc.vhd         ; yes             ; User VHDL File                         ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/GivenComps/RegDesloc.vhd   ;
+; GivenComps/Registrador.vhd       ; yes             ; User VHDL File                         ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/GivenComps/Registrador.vhd ;
+; GivenComps/ula32.vhd             ; yes             ; User VHDL File                         ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/GivenComps/ula32.vhd       ;
+; SignExtend/SE1632.v              ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/SignExtend/SE1632.v        ;
+; Multiplexadores/MuxB.v           ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/Multiplexadores/MuxB.v     ;
+; Multiplexadores/MuxC.v           ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/Multiplexadores/MuxC.v     ;
+; Multiplexadores/MuxD.v           ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/Multiplexadores/MuxD.v     ;
+; Multiplexadores/MuxE.v           ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/Multiplexadores/MuxE.v     ;
+; Multiplexadores/MuxA.v           ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/Multiplexadores/MuxA.v     ;
+; Controle.v                       ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/Controle.v                 ;
+; CPU.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/CPU.v                      ;
+; ShiftLeft2.v                     ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/ShiftLeft2.v               ;
+; FunctExtract.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/FunctExtract.v             ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; c:/users/igors/desktop/quartus/libraries/megafunctions/lpm_ram_dq.tdf             ;
+; altram.tdf                       ; yes             ; Megafunction                           ; c:/users/igors/desktop/quartus/libraries/megafunctions/altram.tdf                 ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/igors/desktop/quartus/libraries/megafunctions/altsyncram.tdf             ;
+; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/db/altsyncram_g2a1.tdf     ;
+; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/igors/Desktop/zProjetoHW/projetoHW/Quartus II/instrucoes.mif             ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -213,39 +213,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 67    ;
-; Dedicated logic registers                     ; 47    ;
+; Estimated ALUTs Used                          ; 72    ;
+; Dedicated logic registers                     ; 53    ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 17    ;
+; Estimated ALUTs Unavailable                   ; 14    ;
 ;                                               ;       ;
-; Total combinational functions                 ; 67    ;
+; Total combinational functions                 ; 72    ;
 ; Combinational ALUT usage by number of inputs  ;       ;
 ;     -- 7 input functions                      ; 0     ;
-;     -- 6 input functions                      ; 21    ;
-;     -- 5 input functions                      ; 32    ;
-;     -- 4 input functions                      ; 6     ;
-;     -- <=3 input functions                    ; 8     ;
+;     -- 6 input functions                      ; 22    ;
+;     -- 5 input functions                      ; 33    ;
+;     -- 4 input functions                      ; 5     ;
+;     -- <=3 input functions                    ; 12    ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 67    ;
+;     -- normal mode                            ; 72    ;
 ;     -- extended LUT mode                      ; 0     ;
 ;     -- arithmetic mode                        ; 0     ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 89    ;
+; Estimated ALUT/register pairs used            ; 96    ;
 ;                                               ;       ;
-; Total registers                               ; 47    ;
-;     -- Dedicated logic registers              ; 47    ;
+; Total registers                               ; 53    ;
+;     -- Dedicated logic registers              ; 53    ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 45    ;
+; Estimated ALMs:  partially or completely used ; 48    ;
 ;                                               ;       ;
 ; I/O pins                                      ; 300   ;
 ; Total block memory bits                       ; 64    ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 79    ;
-; Total fan-out                                 ; 670   ;
-; Average fan-out                               ; 1.50  ;
+; Maximum fan-out                               ; 85    ;
+; Total fan-out                                 ; 725   ;
+; Average fan-out                               ; 1.59  ;
 +-----------------------------------------------+-------+
 
 
@@ -254,29 +254,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 67 (1)            ; 47 (0)       ; 64                ; 0            ; 0       ; 0         ; 0         ; 300  ; 0            ; |CPU                                                                                                           ; work         ;
-;    |Controle:controle|                          ; 18 (18)           ; 10 (10)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:controle                                                                                         ; work         ;
-;    |Instr_Reg:InstructionRegisters|             ; 0 (0)             ; 7 (7)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegisters                                                                            ; work         ;
+; |CPU                                            ; 72 (1)            ; 53 (0)       ; 64                ; 0            ; 0       ; 0         ; 0         ; 300  ; 0            ; |CPU                                                                                                           ; work         ;
+;    |Controle:controle|                          ; 23 (23)           ; 11 (11)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:controle                                                                                         ; work         ;
+;    |Instr_Reg:InstructionRegisters|             ; 0 (0)             ; 12 (12)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegisters                                                                            ;              ;
 ;    |Memoria:memoria|                            ; 0 (0)             ; 0 (0)        ; 64                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria                                                                                           ; work         ;
-;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
+;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ;              ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;              ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM                                                                            ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16                ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
-;    |MuxD:MuxD|                                  ; 3 (3)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxD:MuxD                                                                                                 ; work         ;
+;    |MuxD:MuxD|                                  ; 3 (3)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxD:MuxD                                                                                                 ;              ;
 ;    |Registrador:PC|                             ; 0 (0)             ; 30 (30)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ; work         ;
-;    |Ula32:Alu|                                  ; 45 (45)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
+;    |Ula32:Alu|                                  ; 45 (45)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -312,7 +312,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Registrador:MDR|Saida[0..31]                                                    ; Stuck at GND due to stuck port clock_enable         ;
 ; Registrador:EPC|Saida[0..31]                                                    ; Stuck at GND due to stuck port data_in              ;
 ; Controle:controle|EPCWrite                                                      ; Lost fanout                                         ;
-; Controle:controle|estado[3..5]                                                  ; Merged with Controle:controle|estado[6]             ;
+; Controle:controle|estado[5]                                                     ; Merged with Controle:controle|estado[6]             ;
+; Controle:controle|estado[3]                                                     ; Merged with Controle:controle|estado[4]             ;
 ; Controle:controle|RegDst[2]                                                     ; Merged with Controle:controle|RegDst[0]             ;
 ; Controle:controle|PCSource[2]                                                   ; Merged with Controle:controle|IorD[0]               ;
 ; Controle:controle|AluOp[2]                                                      ; Merged with Controle:controle|IorD[0]               ;
@@ -325,19 +326,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Controle:controle|AluSrcA[1]                                                    ; Merged with Controle:controle|AluSrcB[1]            ;
 ; Controle:controle|WriteRegB                                                     ; Merged with Controle:controle|AluSrcB[2]            ;
 ; Controle:controle|WriteRegA                                                     ; Merged with Controle:controle|AluSrcB[2]            ;
-; Banco_reg:banco_registradores|Reg0[2,6,10]                                      ; Merged with Banco_reg:banco_registradores|Reg0[31]  ;
+; Banco_reg:banco_registradores|Reg0[0..1,3,5]                                    ; Merged with Banco_reg:banco_registradores|Reg0[31]  ;
 ; Banco_reg:banco_registradores|Reg0[4,12,20]                                     ; Merged with Banco_reg:banco_registradores|Reg0[30]  ;
 ; Banco_reg:banco_registradores|Reg0[23,25,27]                                    ; Merged with Banco_reg:banco_registradores|Reg0[29]  ;
 ; Banco_reg:banco_registradores|Reg0[8,16,24]                                     ; Merged with Banco_reg:banco_registradores|Reg0[28]  ;
 ; Banco_reg:banco_registradores|Reg0[14,18,22]                                    ; Merged with Banco_reg:banco_registradores|Reg0[26]  ;
 ; Banco_reg:banco_registradores|Reg0[15,17,19]                                    ; Merged with Banco_reg:banco_registradores|Reg0[21]  ;
 ; Banco_reg:banco_registradores|Reg0[7,9,11]                                      ; Merged with Banco_reg:banco_registradores|Reg0[13]  ;
-; Banco_reg:banco_registradores|Reg0[0..1,3]                                      ; Merged with Banco_reg:banco_registradores|Reg0[5]   ;
+; Banco_reg:banco_registradores|Reg0[2,6]                                         ; Merged with Banco_reg:banco_registradores|Reg0[10]  ;
+; Banco_reg:banco_registradores|Reg1[5,7,9,11,13,15,17]                           ; Merged with Banco_reg:banco_registradores|Reg1[31]  ;
 ; Banco_reg:banco_registradores|Reg1[19,21,23,25,27,29]                           ; Merged with Banco_reg:banco_registradores|Reg1[30]  ;
 ; Banco_reg:banco_registradores|Reg1[4,12,20]                                     ; Merged with Banco_reg:banco_registradores|Reg1[28]  ;
 ; Banco_reg:banco_registradores|Reg1[2,6,10,14,18,22]                             ; Merged with Banco_reg:banco_registradores|Reg1[26]  ;
 ; Banco_reg:banco_registradores|Reg1[0,8,16]                                      ; Merged with Banco_reg:banco_registradores|Reg1[24]  ;
-; Banco_reg:banco_registradores|Reg1[5,7,9,11,13,15]                              ; Merged with Banco_reg:banco_registradores|Reg1[17]  ;
 ; Banco_reg:banco_registradores|Reg1[1]                                           ; Merged with Banco_reg:banco_registradores|Reg1[3]   ;
 ; Banco_reg:banco_registradores|Reg2[19,21,23,25,27,29]                           ; Merged with Banco_reg:banco_registradores|Reg2[31]  ;
 ; Banco_reg:banco_registradores|Reg2[6,10,14,18,22,26]                            ; Merged with Banco_reg:banco_registradores|Reg2[30]  ;
@@ -345,11 +346,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Banco_reg:banco_registradores|Reg2[8,16]                                        ; Merged with Banco_reg:banco_registradores|Reg2[24]  ;
 ; Banco_reg:banco_registradores|Reg2[5,7,9,11,13,15]                              ; Merged with Banco_reg:banco_registradores|Reg2[17]  ;
 ; Banco_reg:banco_registradores|Reg2[0..1]                                        ; Merged with Banco_reg:banco_registradores|Reg2[3]   ;
-; Banco_reg:banco_registradores|Reg3[1,3]                                         ; Merged with Banco_reg:banco_registradores|Reg3[31]  ;
+; Banco_reg:banco_registradores|Reg3[29]                                          ; Merged with Banco_reg:banco_registradores|Reg3[31]  ;
 ; Banco_reg:banco_registradores|Reg3[5,7,9,11,13,15,17,19,21,23,25,27]            ; Merged with Banco_reg:banco_registradores|Reg3[30]  ;
 ; Banco_reg:banco_registradores|Reg3[2,6,10,14,18,22,26]                          ; Merged with Banco_reg:banco_registradores|Reg3[28]  ;
 ; Banco_reg:banco_registradores|Reg3[0,8,16]                                      ; Merged with Banco_reg:banco_registradores|Reg3[24]  ;
 ; Banco_reg:banco_registradores|Reg3[4,12]                                        ; Merged with Banco_reg:banco_registradores|Reg3[20]  ;
+; Banco_reg:banco_registradores|Reg3[1]                                           ; Merged with Banco_reg:banco_registradores|Reg3[3]   ;
 ; Banco_reg:banco_registradores|Reg4[7,9,11,13,15,17,19,21,23,25,27,29]           ; Merged with Banco_reg:banco_registradores|Reg4[31]  ;
 ; Banco_reg:banco_registradores|Reg4[2,6,10,14,18,22,26]                          ; Merged with Banco_reg:banco_registradores|Reg4[30]  ;
 ; Banco_reg:banco_registradores|Reg4[4,12,20]                                     ; Merged with Banco_reg:banco_registradores|Reg4[28]  ;
@@ -365,10 +367,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Banco_reg:banco_registradores|Reg6[4,12,20]                                     ; Merged with Banco_reg:banco_registradores|Reg6[28]  ;
 ; Banco_reg:banco_registradores|Reg6[8,16]                                        ; Merged with Banco_reg:banco_registradores|Reg6[24]  ;
 ; Banco_reg:banco_registradores|Reg6[0..1,3]                                      ; Merged with Banco_reg:banco_registradores|Reg6[5]   ;
-; Banco_reg:banco_registradores|Reg7[1,3,5,7,9,11,13]                             ; Merged with Banco_reg:banco_registradores|Reg7[31]  ;
-; Banco_reg:banco_registradores|Reg7[15,17,19,21,23,26..27]                       ; Merged with Banco_reg:banco_registradores|Reg7[30]  ;
-; Banco_reg:banco_registradores|Reg7[4,12,20,24]                                  ; Merged with Banco_reg:banco_registradores|Reg7[29]  ;
-; Banco_reg:banco_registradores|Reg7[2,6,10,14,18,22,25]                          ; Merged with Banco_reg:banco_registradores|Reg7[28]  ;
+; Banco_reg:banco_registradores|Reg7[1,3,5,7,9,11,13,15,17,19,21,23,25..26]       ; Merged with Banco_reg:banco_registradores|Reg7[30]  ;
+; Banco_reg:banco_registradores|Reg7[2,6,10,14,18,22,28]                          ; Merged with Banco_reg:banco_registradores|Reg7[29]  ;
+; Banco_reg:banco_registradores|Reg7[4,12,20]                                     ; Merged with Banco_reg:banco_registradores|Reg7[24]  ;
 ; Banco_reg:banco_registradores|Reg7[0,8]                                         ; Merged with Banco_reg:banco_registradores|Reg7[16]  ;
 ; Banco_reg:banco_registradores|Reg8[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29]     ; Merged with Banco_reg:banco_registradores|Reg8[31]  ;
 ; Banco_reg:banco_registradores|Reg8[2,6,10,14,18,22,26]                          ; Merged with Banco_reg:banco_registradores|Reg8[30]  ;
@@ -398,11 +399,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Banco_reg:banco_registradores|Reg14[2,6,10,14,18,22,26]                         ; Merged with Banco_reg:banco_registradores|Reg14[30] ;
 ; Banco_reg:banco_registradores|Reg14[4,12,20]                                    ; Merged with Banco_reg:banco_registradores|Reg14[28] ;
 ; Banco_reg:banco_registradores|Reg14[8,16]                                       ; Merged with Banco_reg:banco_registradores|Reg14[24] ;
-; Banco_reg:banco_registradores|Reg15[17,21,29]                                   ; Merged with Banco_reg:banco_registradores|Reg15[31] ;
-; Banco_reg:banco_registradores|Reg15[1,3,5,7,9,11,13,15,18,22,26..27]            ; Merged with Banco_reg:banco_registradores|Reg15[30] ;
-; Banco_reg:banco_registradores|Reg15[2,6,10,14,20]                               ; Merged with Banco_reg:banco_registradores|Reg15[28] ;
-; Banco_reg:banco_registradores|Reg15[19]                                         ; Merged with Banco_reg:banco_registradores|Reg15[25] ;
-; Banco_reg:banco_registradores|Reg15[4,12]                                       ; Merged with Banco_reg:banco_registradores|Reg15[24] ;
+; Banco_reg:banco_registradores|Reg15[19]                                         ; Merged with Banco_reg:banco_registradores|Reg15[31] ;
+; Banco_reg:banco_registradores|Reg15[1,3,5,7,9,11,13,15,18,22,26]                ; Merged with Banco_reg:banco_registradores|Reg15[30] ;
+; Banco_reg:banco_registradores|Reg15[21]                                         ; Merged with Banco_reg:banco_registradores|Reg15[29] ;
+; Banco_reg:banco_registradores|Reg15[2,6,10,14,20,25]                            ; Merged with Banco_reg:banco_registradores|Reg15[28] ;
+; Banco_reg:banco_registradores|Reg15[4,12,24]                                    ; Merged with Banco_reg:banco_registradores|Reg15[27] ;
+; Banco_reg:banco_registradores|Reg15[17]                                         ; Merged with Banco_reg:banco_registradores|Reg15[23] ;
 ; Banco_reg:banco_registradores|Reg15[0,8]                                        ; Merged with Banco_reg:banco_registradores|Reg15[16] ;
 ; Banco_reg:banco_registradores|Reg16[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29]    ; Merged with Banco_reg:banco_registradores|Reg16[31] ;
 ; Banco_reg:banco_registradores|Reg16[2,6,10,14,18,22,26]                         ; Merged with Banco_reg:banco_registradores|Reg16[30] ;
@@ -464,70 +466,68 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Banco_reg:banco_registradores|Reg30[2,6,10,14,18,22,26]                         ; Merged with Banco_reg:banco_registradores|Reg30[30] ;
 ; Banco_reg:banco_registradores|Reg30[4,12,20]                                    ; Merged with Banco_reg:banco_registradores|Reg30[28] ;
 ; Banco_reg:banco_registradores|Reg30[8,16]                                       ; Merged with Banco_reg:banco_registradores|Reg30[24] ;
-; Banco_reg:banco_registradores|Reg31[7,27]                                       ; Merged with Banco_reg:banco_registradores|Reg31[31] ;
-; Banco_reg:banco_registradores|Reg31[2,6,9..10,14,18,21..22,26]                  ; Merged with Banco_reg:banco_registradores|Reg31[30] ;
-; Banco_reg:banco_registradores|Reg31[11,13]                                      ; Merged with Banco_reg:banco_registradores|Reg31[29] ;
-; Banco_reg:banco_registradores|Reg31[1,4,12,17,20]                               ; Merged with Banco_reg:banco_registradores|Reg31[28] ;
-; Banco_reg:banco_registradores|Reg31[19,23]                                      ; Merged with Banco_reg:banco_registradores|Reg31[25] ;
-; Banco_reg:banco_registradores|Reg31[0,3,8,16]                                   ; Merged with Banco_reg:banco_registradores|Reg31[24] ;
-; Banco_reg:banco_registradores|Reg0[29]                                          ; Merged with Banco_reg:banco_registradores|Reg0[31]  ;
-; Banco_reg:banco_registradores|Reg0[5,13,21,26,28]                               ; Merged with Banco_reg:banco_registradores|Reg0[30]  ;
-; Banco_reg:banco_registradores|Reg1[3,17,24,26,28,30]                            ; Merged with Banco_reg:banco_registradores|Reg1[31]  ;
+; Banco_reg:banco_registradores|Reg31[5,7,27]                                     ; Merged with Banco_reg:banco_registradores|Reg31[31] ;
+; Banco_reg:banco_registradores|Reg31[2,6,10,14,17..19,21..22,26]                 ; Merged with Banco_reg:banco_registradores|Reg31[30] ;
+; Banco_reg:banco_registradores|Reg31[1,9,12,20]                                  ; Merged with Banco_reg:banco_registradores|Reg31[28] ;
+; Banco_reg:banco_registradores|Reg31[11,23]                                      ; Merged with Banco_reg:banco_registradores|Reg31[25] ;
+; Banco_reg:banco_registradores|Reg31[0,8,13,16]                                  ; Merged with Banco_reg:banco_registradores|Reg31[24] ;
+; Banco_reg:banco_registradores|Reg31[4]                                          ; Merged with Banco_reg:banco_registradores|Reg31[15] ;
+; Banco_reg:banco_registradores|Reg0[10,13,21,26,29]                              ; Merged with Banco_reg:banco_registradores|Reg0[31]  ;
+; Banco_reg:banco_registradores|Reg0[28]                                          ; Merged with Banco_reg:banco_registradores|Reg0[30]  ;
+; Banco_reg:banco_registradores|Reg1[3,24,26,28,30]                               ; Merged with Banco_reg:banco_registradores|Reg1[31]  ;
 ; Banco_reg:banco_registradores|Reg2[3,24]                                        ; Merged with Banco_reg:banco_registradores|Reg2[31]  ;
 ; Banco_reg:banco_registradores|Reg2[2,17,28]                                     ; Merged with Banco_reg:banco_registradores|Reg2[30]  ;
-; Banco_reg:banco_registradores|Reg3[20,24,28..30]                                ; Merged with Banco_reg:banco_registradores|Reg3[31]  ;
+; Banco_reg:banco_registradores|Reg3[3,20,24,28,30]                               ; Merged with Banco_reg:banco_registradores|Reg3[31]  ;
 ; Banco_reg:banco_registradores|Reg4[5,24,28,30]                                  ; Merged with Banco_reg:banco_registradores|Reg4[31]  ;
 ; Banco_reg:banco_registradores|Reg5[5,24,28,30]                                  ; Merged with Banco_reg:banco_registradores|Reg5[31]  ;
 ; Banco_reg:banco_registradores|Reg6[24,28,30]                                    ; Merged with Banco_reg:banco_registradores|Reg6[31]  ;
-; Banco_reg:banco_registradores|Reg7[28..30]                                      ; Merged with Banco_reg:banco_registradores|Reg7[31]  ;
-; Banco_reg:banco_registradores|Reg8[24,28,30]                                    ; Merged with Banco_reg:banco_registradores|Reg8[31]  ;
+; Banco_reg:banco_registradores|Reg7[16,27,29..30]                                ; Merged with Banco_reg:banco_registradores|Reg7[31]  ;
+; Banco_reg:banco_registradores|Reg8[28,30]                                       ; Merged with Banco_reg:banco_registradores|Reg8[31]  ;
 ; Banco_reg:banco_registradores|Reg9[28]                                          ; Merged with Banco_reg:banco_registradores|Reg9[31]  ;
 ; Banco_reg:banco_registradores|Reg9[24]                                          ; Merged with Banco_reg:banco_registradores|Reg9[30]  ;
-; Banco_reg:banco_registradores|Reg10[28]                                         ; Merged with Banco_reg:banco_registradores|Reg10[31] ;
-; Banco_reg:banco_registradores|Reg10[24]                                         ; Merged with Banco_reg:banco_registradores|Reg10[30] ;
-; Banco_reg:banco_registradores|Reg11[24,28]                                      ; Merged with Banco_reg:banco_registradores|Reg11[30] ;
-; Banco_reg:banco_registradores|Reg12[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg12[31] ;
+; Banco_reg:banco_registradores|Reg10[24,28]                                      ; Merged with Banco_reg:banco_registradores|Reg10[31] ;
+; Banco_reg:banco_registradores|Reg11[28,30]                                      ; Merged with Banco_reg:banco_registradores|Reg11[31] ;
+; Banco_reg:banco_registradores|Reg12[24,28]                                      ; Merged with Banco_reg:banco_registradores|Reg12[31] ;
 ; Banco_reg:banco_registradores|Reg13[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg13[31] ;
 ; Banco_reg:banco_registradores|Reg14[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg14[31] ;
-; Banco_reg:banco_registradores|Reg15[16,23..25,28,30]                            ; Merged with Banco_reg:banco_registradores|Reg15[31] ;
+; Banco_reg:banco_registradores|Reg15[16,23,27..30]                               ; Merged with Banco_reg:banco_registradores|Reg15[31] ;
 ; Banco_reg:banco_registradores|Reg16[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg16[31] ;
 ; Banco_reg:banco_registradores|Reg17[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg17[31] ;
 ; Banco_reg:banco_registradores|Reg18[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg18[31] ;
-; Banco_reg:banco_registradores|Reg19[28]                                         ; Merged with Banco_reg:banco_registradores|Reg19[31] ;
-; Banco_reg:banco_registradores|Reg19[24]                                         ; Merged with Banco_reg:banco_registradores|Reg19[30] ;
+; Banco_reg:banco_registradores|Reg19[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg19[31] ;
 ; Banco_reg:banco_registradores|Reg20[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg20[31] ;
-; Banco_reg:banco_registradores|Reg21[28]                                         ; Merged with Banco_reg:banco_registradores|Reg21[31] ;
-; Banco_reg:banco_registradores|Reg21[24]                                         ; Merged with Banco_reg:banco_registradores|Reg21[30] ;
+; Banco_reg:banco_registradores|Reg21[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg21[31] ;
 ; Banco_reg:banco_registradores|Reg22[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg22[31] ;
 ; Banco_reg:banco_registradores|Reg23[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg23[31] ;
-; Banco_reg:banco_registradores|Reg24[28,30]                                      ; Merged with Banco_reg:banco_registradores|Reg24[31] ;
-; Banco_reg:banco_registradores|Reg25[28]                                         ; Merged with Banco_reg:banco_registradores|Reg25[31] ;
-; Banco_reg:banco_registradores|Reg25[24]                                         ; Merged with Banco_reg:banco_registradores|Reg25[30] ;
+; Banco_reg:banco_registradores|Reg24[28]                                         ; Merged with Banco_reg:banco_registradores|Reg24[31] ;
+; Banco_reg:banco_registradores|Reg24[24]                                         ; Merged with Banco_reg:banco_registradores|Reg24[30] ;
+; Banco_reg:banco_registradores|Reg25[24,30]                                      ; Merged with Banco_reg:banco_registradores|Reg25[31] ;
 ; Banco_reg:banco_registradores|Reg26[28]                                         ; Merged with Banco_reg:banco_registradores|Reg26[31] ;
 ; Banco_reg:banco_registradores|Reg26[24]                                         ; Merged with Banco_reg:banco_registradores|Reg26[30] ;
 ; Banco_reg:banco_registradores|Reg27[28]                                         ; Merged with Banco_reg:banco_registradores|Reg27[31] ;
 ; Banco_reg:banco_registradores|Reg27[24]                                         ; Merged with Banco_reg:banco_registradores|Reg27[30] ;
 ; Banco_reg:banco_registradores|Reg28[28]                                         ; Merged with Banco_reg:banco_registradores|Reg28[31] ;
 ; Banco_reg:banco_registradores|Reg28[24]                                         ; Merged with Banco_reg:banco_registradores|Reg28[30] ;
-; Banco_reg:banco_registradores|Reg29[24,28]                                      ; Merged with Banco_reg:banco_registradores|Reg29[31] ;
-; Banco_reg:banco_registradores|Reg30[24,28]                                      ; Merged with Banco_reg:banco_registradores|Reg30[31] ;
-; Banco_reg:banco_registradores|Reg31[5,15,24..25,28..29]                         ; Merged with Banco_reg:banco_registradores|Reg31[31] ;
+; Banco_reg:banco_registradores|Reg29[28]                                         ; Merged with Banco_reg:banco_registradores|Reg29[31] ;
+; Banco_reg:banco_registradores|Reg29[24]                                         ; Merged with Banco_reg:banco_registradores|Reg29[30] ;
+; Banco_reg:banco_registradores|Reg30[24,28,30]                                   ; Merged with Banco_reg:banco_registradores|Reg30[31] ;
+; Banco_reg:banco_registradores|Reg31[29]                                         ; Merged with Banco_reg:banco_registradores|Reg31[31] ;
+; Banco_reg:banco_registradores|Reg31[3,15,24..25,28]                             ; Merged with Banco_reg:banco_registradores|Reg31[30] ;
 ; Banco_reg:banco_registradores|Reg0[30]                                          ; Merged with Banco_reg:banco_registradores|Reg0[31]  ;
 ; Banco_reg:banco_registradores|Reg2[30]                                          ; Merged with Banco_reg:banco_registradores|Reg2[31]  ;
 ; Banco_reg:banco_registradores|Reg6[5]                                           ; Merged with Banco_reg:banco_registradores|Reg6[31]  ;
-; Banco_reg:banco_registradores|Reg7[16]                                          ; Merged with Banco_reg:banco_registradores|Reg7[31]  ;
+; Banco_reg:banco_registradores|Reg7[24]                                          ; Merged with Banco_reg:banco_registradores|Reg7[31]  ;
+; Banco_reg:banco_registradores|Reg8[24]                                          ; Merged with Banco_reg:banco_registradores|Reg8[31]  ;
 ; Banco_reg:banco_registradores|Reg9[30]                                          ; Merged with Banco_reg:banco_registradores|Reg9[31]  ;
 ; Banco_reg:banco_registradores|Reg10[30]                                         ; Merged with Banco_reg:banco_registradores|Reg10[31] ;
-; Banco_reg:banco_registradores|Reg11[30]                                         ; Merged with Banco_reg:banco_registradores|Reg11[31] ;
-; Banco_reg:banco_registradores|Reg19[30]                                         ; Merged with Banco_reg:banco_registradores|Reg19[31] ;
-; Banco_reg:banco_registradores|Reg21[30]                                         ; Merged with Banco_reg:banco_registradores|Reg21[31] ;
-; Banco_reg:banco_registradores|Reg24[24]                                         ; Merged with Banco_reg:banco_registradores|Reg24[31] ;
-; Banco_reg:banco_registradores|Reg25[30]                                         ; Merged with Banco_reg:banco_registradores|Reg25[31] ;
+; Banco_reg:banco_registradores|Reg11[24]                                         ; Merged with Banco_reg:banco_registradores|Reg11[31] ;
+; Banco_reg:banco_registradores|Reg12[30]                                         ; Merged with Banco_reg:banco_registradores|Reg12[31] ;
+; Banco_reg:banco_registradores|Reg24[30]                                         ; Merged with Banco_reg:banco_registradores|Reg24[31] ;
+; Banco_reg:banco_registradores|Reg25[28]                                         ; Merged with Banco_reg:banco_registradores|Reg25[31] ;
 ; Banco_reg:banco_registradores|Reg26[30]                                         ; Merged with Banco_reg:banco_registradores|Reg26[31] ;
 ; Banco_reg:banco_registradores|Reg27[30]                                         ; Merged with Banco_reg:banco_registradores|Reg27[31] ;
 ; Banco_reg:banco_registradores|Reg28[30]                                         ; Merged with Banco_reg:banco_registradores|Reg28[31] ;
 ; Banco_reg:banco_registradores|Reg29[30]                                         ; Merged with Banco_reg:banco_registradores|Reg29[31] ;
-; Banco_reg:banco_registradores|Reg30[30]                                         ; Merged with Banco_reg:banco_registradores|Reg30[31] ;
 ; Banco_reg:banco_registradores|Reg31[30]                                         ; Merged with Banco_reg:banco_registradores|Reg31[31] ;
 ; Registrador:registradorB|Saida[0..30]                                           ; Merged with Registrador:registradorB|Saida[31]      ;
 ; Registrador:registradorA|Saida[0..30]                                           ; Merged with Registrador:registradorA|Saida[31]      ;
@@ -573,7 +573,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Registrador:registradorA|Saida[31]                                              ; Stuck at GND due to stuck port data_in              ;
 ; Controle:controle|IorD[0]                                                       ; Stuck at GND due to stuck port data_in              ;
 ; Registrador:PC|Saida[0..1]                                                      ; Stuck at GND due to stuck port data_in              ;
-; Total Number of Removed Registers = 1218                                        ;                                                     ;
+; Total Number of Removed Registers = 1217                                        ;                                                     ;
 +---------------------------------------------------------------------------------+-----------------------------------------------------+
 
 
@@ -669,29 +669,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 47    ;
-; Number of registers using Synchronous Clear  ; 3     ;
-; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 37    ;
+; Total registers                              ; 53    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 42    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 42    ;
+; Number of registers using Clock Enable       ; 50    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 17:1               ; 2 bits    ; 22 ALUTs      ; 16 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|Controle:controle|estado[0]   ;
-; 17:1               ; 4 bits    ; 44 ALUTs      ; 16 ALUTs             ; 28 ALUTs               ; Yes        ; |CPU|Controle:controle|PCSource[0] ;
-; 18:1               ; 2 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |CPU|Controle:controle|estado[1]   ;
-; 18:1               ; 3 bits    ; 36 ALUTs      ; 12 ALUTs             ; 24 ALUTs               ; Yes        ; |CPU|Controle:controle|IRWrite     ;
-; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxC:MuxC|Mux20               ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux63               ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux10               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 97:1               ; 5 bits    ; 320 ALUTs     ; 110 ALUTs            ; 210 ALUTs              ; Yes        ; |CPU|Controle:controle|estado[2] ;
+; 97:1               ; 7 bits    ; 448 ALUTs     ; 28 ALUTs             ; 420 ALUTs              ; Yes        ; |CPU|Controle:controle|IRWrite   ;
+; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxC:MuxC|Mux23             ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux63             ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux10             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -1065,7 +1063,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Oct 11 14:09:19 2019
+    Info: Processing started: Sat Oct 12 00:37:30 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoVerilog -c projetoVerilog
 Info: Found 2 design units, including 1 entities, in source file givencomps/banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
@@ -1117,14 +1115,15 @@ Info: Found 1 design units, including 1 entities, in source file shiftleft2.v
     Info: Found entity 1: ShiftLeft2
 Info: Found 1 design units, including 1 entities, in source file functextract.v
     Info: Found entity 1: FunctExtract
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "Overflow"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "Negativo"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "Zero"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "EQ"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "GT"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(70): created implicit net for "LT"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(76): created implicit net for "OffsetExtendido"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(72): created implicit net for "Overflow"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(72): created implicit net for "Negativo"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(72): created implicit net for "Zero"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(72): created implicit net for "EQ"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(72): created implicit net for "GT"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(72): created implicit net for "LT"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(84): created implicit net for "OffsetExtendido"
 Info: Elaborating entity "CPU" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at CPU.v(20): object "BCut" assigned a value but never read
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:registradorA"
 Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:banco_registradores"
 Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:regdesloc"
@@ -1562,15 +1561,15 @@ Info: Removed 7 MSB VCC or GND address nodes from RAM block "Memoria:memoria|lpm
 Warning: Ignored assignments for entity "projetoVerilog" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity projetoVerilog -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projetoVerilog -section_id "Root Region" was ignored
-Info: Implemented 436 device resources after synthesis - the final resource count might be different
+Info: Implemented 446 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 298 output pins
-    Info: Implemented 104 logic cells
+    Info: Implemented 114 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 256 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 257 warnings
     Info: Peak virtual memory: 273 megabytes
-    Info: Processing ended: Fri Oct 11 14:09:22 2019
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Sat Oct 12 00:37:36 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

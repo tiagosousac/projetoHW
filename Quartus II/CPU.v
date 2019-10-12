@@ -17,6 +17,8 @@ output reg [31:0] MuxFOut;
 output reg [31:0] MuxGOut;
 output reg [31:0] MuxHOut;
 
+wire [4:0] BCut;
+assign BCut = RegBOut[4:0];
 wire MuxAOut;
 wire WriteCond;
 wire PCWrite;
@@ -68,13 +70,20 @@ Controle controle(clock, reset, Opcode, Funct, WriteCond,PCWrite,RegWrite,Wr,IRW
 Memoria memoria(MuxAOut, clock, Wr, SSOut, MemData);
 Instr_Reg InstructionRegisters (clock, reset, IRWrite, MemData, Opcode, RS, RT, Offset);	
 ula32 Alu(MuxCOut, MuxDOut, AluOp, AluResult, Overflow, Negativo, Zero, EQ, GT, LT);
+
+//Declaraçao de cada Mux
 MuxA MuxA(RegPCOut, MuxFOut, AluResult, RegAluOutOut, RegAOut, IorD, MuxAOut);
 MuxB MuxB(RS, RT, RD, RegDst, MuxBOut);
 MuxC MuxC(RegPCOut, RegBOut, RegAOut, MemData, AluSrcA, MuxCOut);
 MuxD MuxD(RegBOut, Extend16a32Out, RegMDROut, OffsetExtendidoLeft2, AluSrcB, MuxDOut);
-MuxE MuxE(RegAOut, AluResult, 1'd0, RegAluOutOut, RegEPCOut, 1'd0, PCSource, MuxEOut); //depos faço essses
+MuxE MuxE(RegAOut, AluResult, 1'd0, RegAluOutOut, RegEPCOut, 1'd0, PCSource, MuxEOut);
+//MuxF MuxF(ExceptionCtrl, MuxFOut);
+//MuxG MuxG(RegAOut, RegBOut, ShiftSrc, MuxGOut);
+//MuxH MuxH(BCut, );
+//MuxI MuxI();
 SE1632 SignExtend16a32(Offset, OffsetExtendido);
 ShiftLeft2 sl2(OffsetExtendido, OffsetExtendidoLeft2);
 FunctExtract functextract(Offset, Funct);
+
 
 endmodule

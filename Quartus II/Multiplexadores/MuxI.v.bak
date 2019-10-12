@@ -1,6 +1,7 @@
 module MuxI (
 input wire[31:0] FromLT,
 input wire[31:0] FromLoad,
+input wire[31:0] FromMDR,
 input wire[31:0] FromShift,
 input wire[31:0] FromHI,
 input wire[31:0] FromLO,
