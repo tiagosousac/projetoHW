@@ -1,8 +1,8 @@
 module Controle(
 input clock,
 input reset,
-input [5:0] Opcode,
-input [5:0] Funct,
+input wire [5:0] Opcode,
+input wire [5:0] Funct,
 output reg WriteCond,
 output reg PCWrite,
 output reg RegWrite,
@@ -20,7 +20,7 @@ output reg HICtrl,
 output reg LOCtrl,
 output reg WriteHI,
 output reg WriteLO,
-output reg MDRCtrl; // falta colocar ele nos casos
+output reg MDRCtrl, // falta colocar ele nos casos
 output reg [1:0] ExceptionCtrl, 
 output reg [1:0] AluSrcA,
 output reg [2:0] AluSrcB,
@@ -29,16 +29,18 @@ output reg [2:0] PCSource,
 output reg [2:0] IorD,
 output reg [2:0] ShiftCtrl,
 output reg [2:0] RegDst,
-output reg [3:0] MemToReg
+output reg [3:0] MemToReg,
+output reg [6:0] estado
 );
 
-reg [6:0] estado;
+
 // parameters dos estados
 parameter FETCH = 7'b0000000;
 parameter WAITFETCH = 7'b0000001;
-parameter DECODE = 7'b0000010;
-parameter OPERAR = 7'b0000011;
-parameter AfterADDIU = 7'b0000100;
+parameter WAITFETCH2 = 7'b0000010;
+parameter DECODE = 7'b0000011;
+parameter OPERAR = 7'b0000100;
+parameter AfterADDIU = 7'b0000101;
 parameter WAIT = 7'b1111111;
 // parameters do Opcode
 parameter RINSTRUCTION = 6'b000000;
@@ -149,6 +151,35 @@ always @(posedge clock) begin
 					PCWrite = 1'b0;
 					RegWrite = 1'b0;
 					Wr = 1'b0;
+					IRWrite = 1'b0;
+					WriteRegA = 1'b0;
+					WriteRegB = 1'b0;
+					AluOutControl = 1'b0;
+					EPCWrite = 1'b0;
+					ShiftSrc = 1'b0;
+					ShiftAmt = 1'b0;
+					DivCtrl = 1'b0;
+					MultCtrl = 1'b0;
+					HICtrl = 1'b0;
+					LOCtrl = 1'b0;
+					WriteHI = 1'b0;
+					WriteLO = 1'b0;
+					ExceptionCtrl = 2'b00; 
+					AluSrcA = 2'b00;
+					AluSrcB = 3'b000;
+					AluOp = 3'b000;
+					PCSource = 3'b000;
+					IorD = 3'b000;
+					ShiftCtrl = 3'b000;
+					RegDst = 3'b000;
+					MemToReg = 4'b0000;
+					estado = WAITFETCH2;
+					end
+					WAITFETCH2: begin
+					WriteCond = 1'b0;
+					PCWrite = 1'b0;
+					RegWrite = 1'b0;
+					Wr = 1'b0;
 					IRWrite = 1'b1;
 					WriteRegA = 1'b0;
 					WriteRegB = 1'b0;
@@ -183,7 +214,7 @@ always @(posedge clock) begin
 					WriteRegB = 1'b1;
 					AluOutControl = 1'b1;
 					EPCWrite = 1'b0;
-					ShiftSrc = 1'b0;
+					ShiftSrc = 1'b1;
 					ShiftAmt = 1'b0;
 					DivCtrl = 1'b0;
 					MultCtrl = 1'b0;
@@ -233,12 +264,41 @@ always @(posedge clock) begin
 							MemToReg = 4'b0000;
 							estado = AfterADDIU;
 							end
+						7'd0: begin
+							WriteCond = 1'b0;
+							PCWrite = 1'b1;
+							RegWrite = 1'b0;
+							Wr = 1'b0;
+							IRWrite = 1'b0;
+							WriteRegA = 1'b0;
+							WriteRegB = 1'b0;
+							AluOutControl = 1'b0;
+							EPCWrite = 1'b0;
+							ShiftSrc = 1'b0;
+							ShiftAmt = 1'b0;
+							DivCtrl = 1'b0;
+							MultCtrl = 1'b0;
+							HICtrl = 1'b0;
+							LOCtrl = 1'b0;
+							WriteHI = 1'b0;
+							WriteLO = 1'b0;
+							ExceptionCtrl = 2'b00; 
+							AluSrcA = 2'b00;
+							AluSrcB = 3'b0001;
+							AluOp = 3'b010;
+							PCSource = 3'b001;
+							IorD = 3'b000;
+							ShiftCtrl = 3'b000;
+							RegDst = 3'b000;
+							MemToReg = 4'b0000;
+							estado = 7'd0;
+							end
 					endcase
 				end
 				AfterADDIU: begin
 					WriteCond = 1'b0;
 					PCWrite = 1'b0;
-					RegWrite = 1'b0;
+					RegWrite = 1'b1;
 					Wr = 1'b0;
 					IRWrite = 1'b0;
 					WriteRegA = 1'b0;
@@ -261,12 +321,13 @@ always @(posedge clock) begin
 					IorD = 3'b000;
 					ShiftCtrl = 3'b000;
 					RegDst = 3'b010;
-					MemToReg = 4'b0000;
+					MemToReg = 4'b1000;
 					estado = WAIT;
 					end
 				WAIT: begin
 					estado = FETCH;
 					end
+					
 			endcase
 		end
 	end

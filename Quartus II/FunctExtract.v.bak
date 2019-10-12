@@ -1,0 +1,10 @@
+module FunctExtract(
+input wire [15:0] Offset,
+output reg [5:0] Funct
+);
+
+always @(*) begin
+	Funct <= [5:0] Offset;
+end
+
+endmodule
