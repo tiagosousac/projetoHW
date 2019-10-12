@@ -1,7 +1,7 @@
 module MuxH (
 input wire[4:0] FromB,
 input wire[4:0] Shamt,
-input wire[0:0] ShiftAmt,
+input wire ShiftAmt,
 output reg[4:0] toShift
 );
 parameter S0 = 0, S1 = 1;
