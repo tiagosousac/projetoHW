@@ -41,6 +41,7 @@ parameter WAITFETCH2 = 7'b0000010;
 parameter DECODE = 7'b0000011;
 parameter OPERAR = 7'b0000100;
 parameter AfterADDIU = 7'b0000101;
+parameter AfterADDI = 7'b0000110;
 parameter WAIT = 7'b1111111;
 // parameters do Opcode
 parameter RINSTRUCTION = 6'b000000;

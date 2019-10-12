@@ -42,6 +42,7 @@ parameter DECODE = 7'b0000011;
 parameter OPERAR = 7'b0000100;
 parameter AfterADDIU = 7'b0000101;
 parameter AfterADDI = 7'b0000110;
+parameter AfterADD = 7'b0000111;
 parameter WAIT = 7'b1111111;
 // parameters do Opcode
 parameter RINSTRUCTION = 6'b000000;
@@ -237,33 +238,37 @@ always @(posedge clock) begin
 				OPERAR: begin
 					case(Opcode)
 						ADDI: begin
-							WriteCond = 1'b0;
-							PCWrite = 1'b0;
-							RegWrite = 1'b0;
-							Wr = 1'b0;
-							IRWrite = 1'b0;
-							WriteRegA = 1'b0;
-							WriteRegB = 1'b0;
-							AluOutControl = 1'b1;
-							EPCWrite = 1'b0;
-							ShiftSrc = 1'b0;
-							ShiftAmt = 1'b0;
-							DivCtrl = 1'b0;
-							MultCtrl = 1'b0;
-							HICtrl = 1'b0;
-							LOCtrl = 1'b0;
-							WriteHI = 1'b0;
-							WriteLO = 1'b0;
-							ExceptionCtrl = 2'b00; 
+							//alterados
 							AluSrcA = 2'b10;
 							AluSrcB = 3'b010;
-							AluOp = 3'b001;
-							PCSource = 3'b000;
-							IorD = 3'b000;
-							ShiftCtrl = 3'b000;
-							RegDst = 3'b000;
-							MemToReg = 4'b0000;
-							estado = AfterADDI;
+							AluOutControl = 1'b1;
+							AluOp = 3'b001;		
+							//inalterados
+							 PCSource = 3'b000;
+                                PCWrite = 1'b0;
+                                WriteCond = 1'b0;
+                                IorD = 3'b000;
+                                Wr = 1'b0;
+                                IRWrite = 1'b0;
+                                WriteRegA = 1'b0;
+                                WriteRegB = 1'b0;                                RegDst = 3'b000;
+                                MemToReg = 4'b0000;
+                                RegWrite = 1'b0;
+                                MDRCtrl = 1'b0;
+                                LSControl = 2'b00;
+                                SSControl = 2'b00;
+                                ExceptionCtrl = 2'b00;
+                                WriteHI = 1'b0;
+                                WriteLO = 1'b0;
+                                HICtrl = 1'b0;
+                                LOCtrl = 1'b0;
+                                DivCtrl = 1'b0;
+                                MultCtrl = 1'b0;
+                                ShiftSrc = 1'b0;
+                                ShiftAmt = 1'b0;
+                                ShiftCtrl = 3'b000;
+                                EPCWrite = 1'b0;
+								estado = AfterADDI;
 							end
 						ADDIU: begin
 							WriteCond = 1'b0;
@@ -327,10 +332,107 @@ always @(posedge clock) begin
 						RINSTRUCTION: begin
 							case(Funct)
 								ADD: begin
+								//Alteradas
+									AluSrcA = 2'b10;
+									AluSrcB = 3'b000;
+									AluOp = 3'b001;
+									AluOutControl = 1'b1;
+                                //Inalteradas
+									PCSource = 3'b000;
+									PCWrite = 1'b0;
+									WriteCond = 1'b0;
+									IorD = 3'b000;
+									Wr = 1'b0;
+									IRWrite = 1'b0;
+									WriteRegA = 1'b0;
+									WriteRegB = 1'b0;                                RegDst = 3'b000;
+									MemToReg = 4'b0000;
+									RegWrite = 1'b0;
+									MDRCtrl = 1'b0;
+									LSControl = 2'b00;
+									SSControl = 2'b00;
+									ExceptionCtrl = 2'b00;
+									WriteHI = 1'b0;
+									WriteLO = 1'b0;
+									HICtrl = 1'b0;
+									LOCtrl = 1'b0;
+									DivCtrl = 1'b0;
+									MultCtrl = 1'b0;
+									ShiftSrc = 1'b0;
+									ShiftAmt = 1'b0;
+									ShiftCtrl = 3'b000;
+									EPCWrite = 1'b0;
+									estado =AfterADD;
 									end
 								AND: begin
+									//Alteradas
+									AluSrcA = 2'b10;
+									AluSrcB = 3'b000;
+									AluOp = 3'b011;
+									AluOutControl = 1'b1;
+
+								//Inalteradas		
+									PCSource = 3'b000;
+									PCWrite = 1'b0;
+									WriteCond = 1'b0;
+									IorD = 3'b000;
+									Wr = 1'b0;
+									IRWrite = 1'b0;
+									WriteRegA = 1'b0;
+									WriteRegB = 1'b0;
+									RegDst = 4'b0000;
+									MemToReg = 4'b0000;
+									RegWrite = 1'b0;
+									MDRCtrl = 1'b0;
+									LSControl = 2'b00;
+									SSControl = 2'b00;
+									ExceptionCtrl = 2'b00;
+									WriteHI = 1'b0;
+									WriteLO = 1'b0;
+									HICtrl = 1'b0;
+									LOCtrl = 1'b0;
+									DivCtrl = 1'b0;
+									MultCtrl = 1'b0;
+									ShiftSrc = 1'b0;
+									ShiftAmt = 1'b0;
+									ShiftCtrl = 3'b000;
+									EPCWrite = 1'b0;
+									estado = AfterADD;
 									end
 								SUB: begin
+								//Alteradas
+									AluSrcA = 2'b10;
+									AluSrcB = 3'b000;
+									AluOp = 3'b010;
+									AluOutControl = 1'b1;
+
+								//Inalteradas		
+									PCSource = 3'b000;
+									PCWrite = 1'b0;
+									WriteCond = 1'b0;
+									IorD = 3'b000;
+									Wr = 1'b0;
+									IRWrite = 1'b0;
+									WriteRegA = 1'b0;
+									WriteRegB = 1'b0;
+									RegDst = 4'b0000;
+									MemToReg = 4'b0000;
+									RegWrite = 1'b0;
+									MDRCtrl = 1'b0;
+									LSControl = 2'b00;
+									SSControl = 2'b00;
+									ExceptionCtrl = 2'b00;
+									WriteHI = 1'b0;
+									WriteLO = 1'b0;
+									HICtrl = 1'b0;
+									LOCtrl = 1'b0;
+									DivCtrl = 1'b0;
+									MultCtrl = 1'b0;
+									ShiftSrc = 1'b0;
+									ShiftAmt = 1'b0;
+									ShiftCtrl = 3'b000;
+									EPCWrite = 1'b0;
+									estado = AfterADD;
 									end
 								DIV: begin
 									end
@@ -378,7 +480,7 @@ always @(posedge clock) begin
 									WriteLO = 1'b0;
 									ExceptionCtrl = 2'b00; 
 									AluSrcA = 2'b00;
-									AluSrcB = 3'b0001;
+									AluSrcB = 3'b001;
 									AluOp = 3'b010;
 									PCSource = 3'b001;
 									IorD = 3'b000;
@@ -449,6 +551,41 @@ always @(posedge clock) begin
 					MemToReg = 4'b1000;
 					estado = WAIT;
 					end
+				AfterADD: begin //pode copiar para sub e and
+				//Alteradas
+					RegDst = 4'b0101; 
+					MemToReg = 4'b1000;
+                    RegWrite = 1'b1;
+                //Inalteradas
+                    PCSource = 3'b000;
+                    PCWrite = 1'b0;
+                    WriteCond = 1'b0;
+                    IorD = 3'b000;
+                    Wr = 1'b0;
+                    IRWrite = 1'b0;
+                    WriteRegA = 1'b0;
+                    WriteRegB = 1'b0;
+                    AluSrcA = 2'b00;
+                    AluSrcB = 3'b000;
+                    AluOp = 3'b000;
+                    AluOutControl = 1'b0;
+                    MDRCtrl = 1'b0;
+                    LSControl = 2'b00;
+                    SSControl = 2'b00;
+                    ExceptionCtrl = 2'b00;
+                    WriteHI = 1'b0;
+                    WriteLO = 1'b0;
+                    HICtrl = 1'b0;
+                    LOCtrl = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
+                    ShiftSrc = 1'b0;
+                    ShiftAmt = 1'b0;
+                    ShiftCtrl = 3'b000;
+                    EPCWrite = 1'b0;
+                    estado = WAIT;
+					end
+					
 				WAIT: begin
 					estado = FETCH;
 					end
