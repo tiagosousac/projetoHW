@@ -42,7 +42,7 @@ parameter DECODE = 7'b0000011;
 parameter OPERAR = 7'b0000100;
 parameter AfterADDIU = 7'b0000101;
 parameter AfterADDI = 7'b0000110;
-parameter AfterADD = 7'b0000111;
+parameter AfterADD_SUB_AND = 7'b0000111;
 parameter WAIT = 7'b1111111;
 // parameters do Opcode
 parameter RINSTRUCTION = 6'b000000;
@@ -362,7 +362,7 @@ always @(posedge clock) begin
 									ShiftAmt = 1'b0;
 									ShiftCtrl = 3'b000;
 									EPCWrite = 1'b0;
-									estado =AfterADD;
+									estado =AfterADD_SUB_AND;
 									end
 								AND: begin
 									//Alteradas
@@ -397,7 +397,7 @@ always @(posedge clock) begin
 									ShiftAmt = 1'b0;
 									ShiftCtrl = 3'b000;
 									EPCWrite = 1'b0;
-									estado = AfterADD;
+									estado = AfterADD_SUB_AND;
 									end
 								SUB: begin
 								//Alteradas
@@ -432,7 +432,7 @@ always @(posedge clock) begin
 									ShiftAmt = 1'b0;
 									ShiftCtrl = 3'b000;
 									EPCWrite = 1'b0;
-									estado = AfterADD;
+									estado = AfterADD_SUB_AND;
 									end
 								DIV: begin
 									end
@@ -551,7 +551,7 @@ always @(posedge clock) begin
 					MemToReg = 4'b1000;
 					estado = WAIT;
 					end
-				AfterADD: begin //pode copiar para sub e and
+				AfterADD_SUB_AND: begin //pode copiar para sub e and
 				//Alteradas
 					RegDst = 4'b0101; 
 					MemToReg = 4'b1000;
