@@ -7,7 +7,7 @@ input wire[31:0] AContente,
 input wire[2:0] IorD,
 output reg[31:0] toMem
 );
-parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3,S4 = 4;
+parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4;
 always @(*) begin
 	case(IorD)
 		S0:
