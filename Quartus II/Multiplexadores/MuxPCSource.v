@@ -1,7 +1,7 @@
 module MuxPCSource (
 input wire[31:0] RegAOut,
 input wire[31:0] AluResult,
-input wire[31:0] FromJump, // valido mudar o nome depois
+input wire[31:0] JumpAddress, // valido mudar o nome depois
 input wire[31:0] RegAluOutOut,
 input wire[31:0] RegEPCOut,
 input wire[31:0] ExceptionBit, // valido mudar o nome depois
@@ -16,7 +16,7 @@ always @(*) begin
 		S1:
 			MuxPCSourceOut <= AluResult;
 		S2:
-			MuxPCSourceOut <= FromJump;
+			MuxPCSourceOut <= JumpAddress;
 		S3:
 			MuxPCSourceOut <= RegAluOutOut;
 		S4:
