@@ -1,10 +1,10 @@
 module MuxPCSource (
 input wire[31:0] RegAOut,
 input wire[31:0] AluResult,
-input wire[31:0] FromJump,
+input wire[31:0] FromJump, // valido mudar o nome depois
 input wire[31:0] RegAluOutOut,
 input wire[31:0] RegEPCOut,
-input wire[31:0] ExceptionBit,
+input wire[31:0] ExceptionBit, // valido mudar o nome depois
 input wire[2:0] PCSource,
 output reg[31:0] MuxPCSourceOut
 );

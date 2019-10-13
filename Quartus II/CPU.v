@@ -11,7 +11,7 @@ output wire [5:0] Opcode, Funct;
 
 // declaracao das variaveis do programa
 wire [31:0] SSControlOut, RegWriteOutA, RegWriteOutB, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MultCtrlLOOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut;
-wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, RegDeslocOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16;
+wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, RegDeslocOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress;
 wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado, Shamt;
 wire [15:0] Offset;
 
@@ -52,6 +52,7 @@ assign RegBOutCortado = RegBOut[4:0];
 assign OffsetExtendido = Offset;
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
 assign Funct = Offset [5:0];
+assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0] ,2'b0};
 
 Registrador A(clock, reset, WriteRegA, RegWriteOutA, RegAOut);
  
@@ -73,7 +74,10 @@ Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDstOut, MuxM
  
 RegDesloc regdesloc(clock, reset, ShiftCtrl, MuxShiftAmtOut, MuxShiftSrcOut, RegDeslocOut);
  
-Controle controle(clock, reset, Opcode, Funct, WriteCond,PCWrite,RegWrite,Wr,IRWrite,WriteRegA,WriteRegB,AluOutControl,EPCWrite,ShiftSrc,ShiftAmt,DivCtrl,MultCtrl,HICtrl,LOCtrl,WriteHI,WriteLO,MDRCtrl,LSControl, SSControl, ExceptionsCtrl, AluSrcA,AluSrcB,AluOp,PCSource,IorD,ShiftCtrl,RegDst,MemToReg, estado);
+Controle controle(clock, reset, Opcode, Funct, WriteCond, PCWrite, RegWrite, Wr, IRWrite, WriteRegA, WriteRegB,
+				  AluOutControl, EPCWrite, ShiftSrc, ShiftAmt, DivCtrl, MultCtrl, HICtrl, LOCtrl, WriteHI,
+				  WriteLO, MDRCtrl, Overflow, Negativo, Zero, EQ, GT, LT, LSControl, SSControl, ExceptionsCtrl,
+				  AluSrcA, AluSrcB, AluOp, PCSource, IorD, ShiftCtrl, RegDst, MemToReg, estado);
  
 Memoria memoria(MuxIorDOut, clock, Wr, SSControlOut, MemData);
  
@@ -89,7 +93,7 @@ MuxAluSrcA MuxAluSrcA(RegPCOut, RegBOut, RegAOut, MemData, AluSrcA, MuxAluSrcAOu
 
 MuxAluSrcB MuxAluSrcB(RegBOut, OffsetExtendido, LSControlOut, OffsetExtendidoLeft2, AluSrcB, MuxAluSrcBOut);
 
-MuxPCSource MuxPCSource(RegAOut, AluResult, 1'd0, RegAluOutOut, RegEPCOut, 1'd0, PCSource, MuxPCSourceOut); //depos faï¿½o essses
+MuxPCSource MuxPCSource(RegAOut, AluResult, JumpAddress, RegAluOutOut, RegEPCOut, 1'd0, PCSource, MuxPCSourceOut); //depos faï¿½o essses
 
 MuxExceptionsCtrl MuxExceptionsCtrl(ExceptionsCtrl, MuxExceptionsCtrlOut);
 
