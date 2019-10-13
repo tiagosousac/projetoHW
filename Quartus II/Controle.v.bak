@@ -21,8 +21,8 @@ output reg LOCtrl,
 output reg WriteHI,
 output reg WriteLO,
 output reg MDRCtrl,
-output reg LSControl,
-output reg SSControl,
+output reg [1:0] LSControl,
+output reg [1:0] SSControl,
 output reg [1:0] ExceptionCtrl, 
 output reg [1:0] AluSrcA,
 output reg [2:0] AluSrcB,
@@ -144,7 +144,7 @@ always @(posedge clock) begin
 					WriteRegA = 1'b0;
 					WriteRegB = 1'b0;
 					AluOutControl = 1'b0;
-					RegDst = 4'b0000;
+					RegDst = 3'b000;
 					MemToReg = 4'b0000;
 					RegWrite = 1'b0;
 					MDRCtrl = 1'b0;
@@ -320,10 +320,6 @@ always @(posedge clock) begin
 					            IRWrite = 1'b0;
 					            WriteRegA = 1'b0;
 					            WriteRegB = 1'b0;
-					            AluSrcA = 2'b00;
-					            AluSrcB = 3'b000;
-					            AluOp = 3'b000;
-					            AluOutControl = 1'b0;
 					            RegDst = 3'b000;
 					            MemToReg = 4'b0000;
 					            RegWrite = 1'b0;
@@ -368,7 +364,7 @@ always @(posedge clock) begin
 						LUI: begin
 						//Alteradas
 							RegDst = 3'b010;
-							MemToReg = 1010;
+							MemToReg = 4'b1010;
 							RegWrite = 1'b1;
 						//Inalteradas
 							PCSource = 3'b000;
@@ -457,7 +453,7 @@ always @(posedge clock) begin
 									IRWrite = 1'b0;
 									WriteRegA = 1'b0;
 									WriteRegB = 1'b0;
-									RegDst = 4'b0000;
+									RegDst = 3'b000;
 									MemToReg = 4'b0000;
 									RegWrite = 1'b0;
 									MDRCtrl = 1'b0;
@@ -492,7 +488,7 @@ always @(posedge clock) begin
 									IRWrite = 1'b0;
 									WriteRegA = 1'b0;
 									WriteRegB = 1'b0;
-									RegDst = 4'b0000;
+									RegDst = 3'b000;
 									MemToReg = 4'b0000;
 									RegWrite = 1'b0;
 									MDRCtrl = 1'b0;
@@ -541,7 +537,7 @@ always @(posedge clock) begin
 									AluSrcB = 3'b000;
 									AluOp = 3'b000;
 									AluOutControl = 1'b0;
-									RegDst = 4'b0000;
+									RegDst = 3'b000;
 									MemToReg = 4'b0000;
 									RegWrite = 1'b0;
 									MDRCtrl = 1'b0;
@@ -575,7 +571,7 @@ always @(posedge clock) begin
 									AluSrcB = 3'b000;
 									AluOp = 3'b000;
 									AluOutControl = 1'b0;
-									RegDst = 4'b0000;
+									RegDst = 3'b000;
 									MemToReg = 4'b0000;
 									RegWrite = 1'b0;
 									MDRCtrl = 1'b0;

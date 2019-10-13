@@ -1,0 +1,4 @@
+addiu 10 10 13
+addiu 10 10 20
+addiu 10 10 22
+addiu 10 10 24

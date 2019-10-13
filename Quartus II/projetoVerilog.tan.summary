@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 4.504 ns
+Actual Time    : 4.464 ns
 From           : reset
-To             : Controle:controle|PCSource[0]
+To             : Controle:controle|RegWrite
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 12.471 ns
-From           : Controle:controle|AluOp[1]
-To             : AluResult[28]
+Actual Time    : 17.141 ns
+From           : MuxAluSrcB:MuxAluSrcB|MuxAluSrcBOut[0]
+To             : AluResult[30]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -2.657 ns
+Actual Time    : -0.167 ns
 From           : reset
-To             : Controle:controle|AluOp[0]
+To             : Controle:controle|RegDst[1]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -35,12 +35,22 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 79.99 MHz ( period = 12.502 ns )
-From           : MuxD:MuxD|toALU[2]
-To             : Registrador:PC|Saida[30]
+Actual Time    : 43.34 MHz ( period = 23.074 ns )
+From           : MuxAluSrcB:MuxAluSrcB|MuxAluSrcBOut[0]
+To             : Registrador:AluOut|Saida[30]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
+
+Type           : Clock Hold: 'clock'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : Instr_Reg:InstructionRegisters|Instr25_21[0]
+To             : MuxRegDst:MuxRegDst|MuxRegDstOut[0]
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 340
 
 Type           : Total number of failed paths
 Slack          : 
@@ -50,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 0
+Failed Paths   : 340
 
 --------------------------------------------------------------------------------------
 
