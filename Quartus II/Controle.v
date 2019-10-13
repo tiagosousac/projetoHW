@@ -95,8 +95,8 @@ end
 always @(posedge clock) begin
 		if (reset) begin
 			//Alteradas
-                RegDst = 3'b101;
-                MemToReg = 4'b1011;
+                RegDst = 3'b011;
+                MemToReg = 4'b0010;
                 RegWrite = 1'b1;
             //Inalteradas                
                 PCSource = 3'b000;
@@ -363,7 +363,7 @@ always @(posedge clock) begin
 							end
 						LUI: begin
 						//Alteradas
-							RegDst = 3'b010;
+							RegDst = 3'b001;
 							MemToReg = 4'b1010;
 							RegWrite = 1'b1;
 						//Inalteradas
@@ -704,7 +704,7 @@ always @(posedge clock) begin
 					end
 				AfterADD_SUB_AND: begin //pode copiar para sub e and
 				//Alteradas
-					RegDst = 3'b101; 
+					RegDst = 3'b010; 
 					MemToReg = 4'b1000;
                     RegWrite = 1'b1;
                 //Inalteradas
@@ -739,7 +739,7 @@ always @(posedge clock) begin
 					
 					AfterSRA_SRL:begin
 					//Alteradas
-						RegDst = 3'b101;
+						RegDst = 3'b010;
 						MemToReg = 4'b0011;
 						RegWrite = 1'b1;
 					//Inalteradas
@@ -774,7 +774,7 @@ always @(posedge clock) begin
 					
 					AfterXchg: begin
 					//Alteradas
-						RegDst = 3'b101;
+						RegDst = 3'b001;
 						MemToReg = 4'b0000;
 						RegWrite = 1'b1;
 					//Inalteradas
