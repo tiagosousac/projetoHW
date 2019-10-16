@@ -1,20 +1,19 @@
-module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct);
+module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, estado, MuxShiftAmtOut, MuxShiftSrcOut, Shamt, RegDeslocOut, ShiftCtrl);
 
 input clock;
 input reset;
 
 // aqui ficam as variaveis que desejam ser printadas, tambem precisa especificar elas no parenteses apos CPU
-output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult;
+output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, RegDeslocOut, MuxShiftSrcOut;
 output wire [6:0] estado;
-output wire [2:0] AluOp;
-output wire [5:0] Opcode, Funct;
+output wire [4:0] MuxShiftAmtOut, Shamt;
 
 // declaracao das variaveis do programa
-wire [31:0] SSControlOut, RegWriteOutA, RegWriteOutB, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MultCtrlLOOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut;
-wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, RegDeslocOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress;
-wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado, Shamt;
+wire [31:0] SSControlOut, RegWriteOutA, RegWriteOutB, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MultCtrlLOOut, MuxExceptionsCtrlOut;
+wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, AluResult;
+wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado;
 wire [15:0] Offset;
-
+wire [5:0] Opcode, Funct;
 
 wire Overflow, Negativo, Zero, EQ, GT, LT; // 1bit da ALU
 
@@ -42,9 +41,10 @@ wire [1:0] LSControl;
 wire [1:0] SSControl;
 wire [1:0] AluSrcA;
 wire [2:0] AluSrcB;
+wire [2:0] AluOp;
 wire [2:0] PCSource;
 wire [2:0] IorD;
-wire [2:0] ShiftCtrl;
+output wire [2:0] ShiftCtrl;
 wire [2:0] RegDst;
 wire [3:0] MemToReg;
 
@@ -53,6 +53,9 @@ assign OffsetExtendido = Offset;
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
 assign Funct = Offset [5:0];
 assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0] ,2'b0};
+assign RD = Offset[15:11];
+assign Shamt = Offset[10:6];
+
 
 Registrador A(clock, reset, WriteRegA, RegWriteOutA, RegAOut);
  

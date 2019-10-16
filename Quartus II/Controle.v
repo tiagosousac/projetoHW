@@ -265,7 +265,8 @@ always @(posedge clock) begin
                         AluOp = 3'b001;
                         AluOutControl = 1'b1;
                         ShiftCtrl = 3'b001;
-                        ShiftSrc = 1'b1;
+                        ShiftSrc = 1'b0;
+                        ShiftAmt = 1'b1;
 					//Inalteradas
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -646,7 +647,7 @@ always @(posedge clock) begin
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
-								AluOp = 3'b001;SWXL
+								AluOp = 3'b001;//SWXL
 								IorD = 3'b011;
 								Wr = 1'b0;
 							//Inalteradas        
@@ -1921,7 +1922,7 @@ always @(posedge clock) begin
 					
 				SWClk2: begin
 					//Alteradas
-                        MRDCtrl = 1;
+                        MDRCtrl = 1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -1956,7 +1957,7 @@ always @(posedge clock) begin
 					
 				SHClk2: begin
 					//Alteradas
-                        MRDCtrl = 1;
+                        MDRCtrl = 1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -1991,7 +1992,7 @@ always @(posedge clock) begin
 					
 				SBClk2: begin
 					//Alteradas
-                        MRDCtrl = 1;
+                        MDRCtrl = 1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
