@@ -69,6 +69,7 @@ parameter SHClk2 = 7'b0010110;
 parameter SHClk3 = 7'b0010111;
 parameter SWClk2 = 7'b0011000;
 parameter SWClk3 = 7'b0011001;
+parameter SLLTest = 7'b0011010;
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -264,8 +265,6 @@ always @(posedge clock) begin
 					    AluSrcB = 3'b100;
                         AluOp = 3'b001;
                         AluOutControl = 1'b1;
-                        ShiftCtrl = 3'b001;
-                        ShiftSrc = 1'b1;
 					//Inalteradas
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -286,6 +285,8 @@ always @(posedge clock) begin
 					    LOCtrl = 1'b0;
 					    DivCtrl = 1'b0;
 					    MultCtrl = 1'b0;
+					    ShiftCtrl = 3'b000;
+                        ShiftSrc = 1'b0;
 					    ShiftAmt = 1'b0;
 					    EPCWrite = 1'b0;
 					    estado = OPERAR;
@@ -1058,8 +1059,7 @@ always @(posedge clock) begin
 								SLL: begin
 									//Alteradas
 										ShiftSrc = 1'b0;
-										ShiftAmt = 1'b1;
-										ShiftCtrl = 3'b010;
+										ShiftCtrl = 3'b001;
 									//Inalteradas        
 										PCSource = 3'b000;
 										PCWrite = 1'b0;
@@ -1086,8 +1086,9 @@ always @(posedge clock) begin
 										LOCtrl = 1'b0;
 										DivCtrl = 1'b0;
 										MultCtrl = 1'b0;
+										ShiftAmt = 1'b0;
 										EPCWrite = 1'b0;
-										estado = SHIFTOperationClk2;
+										estado = SLLTest;
 									end
 								SLLV: begin
 									//Alteradas
@@ -1468,7 +1469,40 @@ always @(posedge clock) begin
 						EPCWrite = 1'b0;
 						estado = WAIT;
 					end
-					
+				SLLTest: begin
+					//Alteradas
+						ShiftAmt = 1'b1;
+					//Inalteradas        
+						PCSource = 3'b000;
+						PCWrite = 1'b0;
+						WriteCond = 1'b0;
+						IorD = 3'b000;
+						Wr = 1'b0;
+						IRWrite = 1'b0;
+						WriteRegA = 1'b0;
+						WriteRegB = 1'b0;
+						AluSrcA = 2'b00;
+						AluSrcB = 3'b000;
+						AluOp = 3'b000;
+						AluOutControl = 1'b0;
+						RegDst = 3'b000;
+						MemToReg = 4'b0000;
+						RegWrite = 1'b0;
+						MDRCtrl = 1'b0;
+						LSControl = 2'b00;
+						SSControl = 2'b00;
+						ExceptionCtrl = 2'b00;
+						WriteHI = 1'b0;
+						WriteLO = 1'b0;
+						HICtrl = 1'b0;
+						LOCtrl = 1'b0;
+						DivCtrl = 1'b0;
+						MultCtrl = 1'b0;
+						ShiftSrc = 1'b0;
+						ShiftCtrl = 3'b000;
+						EPCWrite = 1'b0;
+						estado = SHIFTOperationClk2;
+					end
 				SHIFTOperationClk2:begin
 					//Alteradas
 						RegDst = 3'b010;
