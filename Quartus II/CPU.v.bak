@@ -51,8 +51,10 @@ wire [3:0] MemToReg;
 assign RegBOutCortado = RegBOut[4:0];
 assign OffsetExtendido = Offset;
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
-assign Funct = Offset [5:0];
-assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0] ,2'b0}
+assign Funct = Offset[5:0];
+assign Shamt = Offset[10:6];
+assign RD = Offset[15:11];
+assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0] ,2'b0};
 
 Registrador A(clock, reset, WriteRegA, RegWriteOutA, RegAOut);
  
@@ -99,7 +101,8 @@ MuxExceptionsCtrl MuxExceptionsCtrl(ExceptionsCtrl, MuxExceptionsCtrlOut);
 
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
 
-MuxShiftAmt MuxShiftAmt(RegBOutCortado, Shamt, ShiftAmt, MuxShiftAmtOut);
+MuxShiftAmt MuxShiftAmt(RegBOutCortado, 
+, ShiftAmt, MuxShiftAmtOut);
 
 MuxMemToReg MuxMemToReg(LTExtendido, LSControlOut, RegDeslocOut, RegHIOut, RegLOOut, RegBOut, RegAOut, RegAluOutOut, OffsetExtendidoLeft2, OffsetExtendidoLeft16, MemToReg, MuxMemToRegOut);
 
