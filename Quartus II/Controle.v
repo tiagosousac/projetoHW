@@ -225,8 +225,8 @@ always @(posedge clock) begin
 					    ShiftCtrl = 3'b000;
 					    EPCWrite = 1'b0;
 					    estado = WAITFETCH2;
-
 					end
+					
 					WAITFETCH2: begin
 					//Alteradas
                         IRWrite = 1'b1;
@@ -546,10 +546,11 @@ always @(posedge clock) begin
 							end
 						LW: begin
 							//Alteradas
+								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
 								AluOp = 3'b001;
-								IorD = 3'b010;
+								IorD = 3'b011;
 								Wr = 1'b0;
 							//Inalteradas        
 								PCSource = 3'b000;
@@ -558,7 +559,6 @@ always @(posedge clock) begin
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
-								AluOutControl = 1'b0;
 								RegDst = 3'b000;
 								MemToReg = 4'b0000;
 								RegWrite = 1'b0;
@@ -580,10 +580,11 @@ always @(posedge clock) begin
 							end
 						LH: begin
 							//Alteradas
+								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
 								AluOp = 3'b001;
-								IorD = 3'b010;
+								IorD = 3'b011;
 								Wr = 1'b0;
 							//Inalteradas        
 								PCSource = 3'b000;
@@ -592,7 +593,6 @@ always @(posedge clock) begin
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
-								AluOutControl = 1'b0;
 								RegDst = 3'b000;
 								MemToReg = 4'b0000;
 								RegWrite = 1'b0;
@@ -614,10 +614,11 @@ always @(posedge clock) begin
 							end
 						LB: begin
 							//Alteradas
+								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
 								AluOp = 3'b001;
-								IorD = 3'b010;
+								IorD = 3'b011;
 								Wr = 1'b0;
 							//Inalteradas        
 								PCSource = 3'b000;
@@ -626,7 +627,6 @@ always @(posedge clock) begin
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
-								AluOutControl = 1'b0;
 								RegDst = 3'b000;
 								MemToReg = 4'b0000;
 								RegWrite = 1'b0;
@@ -648,10 +648,10 @@ always @(posedge clock) begin
 							end
 						SW: begin
 							//Alteradas
+								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
 								AluOp = 3'b001;
-								AluOutControl = 1'b1;
 								IorD = 3'b011;
 								Wr = 1'b0;
 							//Inalteradas        
@@ -1337,8 +1337,8 @@ always @(posedge clock) begin
 										WriteRegA = 1'b0;
 										WriteRegB = 1'b0;
 										RegDst = 3'b000;
-										MemToReg = 4'b0000;
-										RegWrite = 1'b0;
+										MemToReg = 4'b0110;
+										RegWrite = 1'b1;
 									//Inalteradas
 										PCSource = 3'b000;
 										PCWrite = 1'b0;
@@ -1680,7 +1680,7 @@ always @(posedge clock) begin
 				XCHGClk2: begin
 					//Alteradas
 						RegDst = 3'b001;
-						MemToReg = 4'b0000;
+						MemToReg = 4'b0111;
 						RegWrite = 1'b1;
 					//Inalteradas
 						PCSource = 3'b000;
@@ -2091,6 +2091,220 @@ always @(posedge clock) begin
 						EPCWrite = 1'b0;
 						estado = WAIT;
 					end
+					
+				SWClk2: begin
+					//Alteradas
+                        MDRCtrl = 1;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = SWClk3;
+					end
+					
+				SHClk2: begin
+					//Alteradas
+                        MDRCtrl = 1;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = SHClk3;
+					end
+					
+				SBClk2: begin
+					//Alteradas
+                        MDRCtrl = 1;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = SBClk3;
+					end
+					
+				SWClk3: begin
+					//Alteradas
+                        Wr = 1;
+                        SSControl = 2'b00;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    MDRCtrl = 1'b0;
+					    LSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = WAIT;
+					end
+					
+				SHClk3: begin
+					//Alteradas
+                        Wr = 1;
+                        SSControl = 2'b01;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    MDRCtrl = 1'b0;
+					    LSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = WAIT;
+					end
+					
+				SBClk3: begin
+					//Alteradas
+                        Wr = 1;
+                        SSControl = 2'b10;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    MDRCtrl = 1'b0;
+					    LSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = WAIT;
+					end
+					
+					
+					
+					
 				WAIT: begin
 					estado = FETCH;
 					end
