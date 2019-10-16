@@ -5,6 +5,7 @@ input wire Reset,
 input wire Clock,
 input wire DivCtrl,
 output reg Div0,
+output reg DivDone,
 output reg[31:0] HIOut,
 output reg[31:0] LOOut
 );
@@ -30,6 +31,8 @@ always @(*) begin
 			Remainder <= 64'd0;
 			Contador <= 0;
 			ativado <= 1'b0;
+			Div0 <= 1'b0;
+			DivDone <= 1'b0;
 			//Zera variaveis internas
 		end
 	if(DivCtrl == 1)
@@ -58,6 +61,7 @@ always @(*) begin
 				HIOut<=Quotient;
 				LOOut<=Remainder[31:0];
 				ativado <= 1'b0;
+				DivDone <= 1'b1;
 				if(FromA[31] != FromB[31])begin
 					HIOut[31] <= 1;//Como ele vai dando shift left, e mudando o bit mais a direita, não sabemos se é negativo
 								  //então temos que mudar ao final.

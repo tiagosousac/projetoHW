@@ -69,6 +69,9 @@ parameter SHClk2 = 7'b0010110;
 parameter SHClk3 = 7'b0010111;
 parameter SWClk2 = 7'b0011000;
 parameter SWClk3 = 7'b0011001;
+parameter DIV1   = 7'b0011010;
+parameter DIVLOOP= 7'b0011011;
+parameter DIV2   = 7'b0011100;
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -1917,6 +1920,111 @@ always @(posedge clock) begin
 						ShiftCtrl = 3'b000;
 						EPCWrite = 1'b0;
 						estado = WAIT;
+					end
+				DIV1: begin
+						//Inalterado
+						PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    MDRCtrl = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    //Alterado
+					    DivCtrl = 1'b1;
+					    //Inalterado
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = DIVLOOP;
+					end
+					DIVLOOP: begin
+						//Inalterado
+						PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    MDRCtrl = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    //Alterado
+					    DivCtrl = 1'b0;
+					    //Inalterado
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = DIVLOOP;
+					end
+					DIV2: begin
+						//Inalterado
+						PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    MDRCtrl = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    //Alterado
+					    DivCtrl = 1'b0;
+					    //Inalterado
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = WAIT;
 					end
 				WAIT: begin
 					estado = FETCH;

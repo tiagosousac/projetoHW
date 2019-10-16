@@ -31,6 +31,8 @@ wire EPCWrite;
 wire ShiftSrc;
 wire ShiftAmt;
 wire DivCtrl;
+wire DivZero;
+wire DivDone;
 wire MultCtrl;
 wire HICtrl;
 wire LOCtrl;
@@ -110,5 +112,7 @@ MuxLOCtrl MuxLOCtrl(DivCtrlHIOut, MultCtrlLOOut, LOCtrl, MuxLOCtrlOut);
 LoadSize LS(RegMDROut, LSControl, LSControlOut);
 
 StoreSize SS(RegBOut, LSControlOut, SSControl, SSControlOut);
+
+//Div div(RegAOut,RegBOut,reset,clock,DivCtrl,DivZero,DivDone,WriteHI,WriteLO);
 
 endmodule
