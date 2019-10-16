@@ -11,6 +11,8 @@ Segue alguns links úteis para o projeto, adicione também se encontrar algum in
 * [Atividades Verilog](https://drive.google.com/file/d/1H81--gwP9lwWjgLLp97iK5sfZ7ko82NW/view)
 * [Quartus II](https://drive.google.com/file/d/1wQKtpDSJMCUhpOUdQVPDfxamvXK26KWc/view)
 * [PETLib de HW](https://drive.google.com/drive/folders/1B7kcXXYe2SE-hnkpGaBfN5sVz51AqKfs)
+* [Relatório do Projeto](https://docs.google.com/document/d/1rSLCWyYJ6OEvmdShp6RFSfLIDvYymy5Ru3MOvFRQ6No/edit?usp=sharing)
+
 
 # Checklist
 
