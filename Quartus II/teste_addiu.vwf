@@ -3544,12 +3544,10 @@ TRANSITION_LIST("clock")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 166;
-			LEVEL 0 FOR 3.0;
-			LEVEL 1 FOR 3.0;
+			REPEAT = 500;
+			LEVEL 0 FOR 1.0;
+			LEVEL 1 FOR 1.0;
 		}
-		LEVEL 0 FOR 3.0;
-		LEVEL 1 FOR 1.0;
 	}
 }
 
