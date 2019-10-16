@@ -1472,6 +1472,7 @@ always @(posedge clock) begin
 				SLLTest: begin
 					//Alteradas
 						ShiftAmt = 1'b1;
+						ShiftCtrl = 3'b010;
 					//Inalteradas        
 						PCSource = 3'b000;
 						PCWrite = 1'b0;
@@ -1499,7 +1500,6 @@ always @(posedge clock) begin
 						DivCtrl = 1'b0;
 						MultCtrl = 1'b0;
 						ShiftSrc = 1'b0;
-						ShiftCtrl = 3'b000;
 						EPCWrite = 1'b0;
 						estado = SHIFTOperationClk2;
 					end
