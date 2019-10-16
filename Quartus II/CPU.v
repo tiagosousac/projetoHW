@@ -1,4 +1,4 @@
-module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst);
+module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, EQ);
 
 input clock;
 input reset;
@@ -17,7 +17,8 @@ wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado;
 wire [15:0] Offset;
 
 
-wire Overflow, Negativo, Zero, EQ, GT, LT; // 1bit da ALU
+wire Overflow, Negativo, Zero, GT, LT; // 1bit da ALU
+output wire EQ;
 
 // flags de controle
 wire WriteCond;
