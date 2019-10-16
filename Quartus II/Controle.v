@@ -263,9 +263,9 @@ always @(posedge clock) begin
 					    AluSrcA = 2'b00;
 					    AluSrcB = 3'b100;
                         AluOp = 3'b001;
-                        AluOutControl = 1'b1;
+                        AluOutControl = 1'b1;	
                         ShiftCtrl = 3'b001;
-                        ShiftSrc = 1'b1;
+                        ShiftSrc = 1'b0;
 					//Inalteradas
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -1332,8 +1332,8 @@ always @(posedge clock) begin
 										WriteRegA = 1'b0;
 										WriteRegB = 1'b0;
 										RegDst = 3'b000;
-										MemToReg = 4'b0000;
-										RegWrite = 1'b0;
+										MemToReg = 4'b0110;
+										RegWrite = 1'b1;
 									//Inalteradas
 										PCSource = 3'b000;
 										PCWrite = 1'b0;
@@ -1507,7 +1507,7 @@ always @(posedge clock) begin
 				XCHGClk2: begin
 					//Alteradas
 						RegDst = 3'b001;
-						MemToReg = 4'b0000;
+						MemToReg = 4'b0111;
 						RegWrite = 1'b1;
 					//Inalteradas
 						PCSource = 3'b000;

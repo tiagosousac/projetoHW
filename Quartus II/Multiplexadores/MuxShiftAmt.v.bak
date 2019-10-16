@@ -2,7 +2,7 @@ module MuxShiftAmt (
 input wire[4:0] RegBOutCortado,
 input wire[4:0] Shamt,
 input wire ShiftAmt,
-output reg[4:0] MuxShiftAmtOut
+output reg[31:0] MuxShiftAmtOut
 );
 parameter S0 = 0, S1 = 1;
 always @(*) begin
