@@ -12,7 +12,7 @@ wire [4:0] Shamt;
 
 // declaracao das variaveis do programa
 wire [31:0] SSControlOut, RegWriteOutA, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MultCtrlLOOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut, RegDeslocOut;
-wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, RegWriteOutB;
+wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, RegWriteOutB, ExceptionBitExtendido;
 wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado;
 wire [15:0] Offset;
 
@@ -56,8 +56,8 @@ assign Funct = Offset[5:0];
 assign Shamt = Offset[10:6];
 assign RD = Offset[15:11];
 assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0] ,2'b0};
-assign RD = Offset[15:11];
-assign Shamt = Offset[10:6];
+assign LTExtendido = {31'b0, LT};
+assign ExceptionBitExtendido = {31'b0, MemData[0]};
 
 Registrador A(clock, reset, WriteRegA, RegWriteOutA, RegAOut);
  
@@ -98,7 +98,7 @@ MuxAluSrcA MuxAluSrcA(RegPCOut, RegBOut, RegAOut, MemData, AluSrcA, MuxAluSrcAOu
 
 MuxAluSrcB MuxAluSrcB(RegBOut, OffsetExtendido, LSControlOut, OffsetExtendidoLeft2, AluSrcB, MuxAluSrcBOut);
 
-MuxPCSource MuxPCSource(RegAOut, AluResult, JumpAddress, RegAluOutOut, RegEPCOut, 1'd0, PCSource, MuxPCSourceOut); //depos faï¿½o essses
+MuxPCSource MuxPCSource(RegAOut, AluResult, JumpAddress, RegAluOutOut, RegEPCOut, ExceptionBitExtendido, PCSource, MuxPCSourceOut); //depos faï¿½o essses
 
 MuxExceptionsCtrl MuxExceptionsCtrl(ExceptionsCtrl, MuxExceptionsCtrlOut);
 
@@ -108,9 +108,9 @@ MuxShiftAmt MuxShiftAmt(RegBOutCortado, Shamt, ShiftAmt, MuxShiftAmtOut);
 
 MuxMemToReg MuxMemToReg(LTExtendido, LSControlOut, RegDeslocOut, RegHIOut, RegLOOut, RegBOut, RegAOut, RegAluOutOut, OffsetExtendidoLeft2, OffsetExtendidoLeft16, MemToReg, MuxMemToRegOut);
 
-MuxHICtrl MuxHICtrl(DivCtrlHIOut, MultCtrlLOOut, HICtrl, MuxHICtrlOut);
+MuxHICtrl MuxHICtrl(DivCtrlHIOut, MultCtrlHIOut, HICtrl, MuxHICtrlOut);
 
-MuxLOCtrl MuxLOCtrl(DivCtrlHIOut, MultCtrlLOOut, LOCtrl, MuxLOCtrlOut);
+MuxLOCtrl MuxLOCtrl(DivCtrlLOOut, MultCtrlLOOut, LOCtrl, MuxLOCtrlOut);
 
 LoadSize LS(RegMDROut, LSControl, LSControlOut);
 
