@@ -265,8 +265,6 @@ always @(posedge clock) begin
 					    AluSrcB = 3'b100;
                         AluOp = 3'b001;
                         AluOutControl = 1'b1;	
-                        ShiftCtrl = 3'b001;
-                        ShiftSrc = 1'b0;
 					//Inalteradas
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -287,7 +285,9 @@ always @(posedge clock) begin
 					    LOCtrl = 1'b0;
 					    DivCtrl = 1'b0;
 					    MultCtrl = 1'b0;
+						ShiftSrc = 1'b0;
 					    ShiftAmt = 1'b0;
+						ShiftCtrl = 3'b000;
 					    EPCWrite = 1'b0;
 					    estado = OPERAR;
 					end
