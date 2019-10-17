@@ -72,8 +72,9 @@ parameter SLLVClk2 = 7'b0011011;
 parameter SRLClk2 = 7'b0011100;
 parameter SRAClk2 = 7'b0011101;
 parameter SRAVClk2 = 7'b0011110;
-parameter ExceptionByteToPc = 7'b0011111;
-parameter ExceptionWait = 7'b0100000;
+parameter BNEClk2 = 7'b0011111;
+parameter ExceptionByteToPc = 7'b0100000;
+parameter ExceptionWait = 7'b0100001;
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -289,9 +290,9 @@ always @(posedge clock) begin
 					    LOCtrl = 1'b0;
 					    DivCtrl = 1'b0;
 					    MultCtrl = 1'b0;
-					    ShiftCtrl = 3'b000;
-                        ShiftSrc = 1'b0;
+						ShiftSrc = 1'b0;
 					    ShiftAmt = 1'b0;
+						ShiftCtrl = 3'b000;
 					    EPCWrite = 1'b0;
 					    estado = OPERAR;
 					end
@@ -414,13 +415,9 @@ always @(posedge clock) begin
 							end
 						BNE: begin
 							//Alteradas
-								PCSource = 3'b011;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b000;
 								AluOp = 3'b111;
-								if(EQ == 0) begin
-									PCWrite = 1'b1;
-								end
 							//Inalteradas 
 								WriteCond = 1'b0;
 								IorD = 3'b000;
@@ -446,7 +443,7 @@ always @(posedge clock) begin
 								ShiftAmt = 1'b0;
 								ShiftCtrl = 3'b000;
 								EPCWrite = 1'b0;
-								estado = WAIT;
+								estado = BNEClk2;
 							end
 						BLE: begin
 							//Alteradas
@@ -2300,6 +2297,43 @@ always @(posedge clock) begin
 					    EPCWrite = 1'b0;
 					    estado = WAIT;
 					end
+					
+				BNEClk2: begin
+					//Alteradas
+                        if(EQ == 0) begin
+							PCWrite = 1'b1;
+							PCSource = 3'b011;
+						end
+					//Inalteradas
+						WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    MDRCtrl = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+						estado = WAIT;
+					end        
 				ExceptionWait: begin
 					//Alteradas
                         //wait clock
