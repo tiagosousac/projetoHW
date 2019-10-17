@@ -64,7 +64,7 @@ ON
 # case_insensitive
 # source_file
 givencomps|registrador.vhd
-edf855e42ae8db2edc44a0725763e8
+9c2fa77c717e3583f352d6d9d43cb93
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -87,7 +87,7 @@ Registrador:HI
 Registrador:LO
 }
 # lmf
-|home|tiago|downloads|quartus 2|quartus|lmf|maxplus2.lmf
+|users|igors|desktop|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -104,7 +104,7 @@ ON
 # case_insensitive
 # source_file
 givencomps|banco_reg.vhd
-a4a8b123af3dd969b2b25437a1de3b24
+2cadfcaf44a2386f30e8abc1e4fa4f58
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -120,7 +120,7 @@ ON
 Banco_reg:banco_registradores
 }
 # lmf
-|home|tiago|downloads|quartus 2|quartus|lmf|maxplus2.lmf
+|users|igors|desktop|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -137,7 +137,7 @@ ON
 # case_insensitive
 # source_file
 givencomps|regdesloc.vhd
-2c671de8e33e4ad339f935dd38d7e464
+71b6e34bf1c79c645cf497581bd388e
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -153,7 +153,7 @@ ON
 RegDesloc:regdesloc
 }
 # lmf
-|home|tiago|downloads|quartus 2|quartus|lmf|maxplus2.lmf
+|users|igors|desktop|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -170,7 +170,7 @@ ON
 # case_insensitive
 # source_file
 givencomps|memoria.vhd
-cf9b61638e5ca921f9df525ca73dc095
+d0855f6a49415dbe7ff9c716b61a576a
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -186,7 +186,7 @@ ON
 Memoria:memoria
 }
 # lmf
-|home|tiago|downloads|quartus 2|quartus|lmf|maxplus2.lmf
+|users|igors|desktop|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -198,7 +198,7 @@ db|projetoVerilog.(6).cnf
 db|projetoVerilog.(6).cnf
 # case_insensitive
 # source_file
-|home|tiago|downloads|quartus 2|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+|users|igors|desktop|quartus|libraries|megafunctions|lpm_ram_dq.tdf
 8cb8fb4e8f3e90656f489fc92aabb9
 7
 # user_parameter {
@@ -358,7 +358,7 @@ db|projetoVerilog.(7).cnf
 db|projetoVerilog.(7).cnf
 # case_insensitive
 # source_file
-|home|tiago|downloads|quartus 2|quartus|libraries|megafunctions|altram.tdf
+|users|igors|desktop|quartus|libraries|megafunctions|altram.tdf
 c72d5dfba4da3c5a1457d7f3112cd3b
 7
 # user_parameter {
@@ -526,7 +526,7 @@ db|projetoVerilog.(8).cnf
 db|projetoVerilog.(8).cnf
 # case_insensitive
 # source_file
-|home|tiago|downloads|quartus 2|quartus|libraries|megafunctions|altsyncram.tdf
+|users|igors|desktop|quartus|libraries|megafunctions|altsyncram.tdf
 67d9a3902c8a461c1d5750189e124f2
 7
 # user_parameter {
@@ -835,7 +835,7 @@ ON
 # case_insensitive
 # source_file
 givencomps|instr_reg.vhd
-85113dd44a909050d1d734cece687823
+2210c8a335c3f44acebaf05a94bee
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -851,7 +851,7 @@ ON
 Instr_Reg:InstructionRegisters
 }
 # lmf
-|home|tiago|downloads|quartus 2|quartus|lmf|maxplus2.lmf
+|users|igors|desktop|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -868,7 +868,7 @@ ON
 # case_insensitive
 # source_file
 givencomps|ula32.vhd
-339c6cff5c908b2da69a7622f1a2354
+d6bb5bfd211de44547e9b6fe9d17a72
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -884,7 +884,7 @@ ON
 Ula32:Alu
 }
 # lmf
-|home|tiago|downloads|quartus 2|quartus|lmf|maxplus2.lmf
+|users|igors|desktop|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -901,7 +901,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxiord.v
-ade4e061678ff19395b3b933bcb2c0e5
+fd45b8875135d3fe5ee799d6a27cf89
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -959,7 +959,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxregdst.v
-8f20149370df13de8374166cdfaa6a
+dacbbb6623c9ee6cc035d0276584c127
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1017,7 +1017,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxalusrca.v
-8262c047c4725d945e16062fbb81195
+a39230d921e6c01acef62befa59fab75
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1071,7 +1071,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxalusrcb.v
-9910eb2a9b3ba746a78f0977347c48b
+58ea123acb8d4c91836fd204c2b673b
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1118,68 +1118,6 @@ MuxAluSrcB:MuxAluSrcB
 
 # end
 # entity
-MuxPCSource
-# storage
-db|projetoVerilog.(16).cnf
-db|projetoVerilog.(16).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-multiplexadores|muxpcsource.v
-de847d9ae14cb3604542b4e44b2c0b5
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-S0
-0
-PARAMETER_SIGNED_DEC
-DEF
-S1
-1
-PARAMETER_SIGNED_DEC
-DEF
-S2
-2
-PARAMETER_SIGNED_DEC
-DEF
-S3
-3
-PARAMETER_SIGNED_DEC
-DEF
-S4
-4
-PARAMETER_SIGNED_DEC
-DEF
-S5
-5
-PARAMETER_SIGNED_DEC
-DEF
-}
-# hierarchies {
-MuxPCSource:MuxPCSource
-}
-# macro_sequence
-
-# end
-# entity
 MuxExceptionsCtrl
 # storage
 db|projetoVerilog.(17).cnf
@@ -1191,7 +1129,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxexceptionsctrl.v
-41f2712e3e4e78ec7e911d2cb643d
+7967a0af5f8153b6db73b05f3d394947
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1241,7 +1179,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxshiftsrc.v
-25225f375c55d3bf962bccb441d39422
+aa56b45dcb266fe6dbb614346a6cf2
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1276,52 +1214,6 @@ MuxShiftSrc:MuxShiftSrc
 
 # end
 # entity
-MuxShiftAmt
-# storage
-db|projetoVerilog.(20).cnf
-db|projetoVerilog.(20).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-multiplexadores|muxshiftamt.v
-ad7881875acc06663e479f759b11414
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-S0
-0
-PARAMETER_SIGNED_DEC
-DEF
-S1
-1
-PARAMETER_SIGNED_DEC
-DEF
-}
-# hierarchies {
-MuxShiftAmt:MuxShiftAmt
-}
-# macro_sequence
-
-# end
-# entity
 MuxMemToReg
 # storage
 db|projetoVerilog.(21).cnf
@@ -1333,7 +1225,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxmemtoreg.v
-53daaf848cea261890d8596c3e33a257
+7a22f5ef5dc682657f8e72fb9954f85a
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1415,7 +1307,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxhictrl.v
-432c733174e7fc80b0f68a8efe1a2c46
+884899dce6a6939266082cd23305d63
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1461,7 +1353,7 @@ ON
 # case_sensitive
 # source_file
 multiplexadores|muxloctrl.v
-c06372d235d2efbac922758a9547525
+d58c27deeb7213f2184c0f524a737c
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1507,7 +1399,7 @@ ON
 # case_sensitive
 # source_file
 loadsize.v
-bdab1b304654e28bc8ee7b29f92163c4
+8eae6229c4dba3bc641b06b12809fdc
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1557,7 +1449,7 @@ ON
 # case_sensitive
 # source_file
 storesize.v
-67bcc28546dc1db9b4873d124f7353f7
+48af74249f5250ac5faa4eff6fe83c82
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1596,107 +1488,145 @@ StoreSize:SS
 
 # end
 # entity
-altsyncram_g2a1
+MuxPCSource
 # storage
-db|projetoVerilog.(9).cnf
-db|projetoVerilog.(9).cnf
-# case_insensitive
-# source_file
-db|altsyncram_g2a1.tdf
-b4bf82e669e07e9c2c17e794959e6d13
-7
-# used_port {
-wren_a
--1
-3
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-data_a7
--1
-3
-data_a6
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
+db|projetoVerilog.(16).cnf
+db|projetoVerilog.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
 }
-# memory_file {
-instrucoes.mif
-6ee3ada993d86e06c50cf1b2c360d3
+# case_sensitive
+# source_file
+multiplexadores|muxpcsource.v
+edfd731aa90a563e756ab9b3827521
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+S0
+0
+PARAMETER_SIGNED_DEC
+DEF
+S1
+1
+PARAMETER_SIGNED_DEC
+DEF
+S2
+2
+PARAMETER_SIGNED_DEC
+DEF
+S3
+3
+PARAMETER_SIGNED_DEC
+DEF
+S4
+4
+PARAMETER_SIGNED_DEC
+DEF
+S5
+5
+PARAMETER_SIGNED_DEC
+DEF
 }
 # hierarchies {
-Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+MuxPCSource:MuxPCSource
+}
+# macro_sequence
+
+# end
+# entity
+CPU
+# storage
+db|projetoVerilog.(0).cnf
+db|projetoVerilog.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+f558a710c871c6aa6b6c6b517a2f318
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+MuxShiftAmt
+# storage
+db|projetoVerilog.(20).cnf
+db|projetoVerilog.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplexadores|muxshiftamt.v
+7d495623ed6dafc5f4b7578c9bfb6b7b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+S0
+0
+PARAMETER_SIGNED_DEC
+DEF
+S1
+1
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+MuxShiftAmt:MuxShiftAmt
 }
 # macro_sequence
 
@@ -1713,7 +1643,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-93ea541fdd1dc81b181b66a86f0d314
+6a9ba59da73aa993b1ff9dd9d3fa20
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1756,16 +1686,104 @@ ADDIxClk2
 0000101
 PARAMETER_UNSIGNED_BIN
 DEF
-AfterADD_SUB_AND
+ADD_SUB_ANDClk2
 0000110
 PARAMETER_UNSIGNED_BIN
 DEF
-AfterSRA_SRL
+SHIFTOperationClk3
 0000111
 PARAMETER_UNSIGNED_BIN
 DEF
-AfterXchg
+XCHGClk2
 0001000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLMClk2
+0001001
+PARAMETER_UNSIGNED_BIN
+DEF
+BLMClk3
+0001010
+PARAMETER_UNSIGNED_BIN
+DEF
+SLTIClk2
+0001011
+PARAMETER_UNSIGNED_BIN
+DEF
+JALClk2
+0001100
+PARAMETER_UNSIGNED_BIN
+DEF
+SLTClk2
+0001101
+PARAMETER_UNSIGNED_BIN
+DEF
+LBClk2
+0001110
+PARAMETER_UNSIGNED_BIN
+DEF
+LBClk3
+0001111
+PARAMETER_UNSIGNED_BIN
+DEF
+LHClk2
+0010000
+PARAMETER_UNSIGNED_BIN
+DEF
+LHClk3
+0010001
+PARAMETER_UNSIGNED_BIN
+DEF
+LWClk2
+0010010
+PARAMETER_UNSIGNED_BIN
+DEF
+LWClk3
+0010011
+PARAMETER_UNSIGNED_BIN
+DEF
+SBClk2
+0010100
+PARAMETER_UNSIGNED_BIN
+DEF
+SBClk3
+0010101
+PARAMETER_UNSIGNED_BIN
+DEF
+SHClk2
+0010110
+PARAMETER_UNSIGNED_BIN
+DEF
+SHClk3
+0010111
+PARAMETER_UNSIGNED_BIN
+DEF
+SWClk2
+0011000
+PARAMETER_UNSIGNED_BIN
+DEF
+SWClk3
+0011001
+PARAMETER_UNSIGNED_BIN
+DEF
+SLLClk2
+0011010
+PARAMETER_UNSIGNED_BIN
+DEF
+SLLVClk2
+0011011
+PARAMETER_UNSIGNED_BIN
+DEF
+SRLClk2
+0011100
+PARAMETER_UNSIGNED_BIN
+DEF
+SRAClk2
+0011101
+PARAMETER_UNSIGNED_BIN
+DEF
+SRAVClk2
+0011110
 PARAMETER_UNSIGNED_BIN
 DEF
 WAIT
@@ -1920,37 +1938,107 @@ Controle:controle
 
 # end
 # entity
-CPU
+altsyncram_g2a1
 # storage
-db|projetoVerilog.(0).cnf
-db|projetoVerilog.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
+db|projetoVerilog.(9).cnf
+db|projetoVerilog.(9).cnf
+# case_insensitive
 # source_file
-cpu.v
-ea5ecac3ec2be65d7531598a3fedd77c
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
+db|altsyncram_g2a1.tdf
+d8862ea4f7a5427dbb1d3425791064
+7
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+instrucoes.mif
+af2b17e0ef20faa84d54aa246935484
 }
 # hierarchies {
-|
+Memoria:memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 }
 # macro_sequence
 
