@@ -1,10 +1,10 @@
-module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, MultCtrlLOOut, MultCtrlHIOut, counter);
+module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, EQ, MultCtrlLOOut, MultCtrlHIOut, counter);
 
 input clock;
 input reset;
 
 // aqui ficam as variaveis que desejam ser printadas, tambem precisa especificar elas no parenteses apos CPU
-output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, MultCtrlLOOut, MultCtrlHIOut;
+output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, RegDeslocOut, MuxShiftSrcOut, AluResult, MultCtrlLOOut, MultCtrlHIOut;
 output wire [6:0] estado;
 output wire [2:0] AluOp;
 output wire [5:0] Opcode, Funct, counter;
@@ -15,9 +15,10 @@ wire [31:0] SSControlOut, RegWriteOutA, MemData, MuxPCSourceOut, RegAluOutOut, R
 wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, RegWriteOutB, ExceptionBitExtendido;
 wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado;
 wire [15:0] Offset;
+wire [5:0] Opcode, Funct;
 
-
-wire Overflow, Negativo, Zero, EQ, GT, LT; // 1bit da ALU
+wire Overflow, Negativo, Zero, GT, LT; // 1bit da ALU
+output wire EQ;
 
 // flags de controle
 wire WriteCond;
@@ -44,6 +45,7 @@ wire [1:0] LSControl;
 wire [1:0] SSControl;
 wire [1:0] AluSrcA;
 wire [2:0] AluSrcB;
+wire [2:0] AluOp;
 wire [2:0] PCSource;
 wire [2:0] IorD;
 wire [2:0] ShiftCtrl;
