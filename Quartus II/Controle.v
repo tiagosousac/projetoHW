@@ -1,5 +1,6 @@
 module Controle(
 input clock,
+//aksjasdhsajdh
 input reset,
 input wire [5:0] Opcode,
 input wire [5:0] Funct,

@@ -596,8 +596,6 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								//IorD = 3'b000;
-								//Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
@@ -632,8 +630,6 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								//IorD = 3'b000;
-								//Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
