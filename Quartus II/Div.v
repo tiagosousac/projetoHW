@@ -41,7 +41,7 @@ always @(*) begin
 			Contador <= 0;
 			ativado <= 1'b1;
 			//Realiza procedimento inicial do algoritmo
-			//Falta situação onde um deles é negativo
+			//Falta situaï¿½ï¿½o onde um deles ï¿½ negativo
 		end
 		if (ativado == 1'b1 && FromB == 32'd0)
 		begin
@@ -59,15 +59,15 @@ always @(*) begin
 				LOOut<=Remainder[31:0];
 				ativado <= 1'b0;
 				if(FromA[31] != FromB[31])begin
-					HIOut[31] <= 1;//Como ele vai dando shift left, e mudando o bit mais a direita, não sabemos se é negativo
-								  //então temos que mudar ao final.
+					HIOut[31] <= 1;//Como ele vai dando shift left, e mudando o bit mais a direita, nï¿½o sabemos se ï¿½ negativo
+								  //entï¿½o temos que mudar ao final.
 				end
 			end
 			else begin //menor que 33
-				Remainder = Remainder - Divisor;
+				Remainder <= Remainder - Divisor;
 				if(Remainder <0)
 				begin
-				Remainder = Remainder + Divisor;
+				Remainder <= Remainder + Divisor;
 				Quotient <= (Quotient<<1);
 				Quotient[0] = 0;
 				Divisor <= Divisor>>1;
