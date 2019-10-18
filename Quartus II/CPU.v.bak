@@ -52,7 +52,7 @@ assign RegBOutCortado = RegBOut[4:0];
 assign OffsetExtendido = Offset;
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
 assign Funct = Offset [5:0];
-assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0] ,2'b0}
+assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0] ,2'b0};
 
 Registrador A(clock, reset, WriteRegA, RegWriteOutA, RegAOut);
  
