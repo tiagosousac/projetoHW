@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Oct 13 00:46:28 2019
-Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Analysis & Synthesis Status : Successful - Fri Oct 18 10:21:49 2019
+Quartus II 64-Bit Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
 Revision Name : projetoVerilog
 Top-level Entity Name : CPU
 Family : Stratix II
 Logic utilization : N/A
-    Combinational ALUTs : 1,546
-    Dedicated logic registers : 1,240
-Total registers : 1240
+    Combinational ALUTs : 1,938
+    Dedicated logic registers : 1,290
+Total registers : 1290
 Total pins : 184
 Total virtual pins : 0
 Total block memory bits : 8,192
