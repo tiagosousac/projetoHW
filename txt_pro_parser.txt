@@ -3,4 +3,5 @@ sll 10 10 16
 addiu 10 10 32767
 addiu 10 10 32767
 addiu 10 10 1
-addi 10 10 1
+addi 11 11 1
+add 12 11 10
