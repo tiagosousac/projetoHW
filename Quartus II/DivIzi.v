@@ -7,7 +7,7 @@ input wire DivCtrl,
 output reg Div0,
 output reg DivDone,
 output reg[31:0] HIOut,
-output reg[31:0] LOOut,
+output reg[31:0] LOOut
 //output reg signA, //Variavel de testes
 //output reg signB,
 //output reg signed[31:0] AuxA,
