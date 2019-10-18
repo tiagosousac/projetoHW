@@ -1,17 +1,17 @@
-module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, Overflow);
+module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, Overflow, ExceptionBitExtendido);
 
 input clock;
 input reset;
 
 // aqui ficam as variaveis que desejam ser printadas, tambem precisa especificar elas no parenteses apos CPU
-output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult;
+output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, ExceptionBitExtendido;
 output wire [6:0] estado;
 output wire [5:0] Opcode, Funct;
 wire [4:0] Shamt;
 
 // declaracao das variaveis do programa
 wire [31:0] SSControlOut, RegWriteOutA, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MultCtrlLOOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut, RegDeslocOut;
-wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, RegWriteOutB, ExceptionBitExtendido;
+wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, RegWriteOutB;
 wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado;
 wire [15:0] Offset;
 
