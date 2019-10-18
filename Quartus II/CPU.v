@@ -114,6 +114,6 @@ MuxLOCtrl MuxLOCtrl(DivCtrlLOOut, MultCtrlLOOut, LOCtrl, MuxLOCtrlOut);
 
 LoadSize LS(RegMDROut, LSControl, LSControlOut);
 
-StoreSize SS(RegBOut, LSControlOut, SSControl, SSControlOut);
+StoreSize SS(RegBOut, RegMDROut, SSControl, SSControlOut);
 
 endmodule
