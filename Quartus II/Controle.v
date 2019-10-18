@@ -16,6 +16,7 @@ output reg ShiftSrc,
 output reg ShiftAmt,
 output reg DivCtrl,
 input wire DivDone,
+input wire Div0,
 output reg MultCtrl,
 input wire MultDone,
 output reg HICtrl,
@@ -2421,8 +2422,8 @@ always @(posedge clock) begin
 					//Alteradas
                         //wait clock
 					//Inalteradas
-						PCSource = 3'b101;
-					    PCWrite = 1'b1;
+						PCSource = 3'b000;
+					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
 					    IorD = 3'b000;
 					    Wr = 1'b0;

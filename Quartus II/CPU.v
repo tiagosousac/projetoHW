@@ -1,16 +1,16 @@
-module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, MultCtrlLOOut, MultCtrlHIOut, counter, Overflow, ExceptionBitExtendido);
+module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, DivCtrlHIOut, DivCtrlLOOut, counter, Overflow, ExceptionBitExtendido);
 
 input clock;
 input reset;
 
 // aqui ficam as variaveis que desejam ser printadas, tambem precisa especificar elas no parenteses apos CPU
-output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, ExceptionBitExtendido, MultCtrlLOOut, MultCtrlHIOut;
+output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, ExceptionBitExtendido, DivCtrlHIOut, DivCtrlLOOut;
 output wire [6:0] estado;
 output wire [5:0] Opcode, Funct, counter;
 wire [4:0] Shamt;
 
 // declaracao das variaveis do programa
-wire [31:0] SSControlOut, RegWriteOutA, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, DivCtrlLOOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut, RegDeslocOut;
+wire [31:0] SSControlOut, RegWriteOutA, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, MultCtrlLOOut, MultCtrlHIOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut, RegDeslocOut;
 wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, RegWriteOutB;
 wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado;
 wire [15:0] Offset;
@@ -84,7 +84,7 @@ Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDstOut, MuxM
 RegDesloc regdesloc(clock, reset, ShiftCtrl, MuxShiftAmtOut, MuxShiftSrcOut, RegDeslocOut);
  
 Controle controle(clock, reset, Opcode, Funct, WriteCond, PCWrite, RegWrite, Wr, IRWrite, WriteRegA, WriteRegB,
-				  AluOutControl, EPCWrite, ShiftSrc, ShiftAmt, DivCtrl, DivDone, MultCtrl, MultDone, HICtrl, LOCtrl, WriteHI,
+				  AluOutControl, EPCWrite, ShiftSrc, ShiftAmt, DivCtrl, DivDone, Div0, MultCtrl, MultDone, HICtrl, LOCtrl, WriteHI,
 				  WriteLO, MDRCtrl, Overflow, Negativo, Zero, EQ, GT, LT, LSControl, SSControl, ExceptionsCtrl,
 				  AluSrcA, AluSrcB, AluOp, PCSource, IorD, ShiftCtrl, RegDst, MemToReg, estado);
  
@@ -122,6 +122,6 @@ StoreSize SS(RegBOut, LSControlOut, SSControl, SSControlOut);
 
 Mult Mult(RegAOut, RegBOut, clock, reset, MultCtrl, MultDone, counter, MultCtrlHIOut, MultCtrlLOOut);
 
-DivIzi Div(RegAOut, RegBOut, clock, reset, DivCtrl, DivDone, Div0, DivCtrlHIOut, DivCtrlLOOut);
+Div Div(RegAOut, RegBOut, clock, reset, DivCtrl, DivDone, Div0, DivCtrlHIOut, DivCtrlLOOut);
 
 endmodule

@@ -8,8 +8,8 @@ output reg MultDone,
 output reg [5:0] counter,
 output reg[31:0] MultHIOut,
 output reg[31:0] MultLOOut,
-output reg [64:0] AMultiplicandComparePos,
-output reg [64:0] Multiplier
+output reg[64:0] AMultiplicandComparePos,
+output reg[64:0] Multiplier
 );
 
 //64:33 = A
@@ -18,7 +18,7 @@ output reg [64:0] Multiplier
 reg Initialize;
 
 initial begin
-	Initialize <= 1'b1;
+	Initialize = 1'b1;
 end
 
 always @ (posedge clock) begin
