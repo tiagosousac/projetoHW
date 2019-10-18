@@ -33,7 +33,6 @@ wire ShiftSrc;
 wire ShiftAmt;
 wire DivCtrl;
 wire MultCtrl;
-wire Initialize;
 wire MultDone;
 wire HICtrl;
 wire LOCtrl;
@@ -83,7 +82,7 @@ Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDstOut, MuxM
 RegDesloc regdesloc(clock, reset, ShiftCtrl, MuxShiftAmtOut, MuxShiftSrcOut, RegDeslocOut);
  
 Controle controle(clock, reset, Opcode, Funct, WriteCond, PCWrite, RegWrite, Wr, IRWrite, WriteRegA, WriteRegB,
-				  AluOutControl, EPCWrite, ShiftSrc, ShiftAmt, DivCtrl, MultCtrl, Initialize, MultDone, HICtrl, LOCtrl, WriteHI,
+				  AluOutControl, EPCWrite, ShiftSrc, ShiftAmt, DivCtrl, MultCtrl, MultDone, HICtrl, LOCtrl, WriteHI,
 				  WriteLO, MDRCtrl, Overflow, Negativo, Zero, EQ, GT, LT, LSControl, SSControl, ExceptionsCtrl,
 				  AluSrcA, AluSrcB, AluOp, PCSource, IorD, ShiftCtrl, RegDst, MemToReg, estado);
  
@@ -119,6 +118,6 @@ LoadSize LS(RegMDROut, LSControl, LSControlOut);
 
 StoreSize SS(RegBOut, LSControlOut, SSControl, SSControlOut);
 
-Mult Mult(RegAOut, RegBOut, clock, reset, MultCtrl, Initialize, MultDone, counter, MultCtrlHIOut, MultCtrlLOOut);
+Mult Mult(RegAOut, RegBOut, clock, reset, MultCtrl, MultDone, counter, MultCtrlHIOut, MultCtrlLOOut);
 
 endmodule

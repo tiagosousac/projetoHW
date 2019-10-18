@@ -16,7 +16,6 @@ output reg ShiftSrc,
 output reg ShiftAmt,
 output reg DivCtrl,
 output reg MultCtrl,
-output reg Initialize,
 input wire MultDone,
 output reg HICtrl,
 output reg LOCtrl,
@@ -1027,7 +1026,6 @@ always @(posedge clock) begin
 								MULT: begin
 									//Alteradas
 										MultCtrl = 1'b1;
-										Initialize = 1'b1;
 									//Inalteradas        
 										PCSource = 3'b000;
 										PCWrite = 1'b0;
@@ -2406,7 +2404,6 @@ always @(posedge clock) begin
 					end
 				MULTClk2: begin
 					//Alteradas
-						Initialize = 1'b0;
 						if(MultDone == 1'b0) begin
 							estado = MULTClk2;
 						end
