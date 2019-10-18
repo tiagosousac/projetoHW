@@ -7,13 +7,17 @@ input wire DivCtrl,
 output reg Div0,
 output reg DivDone,
 output reg[31:0] HIOut,
-output reg[31:0] LOOut
+output reg[31:0] LOOut,
+//output reg signA, //Variavel de testes
+//output reg signB,
+//output reg signed[31:0] AuxA,
+//output reg signed[31:0] AuxB
 );
-reg signed[31:0] AuxA;
-reg signed[31:0] AuxB;
 reg ativado;
 reg signA;
 reg signB;
+reg signed[31:0] AuxA;
+reg signed[31:0] AuxB;
 reg signed[31:0] Contador;
 
 initial begin//setar variaveis
@@ -39,15 +43,15 @@ always @(posedge Clock) begin
 			Div0 <= 1'b0;
 			DivDone <= 0;
 			if(FromA[31] == 1) begin//Se for negativo, guarda informação e faz complemento 2
-				signA <= 1;
-				AuxA <= (!FromA) +1;
+				signA <= 1'b1;
+				AuxA <= (~FromA) +1;
 			end
 			else begin
 				AuxA <= FromA;//Se não, pega o valor na tora
 			end
 			if(FromB[31] == 1)begin//Realiza mesmo processo com B
-				signB <= 1;
-				AuxB <= (!FromB) +1;
+				signB <= 1'b1;
+				AuxB <= (~FromB) +1;
 			end
 			else begin
 				AuxB <= FromB;
@@ -66,23 +70,30 @@ always @(posedge Clock) begin
 			//-7  3|-2 -1
 			//-7 -3| 2 -1
 			//Estes Ifs seguem este padrão
-				if(signA)begin
+				if(signA == 1'b1)begin
 					//Transforma negativo
-					AuxA <= (!AuxA) +1;
+					LOOut <= (~AuxA) +1;
 				end
-				if(signB == 1 && signA == 1)begin
+				else begin
+					LOOut <= (AuxA);
+				end
+				if(signB == 1'b1 && signA == 1'b1)begin
 					//Transforma negativo, se A tiver sido negativo
 					//vai colocar de volta para positivo
+					HIOut <= Contador;
 				end
-				else if(signA)begin
-					Contador <= (!Contador) + 1;//Transforma negativo
+				else if(signA == 1'b1)begin
+					//Transforma negativo
+					HIOut <= (~Contador) + 1;
 				end
-				else if(signB)begin
-					Contador <= (!Contador) + 1;//Transforma negativo
+				else if(signB == 1'b1)begin
+					//Transforma negativo
+					HIOut <= (~Contador) + 1;
 				end
-				ativado = 1'b0;
-				HIOut <= Contador;
-				LOOut <= AuxA;
+				else begin
+					HIOut <= Contador;
+				end
+				ativado = 1'b1;
 				DivDone <= 1'b1;//Informa que o Div foi finalizado
 			end
 			else begin
