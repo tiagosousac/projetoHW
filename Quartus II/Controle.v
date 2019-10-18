@@ -16,6 +16,8 @@ output reg ShiftSrc,
 output reg ShiftAmt,
 output reg DivCtrl,
 output reg MultCtrl,
+output reg Initialize,
+input wire MultDone,
 output reg HICtrl,
 output reg LOCtrl,
 output reg WriteHI,
@@ -74,6 +76,7 @@ parameter SRAClk2 = 7'b0011101;
 parameter SRAVClk2 = 7'b0011110;
 parameter ExceptionByteToPc = 7'b0011111;
 parameter ExceptionWait = 7'b0100000;
+parameter MULTClk2 = 7'b1000000;
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -556,7 +559,6 @@ always @(posedge clock) begin
 							end
 						LW: begin
 							//Alteradas
-								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
 								AluOp = 3'b001;
@@ -1023,6 +1025,39 @@ always @(posedge clock) begin
 								DIV: begin
 									end
 								MULT: begin
+									//Alteradas
+										MultCtrl = 1'b1;
+										Initialize = 1'b1;
+									//Inalteradas        
+										PCSource = 3'b000;
+										PCWrite = 1'b0;
+										WriteCond = 1'b0;
+										IorD = 3'b000;
+										Wr = 1'b0;
+										IRWrite = 1'b0;
+										WriteRegA = 1'b0;
+										WriteRegB = 1'b0;
+										AluSrcA = 2'b00;
+										AluSrcB = 3'b000;
+										AluOp = 3'b000;
+										AluOutControl = 1'b0;
+										RegDst = 3'b000;
+										MemToReg = 4'b0000;
+										RegWrite = 1'b0;
+										MDRCtrl = 1'b0;
+										LSControl = 2'b00;
+										SSControl = 2'b00;
+										ExceptionCtrl = 2'b00;
+										WriteHI = 1'b0;
+										WriteLO = 1'b0;
+										HICtrl = 1'b0;
+										LOCtrl = 1'b0;
+										DivCtrl = 1'b0;
+										ShiftSrc = 1'b0;
+										ShiftAmt = 1'b0;
+										ShiftCtrl = 3'b000;
+										EPCWrite = 1'b0;
+										estado = MULTClk2;
 									end
 								MFHI: begin
 									//Alteradas
@@ -2369,7 +2404,21 @@ always @(posedge clock) begin
 					    EPCWrite = 1'b0;
 					    estado = FETCH;
 					end
-					
+				MULTClk2: begin
+					//Alteradas
+						Initialize = 1'b0;
+						if(MultDone == 1'b0) begin
+							estado = MULTClk2;
+						end
+					    else begin
+							MultCtrl = 1'b0;
+							WriteHI = 1'b1;
+							WriteLO = 1'b1;
+							HICtrl = 1'b1;
+							LOCtrl = 1'b1;
+							estado = WAIT;
+						end
+					end
 					
 					
 				WAIT: begin

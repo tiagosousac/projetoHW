@@ -1,17 +1,17 @@
-module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst);
+module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, MultCtrlLOOut, MultCtrlHIOut, counter);
 
 input clock;
 input reset;
 
 // aqui ficam as variaveis que desejam ser printadas, tambem precisa especificar elas no parenteses apos CPU
-output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult;
+output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, MultCtrlLOOut, MultCtrlHIOut;
 output wire [6:0] estado;
 output wire [2:0] AluOp;
-output wire [5:0] Opcode, Funct;
+output wire [5:0] Opcode, Funct, counter;
 wire [4:0] Shamt;
 
 // declaracao das variaveis do programa
-wire [31:0] SSControlOut, RegWriteOutA, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MultCtrlLOOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut, RegDeslocOut;
+wire [31:0] SSControlOut, RegWriteOutA, MemData, MuxPCSourceOut, RegAluOutOut, RegEPCOut,  RegMDROut, MuxIorDOut, LSControlOut, DivCtrlHIOut, MuxExceptionsCtrlOut, MuxShiftSrcOut, MuxShiftAmtOut, RegDeslocOut;
 wire [31:0] MuxHICtrlOut, RegHIOut, MuxLOCtrlOut, RegLOOut, MuxAluSrcAOut, MuxAluSrcBOut, OffsetExtendidoLeft2, OffsetExtendido, LTExtendido, OffsetExtendidoLeft16, JumpAddress, RegWriteOutB, ExceptionBitExtendido;
 wire [4:0] RS, RT, RD, MuxRegDstOut, RegBOutCortado;
 wire [15:0] Offset;
@@ -33,6 +33,8 @@ wire ShiftSrc;
 wire ShiftAmt;
 wire DivCtrl;
 wire MultCtrl;
+wire Initialize;
+wire MultDone;
 wire HICtrl;
 wire LOCtrl;
 wire WriteHI;
@@ -52,6 +54,7 @@ wire [3:0] MemToReg;
 assign RegBOutCortado = RegBOut[4:0];
 assign OffsetExtendido = Offset;
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
+assign OffsetExtendidoLeft16 = OffsetExtendido << 16;
 assign Funct = Offset[5:0];
 assign Shamt = Offset[10:6];
 assign RD = Offset[15:11];
@@ -80,7 +83,7 @@ Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDstOut, MuxM
 RegDesloc regdesloc(clock, reset, ShiftCtrl, MuxShiftAmtOut, MuxShiftSrcOut, RegDeslocOut);
  
 Controle controle(clock, reset, Opcode, Funct, WriteCond, PCWrite, RegWrite, Wr, IRWrite, WriteRegA, WriteRegB,
-				  AluOutControl, EPCWrite, ShiftSrc, ShiftAmt, DivCtrl, MultCtrl, HICtrl, LOCtrl, WriteHI,
+				  AluOutControl, EPCWrite, ShiftSrc, ShiftAmt, DivCtrl, MultCtrl, Initialize, MultDone, HICtrl, LOCtrl, WriteHI,
 				  WriteLO, MDRCtrl, Overflow, Negativo, Zero, EQ, GT, LT, LSControl, SSControl, ExceptionsCtrl,
 				  AluSrcA, AluSrcB, AluOp, PCSource, IorD, ShiftCtrl, RegDst, MemToReg, estado);
  
@@ -115,5 +118,7 @@ MuxLOCtrl MuxLOCtrl(DivCtrlLOOut, MultCtrlLOOut, LOCtrl, MuxLOCtrlOut);
 LoadSize LS(RegMDROut, LSControl, LSControlOut);
 
 StoreSize SS(RegBOut, LSControlOut, SSControl, SSControlOut);
+
+Mult Mult(RegAOut, RegBOut, clock, reset, MultCtrl, Initialize, MultDone, counter, MultCtrlHIOut, MultCtrlLOOut);
 
 endmodule
