@@ -1,5 +1,6 @@
 module Controle(
 input clock,
+//aksjasdhsajdh
 input reset,
 input wire [5:0] Opcode,
 input wire [5:0] Funct,
@@ -550,7 +551,7 @@ always @(posedge clock) begin
 							end
 						LW: begin
 							//Alteradas
-								IorD = 3'b011;
+								IorD = 3'b010;
 								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
@@ -586,7 +587,7 @@ always @(posedge clock) begin
 							end
 						LH: begin
 							//Alteradas
-								IorD = 3'b011;
+								IorD = 3'b010;
 								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
@@ -620,7 +621,7 @@ always @(posedge clock) begin
 							end
 						LB: begin
 							//Alteradas
-								IorD = 3'b011;
+								IorD = 3'b010;
 								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
@@ -1551,12 +1552,11 @@ always @(posedge clock) begin
 					end
 				BLMClk2: begin
 					//Alteradas
-                        //Wait Clock
+					    IorD = 3'b100;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -1586,11 +1586,8 @@ always @(posedge clock) begin
 					end
 				BLMClk3: begin
 					//Alteradas
-						PCSource = 3'b011;
-						AluSrcA = 2'b11;
-					    AluSrcB = 3'b000;
-					    AluOp = 3'b111;
 					//Inalteradas
+						PCSource = 3'b000;
 						PCWrite = 1'b0;
 					    WriteCond = 1'b0;
 					    IorD = 3'b000;
@@ -1598,6 +1595,9 @@ always @(posedge clock) begin
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
+						AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
 					    AluOutControl = 1'b0;
 					    RegDst = 3'b000;
 					    MemToReg = 4'b0000;
@@ -1758,11 +1758,11 @@ always @(posedge clock) begin
 					end
 				LWClk2: begin
 					//Alteradas
+						IorD = 3'b011;
 					//Inalteradas        
 						PCSource = 3'b000;
 						PCWrite = 1'b0;
 						WriteCond = 1'b0;
-						IorD = 3'b000;
 						Wr = 1'b0;
 						IRWrite = 1'b0;
 						WriteRegA = 1'b0;
@@ -1792,12 +1792,12 @@ always @(posedge clock) begin
 					end
 				LWClk3: begin
 					//Alteradas
+					    IorD = 3'b011;
                         MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -1860,11 +1860,11 @@ always @(posedge clock) begin
 					end
 				LHClk2: begin
 					//Alteradas
+						IorD = 3'b011;
 					//Inalteradas        
 						PCSource = 3'b000;
 						PCWrite = 1'b0;
 						WriteCond = 1'b0;
-						IorD = 3'b000;
 						Wr = 1'b0;
 						IRWrite = 1'b0;
 						WriteRegA = 1'b0;
@@ -1894,12 +1894,12 @@ always @(posedge clock) begin
 					end
 				LHClk3: begin
 					//Alteradas
+						IorD = 3'b011;
                         MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -1962,11 +1962,11 @@ always @(posedge clock) begin
 					end
 				LBClk2: begin
 					//Alteradas
+						IorD = 3'b011;
 					//Inalteradas        
 						PCSource = 3'b000;
 						PCWrite = 1'b0;
 						WriteCond = 1'b0;
-						IorD = 3'b000;
 						Wr = 1'b0;
 						IRWrite = 1'b0;
 						WriteRegA = 1'b0;
@@ -1996,12 +1996,12 @@ always @(posedge clock) begin
 					end
 				LBClk3: begin
 					//Alteradas
+						IorD = 3'b011;
                         MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -2065,11 +2065,11 @@ always @(posedge clock) begin
 					
 				SWClk2: begin
 					//Alteradas
+						IorD = 3'b011;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -2099,12 +2099,12 @@ always @(posedge clock) begin
 					end
 				SWClk3: begin
 					//Alteradas
+						IorD = 3'b011;
                         MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -2167,11 +2167,11 @@ always @(posedge clock) begin
 					end
 				SHClk2: begin
 					//Alteradas
+						IorD = 3'b011;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -2201,12 +2201,12 @@ always @(posedge clock) begin
 					end
 				SHClk3: begin
 					//Alteradas
+						IorD = 3'b011;
                         MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -2270,11 +2270,11 @@ always @(posedge clock) begin
 					
 				SBClk2: begin
 					//Alteradas
+						IorD = 3'b011;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -2304,12 +2304,12 @@ always @(posedge clock) begin
 					end
 				SBClk3: begin
 					//Alteradas
+						IorD = 3'b011;
                         MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
