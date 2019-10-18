@@ -74,13 +74,13 @@ parameter BGTClk2 = 7'b0011011;
 parameter BLEClk2 = 7'b0011100;
 parameter BLMClk4 = 7'b0011101;
 parameter SWClk4 = 7'b0011110;
-parameter SWClk5 = 7'b0011111;
+parameter LHClk4 = 7'b0011111;
 parameter LWClk4 = 7'b0100000;
-parameter LWClk5 = 7'b0100001;
+parameter LBClk4 = 7'b0100001;
 parameter SHClk4 = 7'b0100010;
-parameter SHClk5 = 7'b0100011;
+//parameter SHClk5 = 7'b0100011;
 parameter SBClk4 = 7'b0100100;
-parameter SBClk5 = 7'b0100101;
+//parameter SBClk5 = 7'b0100101;
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -550,8 +550,8 @@ always @(posedge clock) begin
 							end
 						LW: begin
 							//Alteradas
-								//IorD = 3'b011;
-								//Wr = 1'b0;
+								IorD = 3'b011;
+								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
@@ -560,8 +560,8 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								IorD = 3'b000;
-								Wr = 1'b0;
+								//IorD = 3'b000;
+								//Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
@@ -586,6 +586,8 @@ always @(posedge clock) begin
 							end
 						LH: begin
 							//Alteradas
+								IorD = 3'b011;
+								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
@@ -594,8 +596,6 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								IorD = 3'b000;
-								Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
@@ -620,6 +620,8 @@ always @(posedge clock) begin
 							end
 						LB: begin
 							//Alteradas
+								IorD = 3'b011;
+								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
@@ -628,8 +630,6 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								IorD = 3'b000;
-								Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
@@ -654,8 +654,8 @@ always @(posedge clock) begin
 							end
 						SW: begin
 							//Alteradas
-								//IorD = 3'b011;
-								//Wr = 1'b0;
+								IorD = 3'b010;
+								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
@@ -664,8 +664,6 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								IorD = 3'b000;
-								Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
@@ -690,6 +688,8 @@ always @(posedge clock) begin
 							end
 						SH: begin
 							//Alteradas
+								IorD = 3'b010;
+								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
@@ -698,8 +698,6 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								IorD = 3'b000;
-								Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
@@ -724,6 +722,8 @@ always @(posedge clock) begin
 							end
 						SB: begin
 							//Alteradas
+								IorD = 3'b010;
+								Wr = 1'b0;
 								AluOutControl = 1'b1;
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b010;
@@ -732,8 +732,6 @@ always @(posedge clock) begin
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
-								IorD = 3'b000;
-								Wr = 1'b0;
 								IRWrite = 1'b0;
 								WriteRegA = 1'b0;
 								WriteRegB = 1'b0;
@@ -1760,12 +1758,12 @@ always @(posedge clock) begin
 					end
 				LWClk2: begin
 					//Alteradas
-						IorD = 3'b011;
-						Wr = 1'b0;
 					//Inalteradas        
 						PCSource = 3'b000;
 						PCWrite = 1'b0;
 						WriteCond = 1'b0;
+						IorD = 3'b000;
+						Wr = 1'b0;
 						IRWrite = 1'b0;
 						WriteRegA = 1'b0;
 						WriteRegB = 1'b0;
@@ -1794,6 +1792,7 @@ always @(posedge clock) begin
 					end
 				LWClk3: begin
 					//Alteradas
+                        MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -1807,7 +1806,6 @@ always @(posedge clock) begin
 					    AluSrcB = 3'b000;
 					    AluOp = 3'b000;
 					    AluOutControl = 1'b0;
-                        MDRCtrl = 1'b0;
 					    RegDst = 3'b000;
 					    MemToReg = 4'b0000;
 					    RegWrite = 1'b0;
@@ -1827,40 +1825,6 @@ always @(posedge clock) begin
 					    estado = LWClk4;
 					end
 				LWClk4: begin
-					//Alteradas
-						MDRCtrl = 1'b1;
-					//Inalteradas        
-						PCSource = 3'b000;
-						PCWrite = 1'b0;
-						WriteCond = 1'b0;
-						IorD = 3'b000;
-						Wr = 1'b0;
-						IRWrite = 1'b0;
-						WriteRegA = 1'b0;
-						WriteRegB = 1'b0;
-						AluSrcA = 2'b00;
-						AluSrcB = 3'b000;
-						AluOp = 3'b000;
-						AluOutControl = 1'b0;
-	                    RegDst = 3'b000;
-						MemToReg = 4'b0000;
-						RegWrite = 1'b0;
-						LSControl = 2'b00;
-						SSControl = 2'b00;
-						ExceptionCtrl = 2'b00;
-						WriteHI = 1'b0;
-						WriteLO = 1'b0;
-						HICtrl = 1'b0;
-						LOCtrl = 1'b0;
-						DivCtrl = 1'b0;
-						MultCtrl = 1'b0;
-						ShiftSrc = 1'b0;
-						ShiftAmt = 1'b0;
-						ShiftCtrl = 3'b000;
-						EPCWrite = 1'b0;
-						estado = LWClk5;
-					end
-				LWClk5: begin
 					//Alteradas
 	                    RegDst = 3'b001;
 						MemToReg = 4'b0001;
@@ -1896,8 +1860,6 @@ always @(posedge clock) begin
 					end
 				LHClk2: begin
 					//Alteradas
-						//Wait clock
-						MDRCtrl = 1'b1;
 					//Inalteradas        
 						PCSource = 3'b000;
 						PCWrite = 1'b0;
@@ -1911,6 +1873,7 @@ always @(posedge clock) begin
 						AluSrcB = 3'b000;
 						AluOp = 3'b000;
 						AluOutControl = 1'b0;
+						MDRCtrl = 1'b0;
 						RegDst = 3'b000;
 						MemToReg = 4'b0000;
 						RegWrite = 1'b0;
@@ -1930,6 +1893,40 @@ always @(posedge clock) begin
 						estado = LHClk3;
 					end
 				LHClk3: begin
+					//Alteradas
+                        MDRCtrl = 1'b1;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = LHClk4;
+					end
+				LHClk4: begin
 					//Alteradas
 	                    RegDst = 3'b001;
 						MemToReg = 4'b0001;
@@ -1965,8 +1962,6 @@ always @(posedge clock) begin
 					end
 				LBClk2: begin
 					//Alteradas
-						//Wait clock
-						MDRCtrl = 1'b1;
 					//Inalteradas        
 						PCSource = 3'b000;
 						PCWrite = 1'b0;
@@ -1980,6 +1975,7 @@ always @(posedge clock) begin
 						AluSrcB = 3'b000;
 						AluOp = 3'b000;
 						AluOutControl = 1'b0;
+						MDRCtrl = 1'b0;
 						RegDst = 3'b000;
 						MemToReg = 4'b0000;
 						RegWrite = 1'b0;
@@ -1999,6 +1995,40 @@ always @(posedge clock) begin
 						estado = LBClk3;
 					end
 				LBClk3: begin
+					//Alteradas
+                        MDRCtrl = 1'b1;
+					//Inalteradas        
+					    PCSource = 3'b000;
+					    PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = LBClk4;
+					end
+				LBClk4: begin
 					//Alteradas
 	                    RegDst = 3'b001;
 						MemToReg = 4'b0001;
@@ -2035,12 +2065,12 @@ always @(posedge clock) begin
 					
 				SWClk2: begin
 					//Alteradas
-					    IorD = 3'b011;
-					    Wr = 1'b0;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
@@ -2069,6 +2099,7 @@ always @(posedge clock) begin
 					end
 				SWClk3: begin
 					//Alteradas
+                        MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -2082,7 +2113,6 @@ always @(posedge clock) begin
 					    AluSrcB = 3'b000;
 					    AluOp = 3'b000;
 					    AluOutControl = 1'b0;
-                        MDRCtrl = 1'b0;
 					    RegDst = 3'b000;
 					    MemToReg = 4'b0000;
 					    RegWrite = 1'b0;
@@ -2102,40 +2132,6 @@ always @(posedge clock) begin
 					    estado = SWClk4;
 					end
 				SWClk4: begin
-					//Alteradas
-					    MDRCtrl = 1'b1;
-					//Inalteradas        
-					    PCSource = 3'b000;
-					    PCWrite = 1'b0;
-					    WriteCond = 1'b0;
-					    IorD = 3'b000;
-                        Wr = 1'b0;
-					    IRWrite = 1'b0;
-					    WriteRegA = 1'b0;
-					    WriteRegB = 1'b0;
-					    AluSrcA = 2'b00;
-					    AluSrcB = 3'b000;
-					    AluOp = 3'b000;
-					    AluOutControl = 1'b0;
-					    RegDst = 3'b000;
-					    MemToReg = 4'b0000;
-					    RegWrite = 1'b0;
-					    LSControl = 2'b00;
-                        SSControl = 2'b00;
-					    ExceptionCtrl = 2'b00;
-					    WriteHI = 1'b0;
-					    WriteLO = 1'b0;
-					    HICtrl = 1'b0;
-					    LOCtrl = 1'b0;
-					    DivCtrl = 1'b0;
-					    MultCtrl = 1'b0;
-					    ShiftSrc = 1'b0;
-					    ShiftAmt = 1'b0;
-					    ShiftCtrl = 3'b000;
-					    EPCWrite = 1'b0;
-					    estado = SWClk5;
-					end
-				SWClk5: begin
 					//Alteradas
 					    IorD = 3'b011;
 					    Wr = 1'b1;
@@ -2171,12 +2167,12 @@ always @(posedge clock) begin
 					end
 				SHClk2: begin
 					//Alteradas
-					    IorD = 3'b011;
-					    Wr = 1'b0;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
@@ -2205,6 +2201,7 @@ always @(posedge clock) begin
 					end
 				SHClk3: begin
 					//Alteradas
+                        MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -2218,7 +2215,6 @@ always @(posedge clock) begin
 					    AluSrcB = 3'b000;
 					    AluOp = 3'b000;
 					    AluOutControl = 1'b0;
-                        MDRCtrl = 1'b0;
 					    RegDst = 3'b000;
 					    MemToReg = 4'b0000;
 					    RegWrite = 1'b0;
@@ -2238,40 +2234,6 @@ always @(posedge clock) begin
 					    estado = SHClk4;
 					end
 				SHClk4: begin
-					//Alteradas
-					    MDRCtrl = 1'b1;
-					//Inalteradas        
-					    PCSource = 3'b000;
-					    PCWrite = 1'b0;
-					    WriteCond = 1'b0;
-					    IorD = 3'b000;
-                        Wr = 1'b0;
-					    IRWrite = 1'b0;
-					    WriteRegA = 1'b0;
-					    WriteRegB = 1'b0;
-					    AluSrcA = 2'b00;
-					    AluSrcB = 3'b000;
-					    AluOp = 3'b000;
-					    AluOutControl = 1'b0;
-					    RegDst = 3'b000;
-					    MemToReg = 4'b0000;
-					    RegWrite = 1'b0;
-					    LSControl = 2'b00;
-                        SSControl = 2'b00;
-					    ExceptionCtrl = 2'b00;
-					    WriteHI = 1'b0;
-					    WriteLO = 1'b0;
-					    HICtrl = 1'b0;
-					    LOCtrl = 1'b0;
-					    DivCtrl = 1'b0;
-					    MultCtrl = 1'b0;
-					    ShiftSrc = 1'b0;
-					    ShiftAmt = 1'b0;
-					    ShiftCtrl = 3'b000;
-					    EPCWrite = 1'b0;
-					    estado = SHClk5;
-					end
-				SHClk5: begin
 					//Alteradas
 					    IorD = 3'b011;
 					    Wr = 1'b1;
@@ -2308,12 +2270,12 @@ always @(posedge clock) begin
 					
 				SBClk2: begin
 					//Alteradas
-					    IorD = 3'b011;
-					    Wr = 1'b0;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
@@ -2342,6 +2304,7 @@ always @(posedge clock) begin
 					end
 				SBClk3: begin
 					//Alteradas
+                        MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
@@ -2355,7 +2318,6 @@ always @(posedge clock) begin
 					    AluSrcB = 3'b000;
 					    AluOp = 3'b000;
 					    AluOutControl = 1'b0;
-                        MDRCtrl = 1'b0;
 					    RegDst = 3'b000;
 					    MemToReg = 4'b0000;
 					    RegWrite = 1'b0;
@@ -2375,40 +2337,6 @@ always @(posedge clock) begin
 					    estado = SBClk4;
 					end
 				SBClk4: begin
-					//Alteradas
-					    MDRCtrl = 1'b1;
-					//Inalteradas        
-					    PCSource = 3'b000;
-					    PCWrite = 1'b0;
-					    WriteCond = 1'b0;
-					    IorD = 3'b000;
-                        Wr = 1'b0;
-					    IRWrite = 1'b0;
-					    WriteRegA = 1'b0;
-					    WriteRegB = 1'b0;
-					    AluSrcA = 2'b00;
-					    AluSrcB = 3'b000;
-					    AluOp = 3'b000;
-					    AluOutControl = 1'b0;
-					    RegDst = 3'b000;
-					    MemToReg = 4'b0000;
-					    RegWrite = 1'b0;
-					    LSControl = 2'b00;
-                        SSControl = 2'b00;
-					    ExceptionCtrl = 2'b00;
-					    WriteHI = 1'b0;
-					    WriteLO = 1'b0;
-					    HICtrl = 1'b0;
-					    LOCtrl = 1'b0;
-					    DivCtrl = 1'b0;
-					    MultCtrl = 1'b0;
-					    ShiftSrc = 1'b0;
-					    ShiftAmt = 1'b0;
-					    ShiftCtrl = 3'b000;
-					    EPCWrite = 1'b0;
-					    estado = SBClk5;
-					end
-				SBClk5: begin
 					//Alteradas
 					    IorD = 3'b011;
 					    Wr = 1'b1;
