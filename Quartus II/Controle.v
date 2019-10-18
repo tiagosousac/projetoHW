@@ -2543,7 +2543,7 @@ always @(posedge clock) begin
 					ShiftCtrl = 3'b000;
 					EPCWrite = 1'b0;
 					estado = WAIT;
-					
+					end
 				BNEClk2: begin
 					//Alteradas
                         if(EQ == 0) begin
