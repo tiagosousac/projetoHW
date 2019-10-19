@@ -59,7 +59,8 @@ always @(posedge clock) begin
 			end
 			
 			if(AuxB == 32'b0) begin
-				Div0 = 1'b1;//Coloca o maior valor poss�vel, facilitar debug, e foi o mais logico da Div0
+				Div0 = 1'b1;//Coloca o maior valor possivel, facilitar debug, e foi o mais logico da Div0
+				DivDone = 1'b1;
 				DivHIOut = 32'b01111111111111111111111111111111;
 				DivLOOut = 32'b01111111111111111111111111111111;
 			end

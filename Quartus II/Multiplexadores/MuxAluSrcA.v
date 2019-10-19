@@ -2,7 +2,7 @@ module MuxAluSrcA (
 input wire[31:0] RegPCOut,
 input wire[31:0] RegBOut,
 input wire[31:0] RegAOut,
-input wire[31:0] MemData,
+input wire[31:0] RegMDROut,
 input wire[1:0] AluSrcA,
 output reg[31:0] MuxAluSrcAOut
 );
@@ -16,7 +16,7 @@ always @(*) begin
 		S2:
 			MuxAluSrcAOut <= RegAOut;
 		S3:
-			MuxAluSrcAOut <= MemData;
+			MuxAluSrcAOut <= RegMDROut;
 	endcase
 end
 

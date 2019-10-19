@@ -1827,11 +1827,13 @@ always @(posedge clock) begin
 					end
 				BLMClk2: begin
 					//Alteradas
-					    IorD = 3'b100;
+					    //wait clock
+					    MDRCtrl = 1'b1;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
+					    IorD = 3'b000;
 					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
@@ -1839,6 +1841,39 @@ always @(posedge clock) begin
 					    AluSrcA = 2'b00;
 					    AluSrcB = 3'b000;
 					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = BLMClk3;
+					end
+				BLMClk3: begin
+					//Alteradas
+					    AluSrcA = 2'b11;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b111;
+					//Inalteradas
+						PCSource = 3'b000;
+						PCWrite = 1'b0;
+					    WriteCond = 1'b0;
+					    IorD = 3'b000;
+					    Wr = 1'b0;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
 					    AluOutControl = 1'b0;
 					    RegDst = 3'b000;
 					    MemToReg = 4'b0000;
@@ -1857,50 +1892,13 @@ always @(posedge clock) begin
 					    ShiftAmt = 1'b0;
 					    ShiftCtrl = 3'b000;
 					    EPCWrite = 1'b0;
-					    estado = BLMClk3;
-					end
-				BLMClk3: begin
-					//Alteradas
-					    IorD = 3'b100;
-					    MDRCtrl = 1'b1;
-					//Inalteradas
-						PCSource = 3'b000;
-						PCWrite = 1'b0;
-					    WriteCond = 1'b0;
-					    Wr = 1'b0;
-					    IRWrite = 1'b0;
-					    WriteRegA = 1'b0;
-					    WriteRegB = 1'b0;
-						AluSrcA = 2'b00;
-					    AluSrcB = 3'b000;
-					    AluOp = 3'b000;
-					    AluOutControl = 1'b0;
-					    RegDst = 3'b000;
-					    MemToReg = 4'b0000;
-					    RegWrite = 1'b0;
-					    LSControl = 2'b00;
-					    SSControl = 2'b00;
-					    ExceptionCtrl = 2'b00;
-					    WriteHI = 1'b0;
-					    WriteLO = 1'b0;
-					    HICtrl = 1'b0;
-					    LOCtrl = 1'b0;
-					    DivCtrl = 1'b0;
-					    MultCtrl = 1'b0;
-					    ShiftSrc = 1'b0;
-					    ShiftAmt = 1'b0;
-					    ShiftCtrl = 3'b000;
-					    EPCWrite = 1'b0;
 					    estado = BLMClk4;
 					end
 				BLMClk4: begin
 					//Alteradas
-						PCSource = 3'b011;
-						AluSrcA = 2'b11;
-					    AluSrcB = 3'b000;
-					    AluOp = 3'b111;
 					    if(LT == 1) begin
 							PCWrite = 1'b1;
+							PCSource = 3'b011;
 						end
 					//Inalteradas
 					    WriteCond = 1'b0;
@@ -1909,6 +1907,9 @@ always @(posedge clock) begin
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
 					    AluOutControl = 1'b0;
 					    RegDst = 3'b000;
 					    MemToReg = 4'b0000;
@@ -2856,25 +2857,29 @@ always @(posedge clock) begin
 					end
 				DIVClk2: begin
 					//Alteradas
-						if(Div0 == 1'b1) begin
-							ExceptionCtrl = 2'b10;
-							IorD = 2'b01;
-							AluSrcA = 2'b00;
-							AluSrcB = 3'b001;
-							AluOp = 3'b010;
-							EPCWrite = 1'b1;
-							estado = ExceptionWait;
-						end
 						if(DivDone == 1'b0) begin
 							estado = DIVClk2;
 						end
 					    else begin
-							DivCtrl = 1'b0;
-							WriteHI = 1'b1;
-							WriteLO = 1'b1;
-							HICtrl = 1'b0;
-							LOCtrl = 1'b0;
-							estado = WAIT;
+							if(Div0 == 1'b1) begin
+								DivCtrl = 1'b0;
+								ExceptionCtrl = 2'b10;
+								IorD = 2'b01;
+								Wr = 1'b0;
+								AluSrcA = 2'b00;
+								AluSrcB = 3'b001;
+								AluOp = 3'b010;
+								EPCWrite = 1'b1;
+								estado = ExceptionWait;
+							end 
+							else begin
+								DivCtrl = 1'b0;
+								WriteHI = 1'b1;
+								WriteLO = 1'b1;
+								HICtrl = 1'b0;
+								LOCtrl = 1'b0;
+								estado = WAIT;
+							end
 						end
 					end
 				ADD_SUBClk2: begin
