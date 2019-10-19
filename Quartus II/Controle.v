@@ -95,6 +95,7 @@ parameter ADD_SUBClk2 = 7'b0101111;
 parameter MULTClk2 = 7'b1000000;
 parameter DIVClk2 = 7'b1000001;
 parameter DIVClk3 = 7'b1000010;
+parameter BLMClk5 = 7'b1000011; 
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -1822,13 +1823,47 @@ always @(posedge clock) begin
 				BLMClk2: begin
 					//Alteradas
 					    //wait clock
-					    MDRCtrl = 1'b1;
+					    IorD = 3'b100;
+					    Wr = 1'b0;
 					//Inalteradas        
 					    PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
-					    IorD = 3'b000;
+					    IRWrite = 1'b0;
+					    WriteRegA = 1'b0;
+					    WriteRegB = 1'b0;
+					    AluSrcA = 2'b00;
+					    AluSrcB = 3'b000;
+					    AluOp = 3'b000;
+					    AluOutControl = 1'b0;
+					    MDRCtrl = 1'b0;
+					    RegDst = 3'b000;
+					    MemToReg = 4'b0000;
+					    RegWrite = 1'b0;
+					    LSControl = 2'b00;
+					    SSControl = 2'b00;
+					    ExceptionCtrl = 2'b00;
+					    WriteHI = 1'b0;
+					    WriteLO = 1'b0;
+					    HICtrl = 1'b0;
+					    LOCtrl = 1'b0;
+					    DivCtrl = 1'b0;
+					    MultCtrl = 1'b0;
+					    ShiftSrc = 1'b0;
+					    ShiftAmt = 1'b0;
+					    ShiftCtrl = 3'b000;
+					    EPCWrite = 1'b0;
+					    estado = BLMClk3;
+					end
+				BLMClk3: begin
+					//Alteradas
+						IorD = 3'b100;
 					    Wr = 1'b0;
+					    MDRCtrl = 1'b1;
+					//Inalteradas
+						PCSource = 3'b000;
+						PCWrite = 1'b0;
+					    WriteCond = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
@@ -1852,16 +1887,14 @@ always @(posedge clock) begin
 					    ShiftAmt = 1'b0;
 					    ShiftCtrl = 3'b000;
 					    EPCWrite = 1'b0;
-					    estado = BLMClk3;
+					    estado = BLMClk4;
 					end
-				BLMClk3: begin
+				BLMClk4: begin
 					//Alteradas
-					    AluSrcA = 2'b11;
+						AluSrcA = 2'b11;
 					    AluSrcB = 3'b000;
 					    AluOp = 3'b111;
 					//Inalteradas
-						PCSource = 3'b000;
-						PCWrite = 1'b0;
 					    WriteCond = 1'b0;
 					    IorD = 3'b000;
 					    Wr = 1'b0;
@@ -1886,9 +1919,9 @@ always @(posedge clock) begin
 					    ShiftAmt = 1'b0;
 					    ShiftCtrl = 3'b000;
 					    EPCWrite = 1'b0;
-					    estado = BLMClk4;
+					    estado = BLMClk5;
 					end
-				BLMClk4: begin
+				BLMClk5: begin
 					//Alteradas
 					    if(LT == 1) begin
 							PCWrite = 1'b1;
