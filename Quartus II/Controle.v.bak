@@ -518,10 +518,10 @@ always @(posedge clock) begin
 								estado = BGTClk2;
 							end
 						BLM: begin
-								//Alteradas
+							//Alteradas
 								IorD = 3'b100;
 								Wr = 1'b0;
-								//Inalteradas        
+							//Inalteradas        
 								PCSource = 3'b000;
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;

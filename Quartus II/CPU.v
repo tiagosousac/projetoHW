@@ -50,7 +50,7 @@ output wire [2:0] RegDst;
 wire [3:0] MemToReg;
 
 assign RegBOutCortado = RegBOut[4:0];
-assign OffsetExtendido = Offset;
+assign OffsetExtendido = {{17{Offset[15]}}, Offset[14:0]};
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
 assign Funct = Offset[5:0];
 assign Shamt = Offset[10:6];

@@ -486,9 +486,6 @@ always @(posedge clock) begin
 								AluSrcA = 2'b10;
 								AluSrcB = 3'b000;
 								AluOp = 3'b111;
-								if(GT == 1) begin
-									PCWrite = 1'b1;
-								end
 							//Inalteradas
 								PCWrite = 1'b0;
 								WriteCond = 1'b0;
