@@ -1,11 +1,11 @@
-module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, DivCtrlHIOut, DivCtrlLOOut, counter, Overflow, ExceptionBitExtendido, RegMDROut, MemData);
+module CPU (clock, reset, RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, estado, AluOp, Opcode, Funct, RegDst, DivCtrlHIOut, DivCtrlLOOut, Overflow, ExceptionBitExtendido, RegMDROut, MemData);
 
 input clock;
 input reset;
 
 // aqui ficam as variaveis que desejam ser printadas, tambem precisa especificar elas no parenteses apos CPU
 output wire [31:0] RegAOut, RegBOut, RegPCOut, MuxMemToRegOut, AluResult, ExceptionBitExtendido, DivCtrlHIOut, DivCtrlLOOut, RegMDROut, MemData;
-output wire [6:0] estado, counter;
+output wire [6:0] estado;
 output wire [5:0] Opcode, Funct;
 wire [4:0] Shamt;
 
@@ -120,7 +120,7 @@ LoadSize LS(RegMDROut, LSControl, LSControlOut);
 
 StoreSize SS(RegBOut, RegMDROut, SSControl, SSControlOut);
 
-Mult Mult(RegAOut, RegBOut, clock, reset, MultCtrl, MultDone, counter, MultCtrlHIOut, MultCtrlLOOut);
+Mult Mult(RegAOut, RegBOut, clock, reset, MultCtrl, MultDone, MultCtrlHIOut, MultCtrlLOOut);
 
 Div Div(RegAOut, RegBOut, clock, reset, DivCtrl, DivDone, Div0, DivCtrlHIOut, DivCtrlLOOut);
 

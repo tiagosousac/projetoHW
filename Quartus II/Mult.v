@@ -5,7 +5,6 @@ input wire clock,
 input wire reset,
 input wire MultCtrl,
 output reg MultDone,
-output reg [6:0] counter,
 output reg[31:0] MultHIOut,
 output reg[31:0] MultLOOut
 );
@@ -14,10 +13,11 @@ output reg[31:0] MultLOOut
 //32:1 = Multiplier
 //0:0 = Comparing Pos
 reg Initialize;
+reg [6:0] counter;
 reg signed [64:0] AMultiplicandComparePos;
 reg signed [64:0] Multiplier;
-reg signed [64:0] Temp;
 reg signed [31:0] NegativeBTemp;
+reg signed [64:0] Temp;
 initial begin
 	Initialize = 1'b1;
 end
@@ -28,6 +28,11 @@ always @ (posedge clock) begin
 		Multiplier[64:0] = 65'b0;
 		counter = 7'b0;
 		Initialize = 1'b1;
+		NegativeBTemp[31:0] = 32'b0;
+		Temp[64:0] = 65'b0;
+		MultDone = 1'b0;
+		MultHIOut[31:0] = 32'b0;
+		MultLOOut[31:0] = 32'b0;
 	end else if(MultCtrl == 1'd1 && Initialize == 1'b1) begin
 		AMultiplicandComparePos = {32'b0, RegAOut[31:0], 1'b0};
 		Multiplier = {RegBOut[31:0], 33'b0};
