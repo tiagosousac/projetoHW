@@ -98,7 +98,7 @@ MuxIorD MuxIorD(RegPCOut, MuxExceptionsCtrlOut, AluResult, RegAluOutOut, RegAOut
  
 MuxRegDst MuxRegDst(RS, RT, RD, RegDst, MuxRegDstOut);
  
-MuxAluSrcA MuxAluSrcA(RegPCOut, RegBOut, RegAOut, MemData, AluSrcA, MuxAluSrcAOut);
+MuxAluSrcA MuxAluSrcA(RegPCOut, RegBOut, RegAOut, RegMDROut, AluSrcA, MuxAluSrcAOut);
 
 MuxAluSrcB MuxAluSrcB(RegBOut, OffsetExtendido, LSControlOut, OffsetExtendidoLeft2, AluSrcB, MuxAluSrcBOut);
 
