@@ -15,7 +15,10 @@ output reg EPCWrite,
 output reg ShiftSrc,
 output reg ShiftAmt,
 output reg DivCtrl,
+input wire DivDone,
+input wire Div0,
 output reg MultCtrl,
+input wire MultDone,
 output reg HICtrl,
 output reg LOCtrl,
 output reg WriteHI,
@@ -89,6 +92,9 @@ parameter ADDIClk2 = 7'b0101100;
 parameter ExceptionByteToPc = 7'b0101101;
 parameter ExceptionWait = 7'b0101110;
 parameter ADD_SUBClk2 = 7'b0101111;
+parameter MULTClk2 = 7'b1000000;
+parameter DIVClk2 = 7'b1000001;
+parameter DIVClk3 = 7'b1000010;
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -998,8 +1004,72 @@ always @(posedge clock) begin
 										estado = ADD_SUBClk2;
 									end
 								DIV: begin
+									//Alteradas
+										DivCtrl = 1'b1;
+									//Inalteradas        
+										PCSource = 3'b000;
+										PCWrite = 1'b0;
+										WriteCond = 1'b0;
+										IorD = 3'b000;
+										Wr = 1'b0;
+										IRWrite = 1'b0;
+										WriteRegA = 1'b0;
+										WriteRegB = 1'b0;
+										AluSrcA = 2'b00;
+										AluSrcB = 3'b000;
+										AluOp = 3'b000;
+										AluOutControl = 1'b0;
+										RegDst = 3'b000;
+										MemToReg = 4'b0000;
+										RegWrite = 1'b0;
+										MDRCtrl = 1'b0;
+										LSControl = 2'b00;
+										SSControl = 2'b00;
+										ExceptionCtrl = 2'b00;
+										WriteHI = 1'b0;
+										WriteLO = 1'b0;
+										HICtrl = 1'b0;
+										LOCtrl = 1'b0;
+										MultCtrl = 1'b0;
+										ShiftSrc = 1'b0;
+										ShiftAmt = 1'b0;
+										ShiftCtrl = 3'b000;
+										EPCWrite = 1'b0;
+										estado = DIVClk2;
 									end
 								MULT: begin
+									//Alteradas
+										MultCtrl = 1'b1;
+									//Inalteradas        
+										PCSource = 3'b000;
+										PCWrite = 1'b0;
+										WriteCond = 1'b0;
+										IorD = 3'b000;
+										Wr = 1'b0;
+										IRWrite = 1'b0;
+										WriteRegA = 1'b0;
+										WriteRegB = 1'b0;
+										AluSrcA = 2'b00;
+										AluSrcB = 3'b000;
+										AluOp = 3'b000;
+										AluOutControl = 1'b0;
+										RegDst = 3'b000;
+										MemToReg = 4'b0000;
+										RegWrite = 1'b0;
+										MDRCtrl = 1'b0;
+										LSControl = 2'b00;
+										SSControl = 2'b00;
+										ExceptionCtrl = 2'b00;
+										WriteHI = 1'b0;
+										WriteLO = 1'b0;
+										HICtrl = 1'b0;
+										LOCtrl = 1'b0;
+										DivCtrl = 1'b0;
+										ShiftSrc = 1'b0;
+										ShiftAmt = 1'b0;
+										ShiftCtrl = 3'b000;
+										EPCWrite = 1'b0;
+										estado = MULTClk2;
 									end
 								MFHI: begin
 									//Alteradas
@@ -2665,13 +2735,13 @@ always @(posedge clock) begin
 					end
 				ExceptionWait: begin
 					//Alteradas
-                        //wait clock
+						//wait clock
+						Wr = 1'b0;
 					//Inalteradas
 						PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
 					    IorD = 3'b000;
-					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
@@ -2770,7 +2840,43 @@ always @(posedge clock) begin
 					    EPCWrite = 1'b0;
 					    estado = FETCH;
 					end
-					
+				MULTClk2: begin
+					//Alteradas
+						if(MultDone == 1'b0) begin
+							estado = MULTClk2;
+						end
+					    else begin
+							MultCtrl = 1'b0;
+							WriteHI = 1'b1;
+							WriteLO = 1'b1;
+							HICtrl = 1'b1;
+							LOCtrl = 1'b1;
+							estado = WAIT;
+						end
+					end
+				DIVClk2: begin
+					//Alteradas
+						if(Div0 == 1'b1) begin
+							ExceptionCtrl = 2'b10;
+							IorD = 2'b01;
+							AluSrcA = 2'b00;
+							AluSrcB = 3'b001;
+							AluOp = 3'b010;
+							EPCWrite = 1'b1;
+							estado = ExceptionWait;
+						end
+						if(DivDone == 1'b0) begin
+							estado = DIVClk2;
+						end
+					    else begin
+							DivCtrl = 1'b0;
+							WriteHI = 1'b1;
+							WriteLO = 1'b1;
+							HICtrl = 1'b0;
+							LOCtrl = 1'b0;
+							estado = WAIT;
+						end
+					end
 				ADD_SUBClk2: begin
 					//Alteradas
                         if(Overflow) begin
