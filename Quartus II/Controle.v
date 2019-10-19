@@ -79,9 +79,9 @@ parameter LHClk4 = 7'b0011111;
 parameter LWClk4 = 7'b0100000;
 parameter LBClk4 = 7'b0100001;
 parameter SHClk4 = 7'b0100010;
-parameter SLTxClk2 = 7'b0100011;
+parameter SLTClk2 = 7'b0100011;
 parameter SBClk4 = 7'b0100100;
-parameter BLMClk5 = 7'b0100101; //fora de ordem por ter sido inserido dps
+parameter SLTIClk2 = 7'b0100101;
 parameter SLLClk2 = 7'b0100110;
 parameter SLLVClk2 = 7'b0100111;
 parameter SRLClk2 = 7'b0101000;
@@ -95,6 +95,7 @@ parameter ADD_SUBClk2 = 7'b0101111;
 parameter MULTClk2 = 7'b1000000;
 parameter DIVClk2 = 7'b1000001;
 parameter DIVClk3 = 7'b1000010;
+parameter BLMClk5 = 7'b1000011; 
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -826,7 +827,7 @@ always @(posedge clock) begin
 								ShiftAmt = 1'b0;
 								ShiftCtrl = 3'b000;
 								EPCWrite = 1'b0;
-								estado = SLTxClk2;
+								estado = SLTIClk2;
 							end
 						J: begin
 							//Alteradas
@@ -1335,7 +1336,7 @@ always @(posedge clock) begin
 										ShiftAmt = 1'b0;
 										ShiftCtrl = 3'b000;
 										EPCWrite = 1'b0;
-										estado = SLTxClk2;
+										estado = SLTClk2;
 									end
 								JR: begin
 									//Alteradas
@@ -2957,15 +2958,19 @@ always @(posedge clock) begin
 					ShiftAmt = 1'b0;
 					ShiftCtrl = 3'b000;
 				end
-				SLTxClk2: begin
+				SLTClk2: begin
 					//Alteradas
 					RegDst = 3'b010;
 					MemToReg = 4'b0000;
 					RegWrite = 1'b1;
+					estado = WAIT;
+				end
+				SLTIClk2: begin
+					//Alteradas
+					RegDst = 3'b001;
+					MemToReg = 4'b0000;
+					RegWrite = 1'b1;
 					//Inalteradas
-					AluSrcA = 2'b00;
-					AluSrcB = 3'b000;
-					AluOp = 3'b000;
 					estado = WAIT;
 				end
 					
