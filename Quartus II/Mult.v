@@ -5,18 +5,19 @@ input wire clock,
 input wire reset,
 input wire MultCtrl,
 output reg MultDone,
-output reg [5:0] counter,
+output reg [6:0] counter,
 output reg[31:0] MultHIOut,
-output reg[31:0] MultLOOut,
-output reg[64:0] AMultiplicandComparePos,
-output reg[64:0] Multiplier
+output reg[31:0] MultLOOut
 );
 
 //64:33 = A
 //32:1 = Multiplier
 //0:0 = Comparing Pos
 reg Initialize;
-
+reg signed [64:0] AMultiplicandComparePos;
+reg signed [64:0] Multiplier;
+reg signed [64:0] Temp;
+reg signed [31:0] NegativeBTemp;
 initial begin
 	Initialize = 1'b1;
 end
@@ -25,31 +26,31 @@ always @ (posedge clock) begin
 	if(reset == 1'd1) begin
 		AMultiplicandComparePos[64:0] = 65'b0;
 		Multiplier[64:0] = 65'b0;
-		counter = 6'b0;
+		counter = 7'b0;
 		Initialize = 1'b1;
 	end else if(MultCtrl == 1'd1 && Initialize == 1'b1) begin
 		AMultiplicandComparePos = {32'b0, RegAOut[31:0], 1'b0};
 		Multiplier = {RegBOut[31:0], 33'b0};
-		counter = 6'b0;
+		NegativeBTemp = ~RegBOut + 1'b1;
+		Temp = {NegativeBTemp, 33'b0};
+		counter = 7'b0;
 		MultDone = 1'b0;
 		Initialize = 1'b0;
 	end else if(MultCtrl == 1'd1) begin
-		if (counter < 6'b100000) begin
+		if (counter < 7'b0100000) begin
 			if(AMultiplicandComparePos[1] == AMultiplicandComparePos[0])begin
-				AMultiplicandComparePos = AMultiplicandComparePos >>> 1;
 			end
-			else if (AMultiplicandComparePos[1] == 1)begin
-				AMultiplicandComparePos = AMultiplicandComparePos - Multiplier;
-				AMultiplicandComparePos = AMultiplicandComparePos >>> 1;
+			else if (AMultiplicandComparePos[1] == 1'b1)begin
+				AMultiplicandComparePos = AMultiplicandComparePos + Temp;
 			end
-			else begin
+			else if (AMultiplicandComparePos[1] == 1'b0)begin
 				AMultiplicandComparePos = AMultiplicandComparePos + Multiplier;
-				AMultiplicandComparePos = AMultiplicandComparePos >>> 1;
 			end
+			AMultiplicandComparePos = AMultiplicandComparePos >>> 1;
 			counter = counter + 1;
-		end else if (counter == 6'b100000)begin
-			MultHIOut = {AMultiplicandComparePos[64:33]};
-			MultLOOut = {AMultiplicandComparePos[32:1]};
+		end else if (counter == 7'b0100000)begin
+			MultHIOut[31:0] = AMultiplicandComparePos[64:33];
+			MultLOOut[31:0] = AMultiplicandComparePos[32:1];
 			MultDone = 1'b1;
 			Initialize = 1'b1;
 		end
