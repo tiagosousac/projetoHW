@@ -75,26 +75,26 @@ always @(posedge clock) begin
 			//Estes Ifs seguem este padrao
 			if(signA == 1'b1)begin
 				//Transforma negativo
-				DivLOOut = ~AuxA + 1;
+				DivHIOut = ~AuxA + 1;
 			end
 			else begin
-				DivLOOut = AuxA;
+				DivHIOut = AuxA;
 			end
 			if(signB == 1'b1 && signA == 1'b1)begin
 				//Transforma negativo, se A tiver sido negativo
 				//vai colocar de volta para positivo
-				DivHIOut = Contador;
+				DivLOOut = Contador;
 			end
 			else if(signA == 1'b1)begin
 				//Transforma negativo
-				DivHIOut = ~Contador + 1;
+				DivLOOut = ~Contador + 1;
 			end
 			else if(signB == 1'b1)begin
 				//Transforma negativo
-				DivHIOut = ~Contador + 1;
+				DivLOOut = ~Contador + 1;
 			end
 			else begin
-				DivHIOut = Contador;
+				DivLOOut = Contador;
 			end
 			DivDone = 1'b1;//Informa que o Div foi finalizado
 		end 
