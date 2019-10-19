@@ -26,8 +26,8 @@ always @ (posedge clock) begin
 		AMultiplicandComparePos[64:0] = 65'b0;
 		Multiplier[64:0] = 65'b0;
 		counter = 6'b0;
-		Initialize = 1'b0;
-	end else if(MultCtrl == 1'd1 && Initialize == 1) begin
+		Initialize = 1'b1;
+	end else if(MultCtrl == 1'd1 && Initialize == 1'b1) begin
 		AMultiplicandComparePos = {32'b0, RegAOut[31:0], 1'b0};
 		Multiplier = {RegBOut[31:0], 33'b0};
 		counter = 6'b0;

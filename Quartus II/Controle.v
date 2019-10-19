@@ -82,6 +82,7 @@ parameter ExceptionWait = 7'b0100010;
 parameter ADD_SUBClk2 = 7'b0100011;
 parameter MULTClk2 = 7'b1000000;
 parameter DIVClk2 = 7'b1000001;
+parameter DIVClk3 = 7'b1000010;
 parameter WAIT = 7'b1111111;
 
 // parameters do Opcode
@@ -2420,13 +2421,13 @@ always @(posedge clock) begin
 					end
 				ExceptionWait: begin
 					//Alteradas
-                        //wait clock
+						//wait clock
+						Wr = 1'b0;
 					//Inalteradas
 						PCSource = 3'b000;
 					    PCWrite = 1'b0;
 					    WriteCond = 1'b0;
 					    IorD = 3'b000;
-					    Wr = 1'b0;
 					    IRWrite = 1'b0;
 					    WriteRegA = 1'b0;
 					    WriteRegB = 1'b0;
@@ -2503,6 +2504,15 @@ always @(posedge clock) begin
 					end
 				DIVClk2: begin
 					//Alteradas
+						if(Div0 == 1'b1) begin
+							ExceptionCtrl = 2'b10;
+							IorD = 2'b01;
+							AluSrcA = 2'b00;
+							AluSrcB = 3'b001;
+							AluOp = 3'b010;
+							EPCWrite = 1'b1;
+							estado = ExceptionWait;
+						end
 						if(DivDone == 1'b0) begin
 							estado = DIVClk2;
 						end

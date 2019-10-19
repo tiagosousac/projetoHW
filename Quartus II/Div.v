@@ -24,7 +24,7 @@ end
 always @(posedge clock) begin
 	if(reset == 1'd1) begin
 			Contador = 32'b0;
-			Initialize = 1'b0;
+			Initialize = 1'b1;
 			DivHIOut = 32'b0;
 			DivLOOut = 32'b0;
 			Div0 = 1'b0;
@@ -34,9 +34,9 @@ always @(posedge clock) begin
 			signA = 1'b0;
 			signB = 1'b0;
 	end
-	else if(DivCtrl == 1'd1 && Initialize == 1) begin
+	else if(DivCtrl == 1'd1 && Initialize == 1'b1) begin
 			Contador = 32'b0;
-			Initialize = 1'b0;//reseta, mas muda o valor de Initialize para come�ar
+			Initialize = 1'b0;//muda o valor de Initialize para nao resetar no clock seguinte
 			DivHIOut = 32'b0;
 			DivLOOut = 32'b0;
 			Div0 = 1'b0;
@@ -57,14 +57,15 @@ always @(posedge clock) begin
 			else begin
 				AuxB = RegBOut;
 			end
+			
+			if(AuxB == 32'b0) begin
+				Div0 = 1'b1;//Coloca o maior valor poss�vel, facilitar debug, e foi o mais logico da Div0
+				DivHIOut = 32'b01111111111111111111111111111111;
+				DivLOOut = 32'b01111111111111111111111111111111;
+			end
 	end
 	else if(DivCtrl == 1'd1) begin
-		if(AuxB == 32'b0) begin
-			Div0 = 1'b1;//Coloca o maior valor poss�vel, facilitar debug, e foi o mais logico da Div0
-			DivHIOut = 32'b01111111111111111111111111111111;
-			DivLOOut = 32'b01111111111111111111111111111111;
-		end
-		else if(AuxA < AuxB) begin
+		if(AuxA < AuxB) begin
 			//Se o resto for menor que o valor a ser dividido, para de dividir
 			//7   3| 2  1
 			//7  -3|-2  1
@@ -95,12 +96,13 @@ always @(posedge clock) begin
 				DivHIOut = Contador;
 			end
 			DivDone = 1'b1;//Informa que o Div foi finalizado
-			Initialize = 1'b1;
 		end 
 		else begin
 			AuxA = AuxA - AuxB;//Salva a subtracao para poder ver qual o resto
 			Contador = Contador + 1;//Incrementa resultado
 		end
+	end else begin
+		Initialize = 1'b1;
 	end
 end
 
